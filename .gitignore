@@ -68,3 +68,4 @@ typings/
 
 #Dev
 docs/test.html
+!docs/node_modules/sfeir-school-theme
