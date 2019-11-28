@@ -11,4 +11,4 @@
 
 ### @jefbinomed
 
-![company](./assets/images/logo_sfeir_bleu_orange.png)
+![company](./assets/images/Sfeir-Gris.png)
