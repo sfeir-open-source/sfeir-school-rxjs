@@ -45,3 +45,28 @@ Expliquer que ce schéma est courant et qu'il représente ce qu'on va rencontrer
 Notes:
 
 RxJS est donc l'implémentation javascript du concept Reactive Programming. Il est existe aussi RxJava, ...
+
+##==##
+
+<!-- .slide: class="with-code consolas" -->
+
+# Installation
+
+```sh
+# ES6 way
+npm install rxjs
+# Typescript way
+npm install @reactivex/rxjs
+```
+
+<!-- .element: class="big-code block" -->
+
+Import:
+
+<!-- .element: class="text-center" -->
+
+```javascript
+import * as rxjs from 'rxjs';
+```
+
+<!-- .element: class="big-code block" -->
