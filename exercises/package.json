@@ -1,0 +1,16 @@
+{
+  "name": "sfeirschoolrxjs-exercises",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sfeir",
+    "sfeirschool",
+    "rxjs"
+  ],
+  "author": "wolfgangGoedel",
+  "license": "MIT"
+}
