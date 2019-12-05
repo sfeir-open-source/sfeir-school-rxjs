@@ -185,22 +185,21 @@ Ici on récupère un nombre inifini de valeurs
 
 <!-- .slide: data-type-show="full" class="with-code consolas" -->
 
-# Return infinite values with time
+# Return single value with time
 
 ```javascript
-function* myGenerator() {
-  ...
+function asyncValue() {
+  return new Promise((resolve, reject)=>{
+    ...
+    resolve(value);
+  })
 }
-const myIterator = myGenerator();
-console.log(myIterator.next());
-console.log(myIterator.next());
-setInterval(()=>console.log(myIterator.next()), 500);
 ```
 
 <!-- .element: class="big-code" -->
 
 Notes:
-on récupère 0 et 1 très rapidement et ensuite on demande la suite toute les 500ms
+on ne sait pas quand la valeur va arriver, mais elle arrivera un jour ! Par contre elle est unique
 ##==##
 
 <!-- .slide: data-type-show="full" class="with-code consolas" -->
@@ -221,6 +220,7 @@ setInterval(()=>console.log(myIterator.next()), 500);
 
 Notes:
 on récupère 0 et 1 très rapidement et ensuite on demande la suite toute les 500ms
+⚠️ Avec un générateur, on est dans une stratégie bloquante
 
 ##==##
 
@@ -280,16 +280,8 @@ Revenir sur le concept de finite vs infinite value
 
 <br>
 
-- A function return an array of a single value
-- A generator return an iterator
+- A function return an array of a single value (sync or not)
+- A generator return an iterator (sync)
 
 Notes:
 Conclure sur le concept de réception
-
-##==##
-
-# TODO : retour sur les générateurs
-
-##==##
-
-# TODO : conclusion sur le chapitre
