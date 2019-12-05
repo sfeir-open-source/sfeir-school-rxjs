@@ -12,5 +12,12 @@
     "rxjs"
   ],
   "author": "wolfgangGoedel",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/jest": "^24.0.23",
+    "jest": "^24.9.0",
+    "rxjs": "^6.5.3",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.3"
+  }
 }
