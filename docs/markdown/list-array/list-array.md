@@ -100,11 +100,191 @@ Additionnal Advice
 
 ##==##
 
-# TODO Slide code approche fonctionelle pour résoudre le précédent problème
+# How to return values ?
+
+<br><br>
+
+|      | Single   | Multiple |
+| ---- | -------- | -------- |
+| Pull | Function | Iterator |
+
+Notes:
+Ici pour récupérer des valeurs, on peut soit récupérer un nombre fini de valeurs, ou alors un nombre infini et surtout non borné dans le temps
 
 ##==##
 
-# TODO : Array vs generators (finite vs infinite value)
+<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition-white transition-center" data-type-show="prez" -->
+
+# Live coding !
+
+Notes:
+Faire un livecoding de :
+
+1. Return single value
+2. Return finite multiple value
+3. Return a generator
+4. Controler le temps => retourner une promesse
+5. Comment controler le temps ? Le générateur peut générer des valeurs à tes temps différents
+
+##==##
+
+<!-- .slide: data-type-show="full" class="with-code consolas" -->
+
+# Return a single value
+
+```javascript
+function singleValue() {
+  return 'hello world!';
+}
+```
+
+<!-- .element: class="big-code" -->
+
+Notes:
+Ici on ne retourne qu'une seule valeure via notre function
+
+##==##
+
+<!-- .slide: data-type-show="full" class="with-code consolas" -->
+
+# Return multiples values
+
+```javascript
+function singleValue() {
+  return ['hello', ' World', '!'];
+}
+```
+
+<!-- .element: class="big-code" -->
+
+Notes:
+Ici on récupère un nombre fini de valeurs
+
+##==##
+
+<!-- .slide: data-type-show="full" class="with-code consolas" -->
+
+# Return infinite values ?
+
+```javascript
+function* myGenerator() {
+  let wontFinish = false;
+  let count = 0;
+  while (wontFinish) {
+    wonFinish = yield count++;
+  }
+}
+```
+
+<!-- .element: class="big-code" -->
+
+Notes:
+Ici on récupère un nombre inifini de valeurs
+
+##==##
+
+<!-- .slide: data-type-show="full" class="with-code consolas" -->
+
+# Return infinite values with time
+
+```javascript
+function* myGenerator() {
+  ...
+}
+const myIterator = myGenerator();
+console.log(myIterator.next());
+console.log(myIterator.next());
+setInterval(()=>console.log(myIterator.next()), 500);
+```
+
+<!-- .element: class="big-code" -->
+
+Notes:
+on récupère 0 et 1 très rapidement et ensuite on demande la suite toute les 500ms
+##==##
+
+<!-- .slide: data-type-show="full" class="with-code consolas" -->
+
+# Return infinite values with time
+
+```javascript
+function* myGenerator() {
+  ...
+}
+const myIterator = myGenerator();
+console.log(myIterator.next());
+console.log(myIterator.next());
+setInterval(()=>console.log(myIterator.next()), 500);
+```
+
+<!-- .element: class="big-code" -->
+
+Notes:
+on récupère 0 et 1 très rapidement et ensuite on demande la suite toute les 500ms
+
+##==##
+
+<!-- .slide: class="two-column-layout" -->
+
+# Recap: Array vs Generators
+
+##--##
+
+<!-- .slide: class="with-code consolas" -->
+
+### Array (Finite values)
+
+```javascript
+const finiteArray = [1, 2, 3, 4];
+
+for (let number of finiteArray) {
+  console.log(number);
+}
+
+//will show '1', '2', '3', '4'
+```
+
+<!-- .element: class="big-code" -->
+
+##--##
+
+<!-- .slide: class="with-code consolas" -->
+
+### Generators (Infinite values ?)
+
+```javascript
+function* myGenerator(max) {
+  let count = 0;
+  while (count < max) yield count++;
+  return;
+}
+for (let number of myGenerator(x)) {
+  console.log(number);
+}
+```
+
+<!-- .element: class="big-code" -->
+
+Notes:
+Revenir sur le concept de finite vs infinite value
+
+##==##
+
+# How to return values ?
+
+<br><br>
+
+|      | Single   | Multiple |
+| ---- | -------- | -------- |
+| Pull | Function | Iterator |
+
+<br>
+
+- A function return an array of a single value
+- A generator return an iterator
+
+Notes:
+Conclure sur le concept de réception
 
 ##==##
 
