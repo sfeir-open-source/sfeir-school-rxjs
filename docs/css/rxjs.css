@@ -5,4 +5,10 @@
 .reveal .slides section .text-center {
   text-align: center; }
 
+.reveal .slides section h1.cadre {
+  background: rgba(51, 51, 51, 0.7);
+  box-shadow: 5px 5px #333;
+  width: fit-content;
+  padding: 30px; }
+
 /*# sourceMappingURL=rxjs.css.map */

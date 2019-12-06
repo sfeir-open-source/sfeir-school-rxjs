@@ -52,7 +52,7 @@ Même si un pipeable operator retourne un observable, il ne fait que réutiliser
 
 ##==##
 
-# HOO: High Order Observable
+# HOO: High Order Operators
 
 > A higher order observable is just a fancy name for an observable that emits observable. Let’s change the example a little bit so you can see what I’m talking about.
 
@@ -179,7 +179,44 @@ It takes the inner value to push it to final stream. Have a look at [Understandi
 
 ##==##
 
-# Todo: présentation des principaux opérateurs
+<!-- .slide: class="transition-white sfeir-bg-blue" -->
+
+# Main Operators
+
+##==##
+
+# Creator - Of
+
+> Converts the arguments to an observable sequence.
+
+![center](./assets/images/of.png)
+
+##==##
+
+# Transformation - Map
+
+> Applies a given project function to each value emitted by the source Observable, and emits the resulting values as an Observable.
+
+![center](./assets/images/map.png)
+
+Notes:
+Transform le contenu d'un stream
+
+##==##
+
+# TODO more operators
+
+##==##
+
+<!-- .slide: data-background="./assets/images/chuttersnap-cY-SXZp6TUY-unsplash.jpg" class="transition-center transition-white"  -->
+
+# How to choose ?
+
+<!-- .element: class="cadre" -->
+
+##==##
+
+# Expliquer arbre de décision de RX (quelles sont les questions à se poser)
 
 ##==##
 
