@@ -185,11 +185,41 @@ It takes the inner value to push it to final stream. Have a look at [Understandi
 
 ##==##
 
+# Understand Marble diagram
+
+![full-center](./assets/images/marble-diagram-anatomy.png)
+
+##==##
+
 # Creator - Of
 
 > Converts the arguments to an observable sequence.
 
 ![center](./assets/images/of.png)
+
+##==##
+
+# Creator - From
+
+> Creates an Observable from an Array, an array-like object, a Promise, an iterable object, or an Observable-like object.
+
+![center](./assets/images/from.png)
+
+##==##
+
+# Creator - merge
+
+> Creates an output Observable which concurrently emits all values from every given input Observable.
+
+![center](./assets/images/merge.png)
+
+##==##
+
+# Creator - concat
+
+> Creates an output Observable which sequentially emits all values from given Observable and then moves on to the next.
+
+![center](./assets/images/concat.png)
 
 ##==##
 
@@ -204,19 +234,60 @@ Transform le contenu d'un stream
 
 ##==##
 
-# TODO more operators
+# Transformation - Scan
+
+> Applies an accumulator function over the source Observable, and returns each intermediate result, with an optional seed value
+
+![center](./assets/images/scan.png)
+
+##==##
+
+# Transformation - Reduce
+
+> Applies an accumulator function over the source Observable, and returns the accumulated result when the source completes, given an optional seed value.
+
+![center](./assets/images/reduce.png)
+
+##==##
+
+# Transformation - Debounce
+
+> Emits a value from the source Observable only after a particular time span determined by another Observable has passed without another source emission.
+
+![center](./assets/images/debounce.png)
+
+##==##
+
+# Transformation - TakeUntil
+
+> Emits the values emitted by the source Observable until a notifier Observable emits a value.
+
+![center](./assets/images/takeUntil.png)
+
+##==##
+
+# Transformation - Delay
+
+> Delays the emission of items from the source Observable by a given timeout or until a given Date.
+
+![center](./assets/images/delay.png)
 
 ##==##
 
 <!-- .slide: data-background="./assets/images/chuttersnap-cY-SXZp6TUY-unsplash.jpg" class="transition-center transition-white"  -->
 
-# How to choose ?
+# How to choose?
 
 <!-- .element: class="cadre" -->
 
 ##==##
 
-# Expliquer arbre de décision de RX (quelles sont les questions à se poser)
+# How to choose it's operator?
+
+> Use [Operator Decision Tree](https://rxjs.dev/operator-decision-tree)
+
+Notes:
+Expliquer le principe et le regarder ensemble
 
 ##==##
 
