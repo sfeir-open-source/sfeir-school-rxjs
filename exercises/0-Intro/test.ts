@@ -1,6 +1,8 @@
-import { getModuleMasses, fuelUpper } from './code';
+import { createModuleMassesGetter, fuelUpper } from './code';
 
 describe('getModuleMasses', () => {
+  const getModuleMasses = createModuleMassesGetter('data.txt');
+
   it('should return 100 entries', () => {
     const actual = getModuleMasses();
     expect(actual.length).toBe(100);
@@ -8,7 +10,7 @@ describe('getModuleMasses', () => {
 
   it('should contain numbers only', () => {
     const actual = getModuleMasses();
-    expect(actual.every(m => typeof m === 'number')).toBe(true);
+    expect(actual.every(m => typeof m === 'number' && !isNaN(m))).toBe(true);
   });
 });
 
