@@ -1,15 +1,20 @@
-import { lazy, map } from './code';
+import { getModuleMasses, fuelUpper } from './code';
 
-describe('producing values', () => {
-  test('lazy function', () => {
-    const lazyAnswer = lazy(42);
-    expect(typeof lazyAnswer).toBe('function');
-    expect(lazyAnswer()).toBe(42);
+describe('getModuleMasses', () => {
+  it('should return 100 entries', () => {
+    const actual = getModuleMasses();
+    expect(actual.length).toBe(100);
   });
 
-  test('map', () => {
-    const lazySource = lazy(21);
-    const lazyAnswer = map(lazySource, x => x * 2);
-    expect(lazyAnswer()).toBe(42);
+  it('should contain numbers only', () => {
+    const actual = getModuleMasses();
+    expect(actual.every(m => typeof m === 'number')).toBe(true);
+  });
+});
+
+describe('fuelUpper', () => {
+  it('should calculate the required fuel', () => {
+    const actual = fuelUpper([12, 14, 1969, 100756]);
+    expect(actual).toBe(2 + 2 + 654 + 33583);
   });
 });
