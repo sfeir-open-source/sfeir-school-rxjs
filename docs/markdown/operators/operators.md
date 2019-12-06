@@ -291,9 +291,21 @@ Expliquer le principe et le regarder ensemble
 
 ##==##
 
-# Todo: Combinaison
+# Todo: distinguer time operator de scheduler
 
 ##==##
+
+# Todo : basic time operator
+
+##==##
+
+# Scheduler = manipulation de la souscription
+
+Distinguer sync & async scheduler
+
+##==##
+
+# Exemple souscription avec scheduler
 
 # Todo: Time operators, comprendre la manipulation
 
