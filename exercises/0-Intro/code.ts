@@ -1,4 +1,8 @@
-import { readInputFile, getRequiredFuelForMass } from '../lib';
+import {
+  readInputFile,
+  getRequiredFuelForMass,
+  accumulateFuelForMass
+} from '../lib';
 
 export declare function getModuleMasses(
   filename: string

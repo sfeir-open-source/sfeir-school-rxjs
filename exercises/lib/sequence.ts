@@ -1,41 +1,39 @@
 export type Sequence<T> = (iter: (value: T) => void) => void;
 
-export function sequenceMap<T, U>(
-  s: Sequence<T>,
+export function map<T, U>(
   f: (v: T) => U
-): Sequence<U> {
-  return iter => {
-    s(v => iter(f(v)));
+): (source: Sequence<T>) => Sequence<U> {
+  return source => iter => {
+    source(v => iter(f(v)));
   };
 }
 
-export function sequenceFlatMap<T, U>(
-  s: Sequence<T>,
+export function flatMap<T, U>(
   f: (v: T) => Sequence<U>
-): Sequence<U> {
-  return iter => {
-    s(v => f(v)(iter));
+): (source: Sequence<T>) => Sequence<U> {
+  return source => iter => {
+    source(v => f(v)(iter));
   };
 }
 
-export function sequenceFilter<T>(
-  s: Sequence<T>,
+export function filter<T>(
   p: (v: T) => boolean
-): Sequence<T> {
-  return iter => {
-    s(v => {
+): (source: Sequence<T>) => Sequence<T> {
+  return source => iter => {
+    source(v => {
       if (p(v)) iter(v);
     });
   };
 }
 
-export function sequenceReduce<T>(
-  s: Sequence<T>,
+export function reduce<T>(
   concat: (a: T, b: T) => T
-): T {
-  let r: T;
-  s(v => {
-    r = r === undefined ? v : concat(r, v);
-  });
-  return r!;
+): (source: Sequence<T>) => T {
+  return source => {
+    let r: T;
+    source(v => {
+      r = r === undefined ? v : concat(r, v);
+    });
+    return r!;
+  };
 }

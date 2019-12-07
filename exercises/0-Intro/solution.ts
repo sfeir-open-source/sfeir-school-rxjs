@@ -1,4 +1,8 @@
-import { readInputFile, getRequiredFuelForMass } from '../lib';
+import {
+  readInputFile,
+  getRequiredFuelForMass,
+  accumulateFuelForMass
+} from '../lib';
 
 export function getModuleMasses(filename: string) {
   return readInputFile(filename)
@@ -14,19 +18,8 @@ export function getRequiredFuel(masses: number[]) {
     .reduce((a, b) => a + b);
 }
 
-function getAccumulatedFuel(mass: number) {
-  function* accumulate(m: number): Iterable<number> {
-    const f = getRequiredFuelForMass(m);
-    if (f > 0) {
-      yield f;
-      yield* accumulate(f);
-    }
-  }
-  return [...accumulate(mass)];
-}
-
 export function getTotalRequiredFuel(masses: number[]) {
   return masses
-    .flatMap(getAccumulatedFuel)
+    .flatMap(m => [...accumulateFuelForMass(m)])
     .reduce((a, b) => a + b);
 }

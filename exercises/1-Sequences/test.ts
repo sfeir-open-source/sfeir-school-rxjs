@@ -1,3 +1,4 @@
+import { map } from '../lib/sequence';
 import {
   sequenceFrom,
   getRequiredFuel,
@@ -5,11 +6,12 @@ import {
 } from './solution';
 
 describe('sequenceFrom', () => {
-  test('it contains 100 numbers', () => {
+  it('should iterate over source', () => {
     const ints = sequenceFrom([1, 2, 3, 4, 5]);
+    const dbl = map<number, number>(x => x * 2);
     const r: number[] = [];
-    ints(v => r.push(v));
-    expect(r).toEqual([1, 2, 3, 4, 5]);
+    dbl(ints)(v => r.push(v));
+    expect(r).toEqual([2, 4, 6, 8, 10]);
   });
 });
 

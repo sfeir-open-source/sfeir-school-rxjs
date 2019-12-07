@@ -1,10 +1,15 @@
-import { readInputFile, getRequiredFuelForMass } from '../lib';
+import {
+  readInputFile,
+  getRequiredFuelForMass,
+  accumulateFuelForMass
+} from '../lib';
+
 import {
   Sequence,
-  sequenceMap,
-  sequenceFilter,
-  sequenceFlatMap,
-  sequenceReduce
+  map,
+  filter,
+  flatMap,
+  reduce
 } from '../lib/sequence';
 
 export declare function sequenceFrom<T>(
