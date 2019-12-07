@@ -1,7 +1,13 @@
-import { fuelUpper, createModuleMassesGetter } from './code';
+import {
+  getModuleMasses,
+  getRequiredFuel,
+  getTotalRequiredFuel
+} from './code';
 
-const getModuleMasses = createModuleMassesGetter('data.txt');
-const masses = getModuleMasses();
-const requiredFuel = fuelUpper(masses);
+const masses = getModuleMasses('data.txt');
 
-console.log('required fuel: ', requiredFuel);
+const requiredFuel = getRequiredFuel(masses);
+console.log('required fuel:', requiredFuel);
+
+const accumulatedFuel = getTotalRequiredFuel(masses);
+console.log('required accumulated fuel:', accumulatedFuel);
