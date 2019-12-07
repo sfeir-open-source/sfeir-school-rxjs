@@ -1,0 +1,25 @@
+{
+  "name": "sfeirschoolrxjs-exercises",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sfeir",
+    "sfeirschool",
+    "rxjs"
+  ],
+  "author": "wolfgangGoedel",
+  "license": "MIT",
+  "dependencies": {
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.14",
+    "jest": "^24.9.0",
+    "rxjs": "^6.5.3",
+    "ts-jest": "^24.2.0",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3"
+  }
+}
