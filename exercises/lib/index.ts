@@ -7,3 +7,5 @@ export function readInputFile(filename: string) {
 export function getRequiredFuelForMass(mass: number) {
   return Math.floor(mass / 3) - 2;
 }
+
+///////////////////////////////////////////////////////////
