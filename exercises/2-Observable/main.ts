@@ -1,28 +1,15 @@
-import { readLines, makeObservable } from './code';
+import { readLines, map } from './code';
+import { getRequiredFuelForMass } from '../lib';
 
-const fuelForMass = (mass: number) =>
-  Math.max(Math.floor(mass / 3) - 2, 0);
+const toFuel = map(getRequiredFuelForMass);
+const fuel = toFuel(readLines('data.txt'));
 
-const fuelAmounts = makeObservable<number>(observer => {
-  readLines('data.txt').subscribe({
-    next(moduleMass) {
-      let current = moduleMass;
-      while ((current = fuelForMass(current)) > 0) {
-        observer.next(current);
-      }
-    },
-    complete() {
-      observer.complete();
-    }
-  });
-});
-
-let fuel = 0;
-fuelAmounts.subscribe({
+let sum = 0;
+fuel.subscribe({
   next(amount) {
-    fuel += amount;
+    sum += amount;
   },
   complete() {
-    console.log('required fuel:', fuel);
+    console.log('required fuel:', sum);
   }
 });

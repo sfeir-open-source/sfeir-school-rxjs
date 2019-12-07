@@ -1,41 +1,24 @@
-import { createReadStream } from 'fs';
 import * as readline from 'readline';
 
-interface Observer<T> {
+import { openInputFile } from '../lib';
+
+export interface Observer<T> {
   next(val: T): void;
   complete(): void;
 }
 
-interface Observable<T> {
+export interface Observable<T> {
   subscribe(observer: Observer<T>): void;
 }
 
-export function makeObservable<T>(
+export declare function makeObservable<T>(
   subscribe: (observer: Observer<T>) => void
-): Observable<T> {
-  return {
-    subscribe(observer) {
-      subscribe(observer);
-    }
-  };
-}
+): Observable<T>;
 
-export function readLines(filename: string) {
-  return makeObservable<number>(observer => {
-    const fileStream = createReadStream(
-      __dirname + '/' + filename
-    );
-    const rl = readline.createInterface(fileStream);
+export declare function readLines(
+  filename: string
+): Observable<number>;
 
-    rl.on('line', line => {
-      const value = parseInt(line, 10);
-      if (!isNaN(value)) {
-        observer.next(value);
-      }
-    });
-
-    rl.on('close', () => {
-      observer.complete();
-    });
-  });
-}
+export declare function map<T, U>(
+  f: (v: T) => U
+): (source: Observable<T>) => Observable<U>;

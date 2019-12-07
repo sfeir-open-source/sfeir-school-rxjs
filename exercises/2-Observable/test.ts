@@ -1,22 +1,42 @@
-import { makeObservable, readLines } from './code';
+import {
+  Observable,
+  makeObservable,
+  readLines,
+  map
+} from './solution';
 
-describe('create a range', () => {
-  test('make', () => {
-    const range = makeObservable<number>(observer => {
-      for (let i = 0; i < 10; i++) {
+describe('create a range and double it', () => {
+  const range = (from: number, to: number) =>
+    makeObservable<number>(observer => {
+      for (let i = from; i <= to; i++) {
         observer.next(i);
       }
+      observer.complete();
     });
 
-    const actual: number[] = [];
-    range.subscribe({
-      next(i) {
-        actual.push(i);
-      },
-      complete() {}
+  const collect = <T>(obs: Observable<T>) => {
+    return new Promise<T[]>(resolve => {
+      const res: T[] = [];
+      obs.subscribe({
+        next(v) {
+          res.push(v);
+        },
+        complete() {
+          resolve(res);
+        }
+      });
     });
+  };
 
-    expect(actual).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  test('make', async () => {
+    const actual = await collect(range(1, 5));
+    expect(actual).toEqual([1, 2, 3, 4, 5]);
+  });
+
+  test('double', async () => {
+    const dbl = map<number, number>(x => x * 2);
+    const actual = await collect(dbl(range(1, 5)));
+    expect(actual).toEqual([2, 4, 6, 8, 10]);
   });
 });
 
@@ -30,9 +50,7 @@ describe('read from file', () => {
       },
       complete() {
         expect(buff.length).toBe(100);
-        expect(
-          buff.every(m => typeof m === 'number' && !isNaN(m))
-        );
+        expect(buff.every(m => !isNaN(m)));
         done();
       }
     });
