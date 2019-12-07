@@ -187,7 +187,7 @@ It takes the inner value to push it to final stream. Have a look at [Understandi
 
 # Understand Marble diagram
 
-![full-center](./assets/images/marble-diagram-anatomy.png)
+![full-center h-600](./assets/images/marble-diagram-anatomy.svg)
 
 ##==##
 
@@ -195,7 +195,7 @@ It takes the inner value to push it to final stream. Have a look at [Understandi
 
 > Converts the arguments to an observable sequence.
 
-![center](./assets/images/of.png)
+![center hm-600](./assets/images/of.png)
 
 ##==##
 
@@ -203,7 +203,7 @@ It takes the inner value to push it to final stream. Have a look at [Understandi
 
 > Creates an Observable from an Array, an array-like object, a Promise, an iterable object, or an Observable-like object.
 
-![center](./assets/images/from.png)
+![center hm-600](./assets/images/from.png)
 
 ##==##
 
@@ -211,7 +211,7 @@ It takes the inner value to push it to final stream. Have a look at [Understandi
 
 > Creates an output Observable which concurrently emits all values from every given input Observable.
 
-![center](./assets/images/merge.png)
+![center hm-600](./assets/images/merge.png)
 
 ##==##
 
@@ -219,7 +219,7 @@ It takes the inner value to push it to final stream. Have a look at [Understandi
 
 > Creates an output Observable which sequentially emits all values from given Observable and then moves on to the next.
 
-![center](./assets/images/concat.png)
+![center hm-600](./assets/images/concat.png)
 
 ##==##
 
@@ -227,7 +227,7 @@ It takes the inner value to push it to final stream. Have a look at [Understandi
 
 > Applies a given project function to each value emitted by the source Observable, and emits the resulting values as an Observable.
 
-![center](./assets/images/map.png)
+![center hm-600](./assets/images/map.png)
 
 Notes:
 Transform le contenu d'un stream
@@ -238,7 +238,7 @@ Transform le contenu d'un stream
 
 > Applies an accumulator function over the source Observable, and returns each intermediate result, with an optional seed value
 
-![center](./assets/images/scan.png)
+![center hm-600](./assets/images/scan.png)
 
 ##==##
 
@@ -246,7 +246,7 @@ Transform le contenu d'un stream
 
 > Applies an accumulator function over the source Observable, and returns the accumulated result when the source completes, given an optional seed value.
 
-![center](./assets/images/reduce.png)
+![center hm-600](./assets/images/reduce.png)
 
 ##==##
 
@@ -254,7 +254,7 @@ Transform le contenu d'un stream
 
 > Emits a value from the source Observable only after a particular time span determined by another Observable has passed without another source emission.
 
-![center](./assets/images/debounce.png)
+![center hm-600](./assets/images/debounce.png)
 
 ##==##
 
@@ -262,7 +262,7 @@ Transform le contenu d'un stream
 
 > Emits the values emitted by the source Observable until a notifier Observable emits a value.
 
-![center](./assets/images/takeUntil.png)
+![center hm-600](./assets/images/takeUntil.png)
 
 ##==##
 
@@ -270,7 +270,7 @@ Transform le contenu d'un stream
 
 > Delays the emission of items from the source Observable by a given timeout or until a given Date.
 
-![center](./assets/images/delay.png)
+![center hm-600](./assets/images/delay.png)
 
 ##==##
 
@@ -291,23 +291,141 @@ Expliquer le principe et le regarder ensemble
 
 ##==##
 
-# Todo: distinguer time operator de scheduler
+<!--.slide: data-background="./assets/images/wall-clock-at-5-50-707582.jpg" class="transition-black transition-center" -->
+
+# How to deal with time?
 
 ##==##
 
-# Todo : basic time operator
+# Scheduler vs timeOperator
+
+<br><br>
+
+> An **Operator** can use a **Scheduler** to affect the timing of publication in the stream.
+
+Notes:
+Préciser qu'un opérateur jouant sur le temps va surement utiliser une scheduler et pas l'inverse
 
 ##==##
 
-# Scheduler = manipulation de la souscription
+# A scheduler
 
-Distinguer sync & async scheduler
+> A scheduler controls when a subscription starts and when notifications are delivered.
+
+<br>
+
+> A Scheduler is an execution context. It denotes where and when the task is executed (e.g. immediately, or in another callback mechanism such as setTimeout or process.nextTick, or the animation frame).
+> ##==##
+
+# Kind of scheduler
+
+| SCHEDULER               | PURPOSE                                                                       |
+| ----------------------- | ----------------------------------------------------------------------------- |
+| null                    | Notifications are delivered synchronously and recursively.                    |
+| queueScheduler          | Schedules on a queue in the current event frame (trampoline scheduler).       |
+| asapScheduler           | Schedules on the micro task queue, which is the same queue used for promises. |
+| asyncScheduler          | Schedules work with setInterval .                                             |
+| animationFrameScheduler | Schedules task that will happen just before next browser content repaint.     |
+
+Notes:
+d'une manière générale, c'est l'async qui est le plus utilisé. Sachez que les autres existent pour le jour où :)
 
 ##==##
 
-# Exemple souscription avec scheduler
+<!-- .slide: class="two-column-layout" -->
 
-# Todo: Time operators, comprendre la manipulation
+# Example
+
+##--##
+
+# AsyncScheduler
+
+<!-- .slide: class="with-code consolas" -->
+
+```javascript
+const observable = new Observable((observer) => {
+  observer.next(1);
+}).pipe(
+  observeOn(asyncScheduler)
+);
+console.log('just before subscribe');
+observable.subscribe({
+  next(x) => console.log('got value ' + x),
+});
+console.log('just after subscribe');
+```
+
+<!-- .element: class="big-code block"-->
+
+##--##
+
+<!-- .slide: class="with-code consolas" -->
+
+# Will print
+
+```
+just before subscribe
+just after subscribe
+got balue 1
+```
+
+<!-- .element: class="big-code block"-->
+
+##==##
+
+<!-- .slide: data-type-show="prez"-->
+
+# Subscription context
+
+## Use `subscribeOn`
+
+> Use subscribeOn to schedule in what context will the subscribe() call happen.
+
+Notes:
+Par défaut, le subscribe est syncrhone et immédiat (rappel -> appel de fonction!)
+
+##==##
+
+<!-- .slide: data-type-show="full"-->
+
+# Subscription context
+
+Use subscribeOn to schedule in what context will the subscribe() call happen. By default, a subscribe() call on an Observable will happen synchronously and immediately. However, you may delay or schedule the actual subscription to happen on a given Scheduler, using the instance operator subscribeOn(scheduler), where scheduler is an argument you provide.
+
+##==##
+
+<!-- .slide: data-type-show="prez"-->
+
+# Notification context
+
+## Use `observeOn`
+
+**List of operators using schedulers:**
+
+```
+bindCallback / bindNodeCallback /combineLatest / concat
+empty / from / fromPromise / interval /merge / of
+range / throw / timer
+```
+
+Notes:
+On met donc en place une sorte de proxy observable de façon controler le timing de notification
+
+##==##
+
+<!-- .slide: data-type-show="full"-->
+
+# Notification context
+
+Use observeOn to schedule in what context will notifications be delivered. As we saw in the examples above, instance operator observeOn(scheduler) introduces a mediator Observer between the source Observable and the destination Observer, where the mediator schedules calls to the destination Observer using your given scheduler.
+
+**List of operators using schedulers:**
+
+```
+bindCallback / bindNodeCallback /combineLatest / concat
+empty / from / fromPromise / interval /merge / of
+range / throw / timer
+```
 
 ##==##
 
