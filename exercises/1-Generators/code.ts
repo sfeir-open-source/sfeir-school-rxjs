@@ -15,7 +15,8 @@ export function createModuleMassesReader(filename: string) {
   };
 }
 
-const fuelForMass = (mass: number) => Math.max(Math.floor(mass / 3) - 2, 0);
+const fuelForMass = (mass: number) =>
+  Math.max(Math.floor(mass / 3) - 2, 0);
 
 export function* fuelAmountsForModule(mass: number) {
   let massToLaunch = mass;

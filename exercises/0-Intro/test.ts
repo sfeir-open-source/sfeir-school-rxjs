@@ -10,7 +10,9 @@ describe('getModuleMasses', () => {
 
   it('should contain numbers only', () => {
     const actual = getModuleMasses();
-    expect(actual.every(m => typeof m === 'number' && !isNaN(m))).toBe(true);
+    expect(
+      actual.every(m => typeof m === 'number' && !isNaN(m))
+    ).toBe(true);
   });
 });
 

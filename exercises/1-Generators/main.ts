@@ -1,4 +1,7 @@
-import { createModuleMassesReader, fuelAmountsForModule } from './code';
+import {
+  createModuleMassesReader,
+  fuelAmountsForModule
+} from './code';
 
 const massReader = createModuleMassesReader('data.txt');
 
