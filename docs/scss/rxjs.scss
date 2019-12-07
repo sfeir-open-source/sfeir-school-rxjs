@@ -21,3 +21,7 @@
 .reveal .slides section.transition-black h1 {
   color: var(--black);
 }
+
+.reveal .slides section.with-code pre.no-max-height code {
+  max-height: initial;
+}
