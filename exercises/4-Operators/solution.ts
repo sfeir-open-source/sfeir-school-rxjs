@@ -13,7 +13,9 @@ export const memory: Observable<number[]> = streamInputFile(
   'aoc2.txt'
 ).pipe(
   map(b => b.toString()),
-  map(s => s.split(',').map(x => parseInt(x, 10)))
+  map(s => s.split(',').map(x => parseInt(x, 10))),
+  shareReplay(1),
+  map(m => [...m])
 );
 
 export const halt: Observable<number> = memory.pipe(
@@ -30,19 +32,18 @@ export function run(
   memory: Observable<number[]>,
   input: Observable<input>
 ): Observable<[input, number]> {
-  return memory.pipe(
-    flatMap(m =>
-      input.pipe(map(nv => [nv, m] as [input, number[]]))
+  return input.pipe(
+    flatMap(nv =>
+      memory.pipe(map(m => [nv, m] as [input, number[]]))
     ),
-    map(([input, memory]) => {
-      const mem = [...memory];
+    map(([input, mem]) => {
       mem[1] = input.noun;
       mem[2] = input.verb;
 
       if (computeIntCode(mem)) {
         return [input, mem[0]];
       }
-      throw 'error';
+      throw new Error('compute error');
     })
   );
 }
