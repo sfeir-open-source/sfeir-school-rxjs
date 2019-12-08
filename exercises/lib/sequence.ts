@@ -1,8 +1,9 @@
 export type Sequence<T> = (iter: (value: T) => void) => void;
+export type SequenceOp<T, U> = (
+  source: Sequence<T>
+) => Sequence<U>;
 
-export function map<T, U>(
-  f: (v: T) => U
-): (source: Sequence<T>) => Sequence<U> {
+export function map<T, U>(f: (v: T) => U): SequenceOp<T, U> {
   return source => iter => {
     source(v => iter(f(v)));
   };
@@ -10,7 +11,7 @@ export function map<T, U>(
 
 export function flatMap<T, U>(
   f: (v: T) => Sequence<U>
-): (source: Sequence<T>) => Sequence<U> {
+): SequenceOp<T, U> {
   return source => iter => {
     source(v => f(v)(iter));
   };
@@ -18,7 +19,7 @@ export function flatMap<T, U>(
 
 export function filter<T>(
   p: (v: T) => boolean
-): (source: Sequence<T>) => Sequence<T> {
+): SequenceOp<T, T> {
   return source => iter => {
     source(v => {
       if (p(v)) iter(v);

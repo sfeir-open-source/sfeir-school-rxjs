@@ -12,9 +12,11 @@ import {
   reduce
 } from '../lib/sequence';
 
-export function sequenceFrom<T>(xs: Iterable<T>): Sequence<T> {
+export function sequenceFrom<T>(
+  gen: () => Iterable<T>
+): Sequence<T> {
   return iter => {
-    for (const v of xs) {
+    for (const v of gen()) {
       iter(v);
     }
   };
@@ -23,7 +25,7 @@ export function sequenceFrom<T>(xs: Iterable<T>): Sequence<T> {
 export function getModuleMasses(
   filename: string
 ): Sequence<number> {
-  const strMs = sequenceFrom(
+  const strMs = sequenceFrom(() =>
     readInputFile(filename).split('\n')
   );
   const toNumbers = map<string, number>(m => parseInt(m, 10));
@@ -42,7 +44,7 @@ export function getRequiredFuel(
 
 export function getTotalRequiredFuel(masses: Sequence<number>) {
   const toAccFuel = flatMap<number, number>(m =>
-    sequenceFrom(accumulateFuelForMass(m))
+    sequenceFrom(() => accumulateFuelForMass(m))
   );
   const sum = reduce<number>((a, b) => a + b);
   return sum(toAccFuel(masses));
