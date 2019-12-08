@@ -4,15 +4,24 @@
   "private": true,
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tsc": "tsc --pretty",
+    "00": "npm run tsc 00/aoc2.ts && node 00/aoc2.js",
+    "0-Intro": "npm run tsc 0-Intro/main.ts && node 0-Intro/main.js",
+    "1-Sequences": "npm run tsc 1-Sequences/main.ts && node 1-Sequences/main.js",
+    "2-Observable": "npm run tsc 2-Observable/main.ts && node 2-Observable/main.js",
+    "3-RxObservable": "npm run tsc 3-RxObservable/main.ts && node 3-RxObservable/main.js",
+    "test": "jest"
   },
   "keywords": [
     "sfeir",
     "sfeirschool",
     "rxjs"
   ],
-  "author": "wolfgangGoedel",
-  "license": "MIT",
+  "authors": [
+    "Jean-François Garreau aka jefbinomed <garreau.jf@sfeir.com>",
+    "Wolfgang Goedel aka wolfgangGoedel <goedel.w@sfeir.com"
+  ],
+  "license": "Apache2.0",
   "dependencies": {
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.14",

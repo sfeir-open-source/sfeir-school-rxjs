@@ -1,19 +1,3 @@
-# About
-
-Template repository for Sfeir School, this template could be use to start a school with revealJS and sfeir school theme
-
-Don't forget to replace all xxx by your techno
-
-## Files to changes
-
-- `docs/scss/xxx.scss` the entry point for your custom styles.
-- `docs/package.json` you should change the tasks `sass` and `sass-once` to reference your scss file
-- `docs/index.html` you should reference your markdown files and the the correct css file
-
-# Content of README
-
-The text below is the template you could use for your readme
-
 # RXjs
 
 A [SFEIR School](https://www.sfeir.com/formation/school/)
@@ -23,3 +7,23 @@ A [SFEIR School](https://www.sfeir.com/formation/school/)
 # Slides
 
 You can view the slides [here](https://sfeir-open-source.github.io/sfeir-school-rxjs/).
+
+# Exercises
+
+To run exercises, you have to go to "exercises" directory, run `npm install` to init the dependancies.
+
+⚠️ You have to use Node 11+ to execute thoses exercises because some of the function used in javascript require node 11.
+
+## Run exercises
+
+To run an exercise, you can first `npm run tsc XXX/FILE.ts` and after `node XXX/FILE.js` or run the script corresponding to exercise:
+
+- `npm run 00`
+- `npm run 0-intro`
+- `npm run 1-sequences`
+- `npm run 2-Observable`
+- `npm run 3-RxObservable`
+
+## Solutions
+
+Each directory has a solution.ts file that contains the solution of exercice. You can test it by running `npx jest`

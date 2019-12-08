@@ -1,5 +1,5 @@
 {
-  "name": "sfeirschoolrxjs",
+  "name": "sfeirschoolrxjsdocs",
   "version": "1.0.0",
   "description": "Sfeir School RXjs with revealJS",
   "main": "index.js",
@@ -13,18 +13,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jefBinomed/SfeirSchoolTheme.git"
+    "url": "git+https://github.com/sfeir-open-source/sfeir-school-rxjs.git"
   },
   "keywords": [
     "rxjs",
     "sfeir"
   ],
-  "author": "jefbinomed",
-  "license": "MIT",
+  "authors": [
+    "Jean-François Garreau aka jefbinomed <garreau.jf@sfeir.com>",
+    "Wolfgang Goedel aka wolfgangGoedel <goedel.w@sfeir.com"
+  ],
+  "license": "CCByND3.0",
   "bugs": {
-    "url": "https://github.com/jefBinomed/SfeirSchoolTheme/issues"
+    "url": "https://github.com/sfeir-open-source/sfeir-school-rxjs/issues"
   },
-  "homepage": "https://github.com/jefBinomed/SfeirSchoolTheme#readme",
+  "homepage": "https://github.com/sfeir-open-source/sfeir-school-rxjs",
   "dependencies": {
     "chokidar-cli": "^1.2.2",
     "cpx": "^1.5.0",
