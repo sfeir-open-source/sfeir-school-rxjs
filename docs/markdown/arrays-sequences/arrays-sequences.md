@@ -70,7 +70,21 @@ input
 
 # Lazyness
 
-Immutable array functions always return new Arrays
+When working with arrays, we manipulate evaluated data.
+Calling `getModuleMasses(...)` reads the file and returns its result.
+Every Array function will execute immediately.
+
+## Thunks
+
+We'd like to read the source only when needed. Let's try:
+
+```javascript
+// instead of
+const nums = readInputFile(...)
+
+// we'll write
+const getNumns = () => readInputFile(...)
+```
 
 ##==##
 
