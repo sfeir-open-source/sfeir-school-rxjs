@@ -87,14 +87,6 @@ Y a pas de secret, un Observable multi casté est en fait un subject
 
 ##==##
 
-# Todo : multicasting, share
-
-##==##
-
-# Todo : factories ?
-
-##==##
-
 <!-- .slide: class="exercice sfeir-bg-pink" -->
 
 # TODO Exercice Title

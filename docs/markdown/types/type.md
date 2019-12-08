@@ -4,10 +4,6 @@
 
 ##==##
 
-# Todo: Typologie des chaines d'observable ?
-
-##==##
-
 <!-- .slide: class="transition-white sfeir-bg-blue" -->
 
 # Hot vs Cold
@@ -42,7 +38,10 @@ Un cold observable partagera tout le temps le même stream pour ses subscribers 
 
 ```javascript
 const obs$ = Observable.fromEvent(document, 'click') //
-  .map(event => ({ clientX: event.clientX, clientY: event.clientY }));
+  .map(event => ({
+    clientX: event.clientX,
+    clientY: event.clientY
+  }));
 ```
 
 <!-- .element: class="big-code block" -->
@@ -188,7 +187,10 @@ with this code, the `connectable` is in charge of subscription and unsubscriptio
 <br><br>
 
 ```javascript
-const source = interval(1000).pipe(multicast(new Subject()), refCount());
+const source = interval(1000).pipe(
+  multicast(new Subject()),
+  refCount()
+);
 ```
 
 <!-- .element: class="big-code block" -->
