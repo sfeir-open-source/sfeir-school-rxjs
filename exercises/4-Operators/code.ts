@@ -1,6 +1,4 @@
-import { Observable, range, of } from 'rxjs/';
-import { map, flatMap, take, skipWhile } from 'rxjs/operators';
-
+import { Observable } from 'rxjs/';
 import { streamInputFile, computeIntCode } from '../lib';
 
 export declare const memory: Observable<number[]>;
