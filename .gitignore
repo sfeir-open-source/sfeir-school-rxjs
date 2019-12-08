@@ -65,6 +65,7 @@ typings/
 
 #SfeirSchoolSpecifics
 .tmp/
+exercises/**/*.js
 
 #Dev
 !docs/node_modules/
