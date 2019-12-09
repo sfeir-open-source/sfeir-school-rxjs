@@ -320,6 +320,8 @@ To deal with multiples values, think about a callback called on each value (like
 Operator signature:
 
 ```typescript
+export type Sequence<T> = (iter: (value: T) => void) => void;
+
 export type SequenceOp<T, U> = (
   source: Sequence<T>
 ) => Sequence<U>;
@@ -331,12 +333,13 @@ export type SequenceOp<T, U> = (
 
 <!-- .slide: class="exercice sfeir-bg-pink" -->
 
-# Pipe
+# Sequences
 
 ## Exercice 1
 
 <br>
-1. Use Pipe to solve the problem
+1. Produce values one by one
+2. Solve the same puzzle
 <br>
 
 ### make the test pass, then run main.ts

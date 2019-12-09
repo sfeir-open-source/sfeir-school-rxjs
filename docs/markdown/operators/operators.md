@@ -79,7 +79,7 @@ alors, notre méthode a modifier le comportement de l'autre => problème
 
 <br>
 
-> Subscription is impure but combinaison is not
+> Subscription is impure but combining observable values is not
 
 ##==##
 
@@ -92,12 +92,6 @@ alors, notre méthode a modifier le comportement de l'autre => problème
 Notes:
 classics: map, filter, reduce (what?), flatMap (but how?)
 (voir d'autres)
-
-##==##
-
-# How to access values
-
-TODO : and how to access values (alternatives to subscribe)
 
 ##==##
 
@@ -131,9 +125,7 @@ Même si un pipeable operator retourne un observable, il ne fait que réutiliser
 <br><br>
 
 ```typescript
-export function pipe<O>(
-  fns<T,U>: ((v: T) => U)[]
-): O {
+function pipe(...fns) {
   return fns => x => fns.reduce((acc, f) => f(acc), x);
 }
 ```

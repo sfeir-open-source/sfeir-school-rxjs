@@ -1,6 +1,6 @@
 <!-- .slide: class="transition-white sfeir-bg-red" -->
 
-# Observable and lazy push stream
+# Observable, the lazy push stream
 
 ##==##
 
@@ -29,6 +29,25 @@ L'observer Pattern ne fait que dire qu'un objet est observé par les listeners e
 <br>
 
 > Observables are like functions with zero arguments, but generalize those to allow multiple values
+
+##==##
+
+<!--  .slide: class="with-code consolas" -->
+
+# Observable protocol
+
+```typescript
+interface Observer<T> {
+  next(val: T): void;
+  complete(): void;
+}
+
+interface Observable<T> {
+  subscribe(observer: Observer<T>): void;
+}
+```
+
+<!-- .element: class="big-code" -->
 
 ##==##
 
@@ -146,56 +165,6 @@ subscriber.error(error);
 
 Notes:
 Faire le lien entre le marble et l'api
-
-##==##
-
-<!-- .slide: class="with-code consolas" -->
-
-# Subcription / Unsubscription
-
-### When subcribe to an observable you can stop receive events
-
-```javascript
-import { interval } from 'rxjs';
-
-const observable = interval(1000);
-const subscription = observable.subscribe(x => console.log(x));
-// Later:
-// This cancels the ongoing Observable execution which
-// was started by calling subscribe with an Observer.
-subscription.unsubscribe();
-```
-
-<!-- .element: class="big-code" -->
-
-##==##
-
-<!-- .slide: class="with-code consolas" -->
-
-# Multiple unsubscription
-
-### You can also group all the subscriptions
-
-```javascript
-const subscription = observable1.subscribe(x =>
-  console.log('first: ' + x)
-);
-const childSubscription = observable2.subscribe(x =>
-  console.log('second: ' + x)
-);
-
-subscription.add(childSubscription);
-
-setTimeout(() => {
-  // Unsubscribes BOTH subscription and childSubscription
-  subscription.unsubscribe();
-}, 1000);
-```
-
-<!-- .element: class="big-code" -->
-
-Notes:
-Précisez qu'on peut bien entendu faire une desincription manuelle mais que c'est plus pratique dans ce sens
 
 ##==##
 

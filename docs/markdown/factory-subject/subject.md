@@ -25,6 +25,12 @@ Un Observable est un producteur d'événement mais qui peut être aussi bien mul
 
 ##==##
 
+<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition-white transition-center" data-type-show="prez" -->
+
+# Live coding !
+
+##==##
+
 <!-- .slide: class="transition-white sfeir-bg-blue" -->
 
 # Hot vs Cold
@@ -252,7 +258,7 @@ const source = interval(1000).pipe(
 
 <br><br>
 
-**Side Effect** represent operator that don't touch the stream but execute some external operations. For example, `tab` is a side effect operator.
+**Side Effect** represent operator that don't touch the stream but execute some external operations. For example, `tap` is a side effect operator.
 
 ##==##
 
@@ -391,6 +397,56 @@ Y a pas de secret, un Observable multi casté est en fait un subject
 
 ##==##
 
+<!-- .slide: class="with-code consolas" -->
+
+# Subcription / Unsubscription
+
+### When subcribe to an observable you can stop receive events
+
+```javascript
+import { interval } from 'rxjs';
+
+const observable = interval(1000);
+const subscription = observable.subscribe(x => console.log(x));
+// Later:
+// This cancels the ongoing Observable execution which
+// was started by calling subscribe with an Observer.
+subscription.unsubscribe();
+```
+
+<!-- .element: class="big-code" -->
+
+##==##
+
+<!-- .slide: class="with-code consolas" -->
+
+# Multiple unsubscription
+
+### You can also group all the subscriptions
+
+```javascript
+const subscription = observable1.subscribe(x =>
+  console.log('first: ' + x)
+);
+const childSubscription = observable2.subscribe(x =>
+  console.log('second: ' + x)
+);
+
+subscription.add(childSubscription);
+
+setTimeout(() => {
+  // Unsubscribes BOTH subscription and childSubscription
+  subscription.unsubscribe();
+}, 1000);
+```
+
+<!-- .element: class="big-code" -->
+
+Notes:
+Précisez qu'on peut bien entendu faire une desincription manuelle mais que c'est plus pratique dans ce sens
+
+##==##
+
 <!--.slide: data-background="./assets/images/wall-clock-at-5-50-707582.jpg" class="transition-black transition-center" -->
 
 # How to deal with time?
@@ -494,7 +550,7 @@ Use subscribeOn to schedule in what context will the subscribe() call happen. By
 
 ##==##
 
-<!-- .slide: data-type-show="prez"-->
+<!-- .slide: data-type-show="prez" class="with-code consolas"-->
 
 # Notification context
 
@@ -507,6 +563,8 @@ bindCallback / bindNodeCallback /combineLatest / concat
 empty / from / fromPromise / interval /merge / of
 range / throw / timer
 ```
+
+<!-- .element: class="big-code block" -->
 
 Notes:
 On met donc en place une sorte de proxy observable de façon controler le timing de notification
