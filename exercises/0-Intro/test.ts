@@ -12,11 +12,7 @@ describe('getModuleMasses', () => {
   });
 
   it('should contain numbers only', () => {
-    expect(
-      moduleMasses.every(
-        m => typeof m === 'number' && !isNaN(m)
-      )
-    ).toBe(true);
+    expect(moduleMasses.every(m => !isNaN(m))).toBe(true);
   });
 });
 

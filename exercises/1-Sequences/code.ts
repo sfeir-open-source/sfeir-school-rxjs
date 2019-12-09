@@ -13,7 +13,7 @@ import {
 } from '../lib/sequence';
 
 export declare function sequenceFrom<T>(
-  xs: Iterable<T>
+  gen: () => Iterable<T>
 ): Sequence<T>;
 
 export declare function getModuleMasses(

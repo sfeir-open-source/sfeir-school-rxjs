@@ -1,6 +1,90 @@
 <!-- .slide: class="transition-white sfeir-bg-red" -->
 
-# List, Array and sequences
+# Arrays and Sequences
+
+functional programming with collections
+
+##==##
+
+# WarmUp
+
+> Given an array of integers<br> `[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]`<br>
+> return the product of their squares not multiple of 3
+
+Notes:
+Il faut parler de map, filter, reduce
+Expliquer programmation déclarative
+
+##==##
+
+<!-- .slide: class="with-code consolas" -->
+
+# Declarative programming
+
+```javascript
+input
+  .map(x => x ** 2)
+  .filter(x => x % 3 !== 0)
+  .reduce((x, y) => x * y);
+```
+
+<!-- .element: class="big-code" -->
+
+##==##
+
+<!-- .slide: class="with-code consolas" -->
+
+# More declarative programming
+
+```javascript
+const square = x => x ** 2;
+const isMultipleOf = y => x => x % y === 0;
+const not = f => x => !f(x);
+const muliply => (a, b) => a * b;
+
+input
+  .map(square)
+  .filter(not(isMultipleOf(3)))
+  .reduce(multiply);
+```
+
+<!-- .element: class="big-code" -->
+
+##==##
+
+<!-- .slide: class="exercice sfeir-bg-pink" -->
+
+# Manipulate arrays
+
+## Exercice 0
+
+<br>
+1. Read a list of numbers from a file
+2. Reduce to a single value
+3. Solve day1 of AdventOfCode
+<br>
+
+### make the test pass, then run main.ts
+
+##==##
+
+# Lazyness
+
+When working with arrays, we manipulate evaluated data.
+Calling `getModuleMasses(...)` reads the file and returns its result.
+Every Array function will execute immediately.
+
+## Thunks
+
+We'd like to read the source only when needed. Let's try:
+
+```javascript
+// instead of
+const nums = readInputFile(...)
+
+// we'll write
+const getNumns = () => readInputFile(...)
+```
 
 ##==##
 
@@ -72,31 +156,6 @@ Expliquer que l'effet de bord si on a une autre méthode qui accède au paramèt
 alors, notre méthode a modifier le comportement de l'autre => problème
 
 ##==##
-
-# Functions everywhere
-
-<br>
-
-> Given an array <br> \[ 1, 2, 3, 4, 5 \] <br> We filter it and map it
-
-Notes:
-TODO : trouver un bon exemple
-
-##==##
-
-<!-- .slide: class="exercice sfeir-bg-pink" -->
-
-# TODO Exercice Title
-
-## Exercice
-
-<br>
-1. First step
-2. Second step
-3. Third step
-<br>
-Additionnal Advice
-### Step: push-1
 
 ##==##
 
