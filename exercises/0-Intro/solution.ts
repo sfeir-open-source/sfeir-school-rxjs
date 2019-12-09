@@ -4,7 +4,7 @@ import {
   accumulateFuelForMass
 } from '../lib';
 
-const not = <T, U>(f: (v: T) => boolean) => (x: T) => !f(x);
+const not = <T>(f: (v: T) => boolean) => (x: T) => !f(x);
 const add = (a: number, b: number) => a + b;
 
 export function getModuleMasses(filename: string) {

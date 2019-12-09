@@ -1,4 +1,5 @@
 export type Sequence<T> = (iter: (value: T) => void) => void;
+
 export type SequenceOp<T, U> = (
   source: Sequence<T>
 ) => Sequence<U>;

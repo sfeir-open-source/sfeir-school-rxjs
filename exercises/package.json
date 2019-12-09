@@ -25,7 +25,9 @@
   "dependencies": {
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.14",
+    "@types/ramda": "^0.26.37",
     "jest": "^24.9.0",
+    "ramda": "^0.26.1",
     "rxjs": "^6.5.3",
     "ts-jest": "^24.2.0",
     "ts-node": "^8.5.4",
