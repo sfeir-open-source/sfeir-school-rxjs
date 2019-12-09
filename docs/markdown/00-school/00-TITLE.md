@@ -6,7 +6,7 @@
 
 ##==##
 
-<!-- .slide: class="school-presentation" -->
+<!-- .slide: class="school-presentation" data-type-show="hide" -->
 
 <div class="wifi">
     <span class="key">wifi:</span><span>SSID</span><br>

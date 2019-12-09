@@ -1,6 +1,193 @@
 <!-- .slide: class="transition-white sfeir-bg-red" -->
 
-# Operators
+# RxJS & Operators
+
+##==##
+
+# Let's talk about Purity
+
+> In computer programming, a pure function is a function that has the following properties :
+>
+> 1. Its return value is the same for the same arguments.
+> 2. Its evaluation has no side effects.
+
+Notes:
+expliquer les 2 points (exemples de code à venir sur les slides suivants)
+
+##==##
+
+<!-- .slide: class="with-code consolas" data-type-show="full"-->
+
+# Its return value is the same for the same arguments.
+
+```javascript
+let a = 0;
+function impureFunction(b) {
+  return a + b;
+}
+impureFunction(1); // => 1
+a = 1;
+impureFunction(1); // => 2
+```
+
+<!-- .element: class="big-code" -->
+
+##==##
+
+<!-- .slide: class="with-code consolas" data-type-show="full" -->
+
+# Its return value is the same for the same arguments.
+
+```javascript
+function pureFunction(b) {
+  const a = 0;
+  return a + b;
+}
+pureFunction(1); // => 1
+pureFunction(1); // => 1
+```
+
+<!-- .element: class="big-code" -->
+
+##==##
+
+<!-- .slide: class="with-code consolas" data-type-show="full" -->
+
+# Its evaluation has no side effects
+
+```javascript
+let count = 0;
+const sideEffectFunction = () => count++;
+const dependantFunction = b => count + b;
+
+dependantFunction(1); // => 1
+sideEffectFunction(); // count changed
+dependantFunction(1); // => 2
+```
+
+<!-- .element: class="big-code" -->
+
+Notes:
+Expliquer que l'effet de bord si on a une autre méthode qui accède au paramètre count
+alors, notre méthode a modifier le comportement de l'autre => problème
+
+##==##
+
+# About Purity
+
+> Observables are immutable values
+
+<br>
+
+> Subscription is impure but combinaison is not
+
+##==##
+
+# Back to basics
+
+<br><br>
+
+> Let's have a look to `map`, `filter`, `reduce`, `flatMap`
+
+Notes:
+classics: map, filter, reduce (what?), flatMap (but how?)
+(voir d'autres)
+
+##==##
+
+# How to access values
+
+TODO : and how to access values (alternatives to subscribe)
+
+##==##
+
+# Piping
+
+You can use operators like function and chain them. But it's not readable
+
+```
+op2()(op1()(obs))
+```
+
+<br>
+So welcome to Pipe method !
+
+```
+obs.pipe(
+  op1(),
+  op2(),
+)
+```
+
+Notes:
+Même si un pipeable operator retourne un observable, il ne fait que réutiliser le précédent observable ! et donc n'est pas à l'origine de sa création
+
+##==##
+
+<!-- .slide: class="with-code consolas" -->
+
+# Pipe everything
+
+<br><br>
+
+```typescript
+export function pipe<O>(
+  fns<T,U>: ((v: T) => U)[]
+): O {
+  return fns => x => fns.reduce((acc, f) => f(acc), x);
+}
+```
+
+<!-- .element: class="big-code block" -->
+
+##==##
+
+<!-- .slide: class="exercice sfeir-bg-pink" -->
+
+# RxObservables
+
+## Exercice 3
+
+<br>
+1. Let's use RxObservables
+<br>
+
+### Make the test pass ;)
+
+##==##
+
+<!-- .slide: class="sfeir-bg-blue transition-white" -->
+
+# RxJS Operators
+
+##==##
+
+# List of operators
+
+## Catch them all
+
+ajax / bindCallback / bindNodeCallback / defer / empty / from / fromEvent / fromEventPattern / generate / interval / of / range / throwError / timer / iif / combineLatest / concat / forkJoin / merge / race / zip / buffer / bufferCount / bufferTime / bufferToggle / bufferWhen / concatMap / concatMapTo / exhaust / exhaustMap / expand / groupBy / map / mapTo / mergeMap / mergeMapTo / mergeScan / pairwise / partition / pluck / scan / switchMap / switchMapTo / window / windowCount / windowTime / windowToggle / windowWhen / audit / auditTime / debounce / debounceTime / distinct / distinctKey / distinctUntilChanged / distinctUntilKeyChanged / elementAt / filter / first / ignoreElements / last / sample / sampleTime / single / skip / skipLast / skipUntil / skipWhile / take / takeLast / takeUntil / takeWhile / throttle / throttleTime / combineAll / concatAll / exhaust / mergeAll / startWith / withLatestFrom / multicast / publish / publishBehavior / publishLast / publishReplay / share / catchError / retry / retryWhen / tap / delay / delayWhen / dematerialize / materialize / observeOn / subscribeOn / timeInterval / timestamp / timeout / timeoutWith / toArray / defaultIfEmpty / every / find / findIndex / isEmpty / count / max / min / reduce
+
+<h1 class="center">😱</h1>
+
+##==##
+
+<!-- .slide: data-background="./assets/images/chuttersnap-cY-SXZp6TUY-unsplash.jpg" class="transition-center transition-white"  -->
+
+# How to choose?
+
+<!-- .element: class="cadre" -->
+
+##==##
+
+# How to choose it's operator?
+
+> Use [Operator Decision Tree](https://rxjs.dev/operator-decision-tree)
+
+Or back to basics 😉
+
+Notes:
+Expliquer le principe et le regarder ensemble
 
 ##==##
 
@@ -26,29 +213,6 @@ D'une manière générale un opérateur va retourner un observable et permet des
 
 Notes:
 Différencier le role de l'opérateur
-
-##==##
-
-# Piping
-
-You can use operators like function and chain them. But it's not readable
-
-```
-op2()(op1()(obs))
-```
-
-<br>
-So welcome to Pipe method !
-
-```
-obs.pipe(
-  op1(),
-  op2(),
-)
-```
-
-Notes:
-Même si un pipeable operator retourne un observable, il ne fait que réutiliser le précédent observable ! et donc n'est pas à l'origine de sa création
 
 ##==##
 
@@ -104,7 +268,9 @@ const clicksToInterval$ = click$.map(event => {
   return interval$;
 });
 
-clicksToInterval$.subscribe(intervalObservable => console.log(intervalObservable));
+clicksToInterval$.subscribe(intervalObservable =>
+  console.log(intervalObservable)
+);
 ```
 
 You write a HOO but we log Observables!
@@ -250,7 +416,14 @@ Transform le contenu d'un stream
 
 ##==##
 
-# Transformation - Debounce
+# Filtering - Filter
+
+> Filter items emitted by the source Observable by only emitting those that satisfy a specified predicate.
+
+![center hm-600](./assets/images/filter.png)
+##==##
+
+# Time - Debounce
 
 > Emits a value from the source Observable only after a particular time span determined by another Observable has passed without another source emission.
 
@@ -266,7 +439,7 @@ Transform le contenu d'un stream
 
 ##==##
 
-# Transformation - Delay
+# Time - Delay
 
 > Delays the emission of items from the source Observable by a given timeout or until a given Date.
 
@@ -274,172 +447,21 @@ Transform le contenu d'un stream
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/chuttersnap-cY-SXZp6TUY-unsplash.jpg" class="transition-center transition-white"  -->
+# Utility - Tap
 
-# How to choose?
+> Perform a side effect for every emission on the source Observable, but return an Observable that is identical to the source.
 
-<!-- .element: class="cadre" -->
-
-##==##
-
-# How to choose it's operator?
-
-> Use [Operator Decision Tree](https://rxjs.dev/operator-decision-tree)
-
-Notes:
-Expliquer le principe et le regarder ensemble
-
-##==##
-
-<!--.slide: data-background="./assets/images/wall-clock-at-5-50-707582.jpg" class="transition-black transition-center" -->
-
-# How to deal with time?
-
-##==##
-
-# Scheduler vs timeOperator
-
-<br><br>
-
-> An **Operator** can use a **Scheduler** to affect the timing of publication in the stream.
-
-Notes:
-Préciser qu'un opérateur jouant sur le temps va surement utiliser une scheduler et pas l'inverse
-
-##==##
-
-# A scheduler
-
-> A scheduler controls when a subscription starts and when notifications are delivered.
-
-<br>
-
-> A Scheduler is an execution context. It denotes where and when the task is executed (e.g. immediately, or in another callback mechanism such as setTimeout or process.nextTick, or the animation frame).
-> ##==##
-
-# Kind of scheduler
-
-| SCHEDULER               | PURPOSE                                                                       |
-| ----------------------- | ----------------------------------------------------------------------------- |
-| null                    | Notifications are delivered synchronously and recursively.                    |
-| queueScheduler          | Schedules on a queue in the current event frame (trampoline scheduler).       |
-| asapScheduler           | Schedules on the micro task queue, which is the same queue used for promises. |
-| asyncScheduler          | Schedules work with setInterval .                                             |
-| animationFrameScheduler | Schedules task that will happen just before next browser content repaint.     |
-
-Notes:
-d'une manière générale, c'est l'async qui est le plus utilisé. Sachez que les autres existent pour le jour où :)
-
-##==##
-
-<!-- .slide: class="two-column-layout" -->
-
-# Example
-
-##--##
-
-# AsyncScheduler
-
-<!-- .slide: class="with-code consolas" -->
-
-```javascript
-const observable = new Observable((observer) => {
-  observer.next(1);
-}).pipe(
-  observeOn(asyncScheduler)
-);
-console.log('just before subscribe');
-observable.subscribe({
-  next(x) => console.log('got value ' + x),
-});
-console.log('just after subscribe');
-```
-
-<!-- .element: class="big-code block"-->
-
-##--##
-
-<!-- .slide: class="with-code consolas" -->
-
-# Will print
-
-```
-just before subscribe
-just after subscribe
-got balue 1
-```
-
-<!-- .element: class="big-code block"-->
-
-##==##
-
-<!-- .slide: data-type-show="prez"-->
-
-# Subscription context
-
-## Use `subscribeOn`
-
-> Use subscribeOn to schedule in what context will the subscribe() call happen.
-
-Notes:
-Par défaut, le subscribe est syncrhone et immédiat (rappel -> appel de fonction!)
-
-##==##
-
-<!-- .slide: data-type-show="full"-->
-
-# Subscription context
-
-Use subscribeOn to schedule in what context will the subscribe() call happen. By default, a subscribe() call on an Observable will happen synchronously and immediately. However, you may delay or schedule the actual subscription to happen on a given Scheduler, using the instance operator subscribeOn(scheduler), where scheduler is an argument you provide.
-
-##==##
-
-<!-- .slide: data-type-show="prez"-->
-
-# Notification context
-
-## Use `observeOn`
-
-**List of operators using schedulers:**
-
-```
-bindCallback / bindNodeCallback /combineLatest / concat
-empty / from / fromPromise / interval /merge / of
-range / throw / timer
-```
-
-Notes:
-On met donc en place une sorte de proxy observable de façon controler le timing de notification
-
-##==##
-
-<!-- .slide: data-type-show="full"-->
-
-# Notification context
-
-Use observeOn to schedule in what context will notifications be delivered. As we saw in the examples above, instance operator observeOn(scheduler) introduces a mediator Observer between the source Observable and the destination Observer, where the mediator schedules calls to the destination Observer using your given scheduler.
-
-**List of operators using schedulers:**
-
-```
-bindCallback / bindNodeCallback /combineLatest / concat
-empty / from / fromPromise / interval /merge / of
-range / throw / timer
-```
+![center hm-600](./assets/images/tap.png)
 
 ##==##
 
 <!-- .slide: class="exercice sfeir-bg-pink" -->
 
-# TODO Exercice Title
+# Loads of Streams
 
-## Exercice
+## Exercice 4
 
 <br>
-1. First step
-2. Second step
-3. Third step
+1. Advent of code day 2
 <br>
-Additionnal Advice
-### Step: push-1
-````
+### run the tests

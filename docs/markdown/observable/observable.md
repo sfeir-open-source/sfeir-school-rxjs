@@ -1,6 +1,15 @@
 <!-- .slide: class="transition-white sfeir-bg-red" -->
 
-# Observable and the push stream
+# Observable and lazy push stream
+
+##==##
+
+# About Timing sequence
+
+## What can we do if the value should be returned later?
+
+- We could use **Callbacks**. What's the problem ?
+- When stop it and how?
 
 ##==##
 
@@ -12,28 +21,6 @@
 
 Notes:
 L'observer Pattern ne fait que dire qu'un objet est observé par les listeners et qu'ils réagissent à des événements
-
-##==##
-
-# Push vs Pull
-
-<br><br><br>
-
-|          | Single                                    | Multiple                                   |
-| -------- | ----------------------------------------- | ------------------------------------------ |
-| **Pull** | **Passive**: produces data when requested | **Active**: decides when data is requested |
-| **Pull** | Function                                  | Iterator                                   |
-| **Push** | **Active**: produces data at its own pace | **Passive**: Reacts to received data       |
-| **Push** | Promise                                   | Observable                                 |
-
-Notes:
-Revenir sur les concepts : Pull = On récupère
-Push = on pousse une information
-
-- A Function is a lazily evaluated computation that synchronously returns a single value on invocation.
-- A generator is a lazily evaluated computation that synchronously returns zero to (potentially) infinite values on iteration.
-- A Promise is a computation that may (or may not) eventually return a single value.
-- An Observable is a lazily evaluated computation that can synchronously or asynchronously return zero to (potentially) infinite values from the time it's invoked onwards.
 
 ##==##
 
@@ -140,15 +127,6 @@ console.log('after');
 
 ##==##
 
-# Push: Observables & EventEmitters
-
-> Contrary to popular claims, Observables are not like EventEmitters nor are they like Promises for multiple values. Observables may act like EventEmitters in some cases, namely when they are multicasted using RxJS Subjects, but usually they don't act like EventEmitters.
-
-Notes:
-Un Observable est un producteur d'événement mais qui peut être aussi bien multicasté que simplement
-
-##==##
-
 <!-- .slide: class="with-code consolas" -->
 
 # Observable API
@@ -199,8 +177,12 @@ subscription.unsubscribe();
 ### You can also group all the subscriptions
 
 ```javascript
-const subscription = observable1.subscribe(x => console.log('first: ' + x));
-const childSubscription = observable2.subscribe(x => console.log('second: ' + x));
+const subscription = observable1.subscribe(x =>
+  console.log('first: ' + x)
+);
+const childSubscription = observable2.subscribe(x =>
+  console.log('second: ' + x)
+);
 
 subscription.add(childSubscription);
 
@@ -217,22 +199,15 @@ Précisez qu'on peut bien entendu faire une desincription manuelle mais que c'es
 
 ##==##
 
-# Todo backpressure
-
-Intérêt de garder le slide si au final on peut pas le gérer ? ou alors parler peut être plus des streams ?
-
-##==##
-
 <!-- .slide: class="exercice sfeir-bg-pink" -->
 
-# TODO Exercice Title
+# Create or Observable
 
-## Exercice
+## Exercice 2
 
 <br>
-1. First step
-2. Second step
-3. Third step
+1. Create an Observable
+2. Create the map Operator
 <br>
-Additionnal Advice
-### Step: push-1
+
+### Make the test pass ;)

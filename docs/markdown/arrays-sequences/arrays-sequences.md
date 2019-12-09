@@ -52,113 +52,6 @@ input
 
 ##==##
 
-<!-- .slide: class="exercice sfeir-bg-pink" -->
-
-# Manipulate arrays
-
-## Exercice 0
-
-<br>
-1. Read a list of numbers from a file
-2. Reduce to a single value
-3. Solve day1 of AdventOfCode
-<br>
-
-### make the test pass, then run main.ts
-
-##==##
-
-# Lazyness
-
-When working with arrays, we manipulate evaluated data.
-Calling `getModuleMasses(...)` reads the file and returns its result.
-Every Array function will execute immediately.
-
-## Thunks
-
-We'd like to read the source only when needed. Let's try:
-
-```javascript
-// instead of
-const nums = readInputFile(...)
-
-// we'll write
-const getNumns = () => readInputFile(...)
-```
-
-##==##
-
-# Let's talk about Purity
-
-> In computer programming, a pure function is a function that has the following properties :
->
-> 1. Its return value is the same for the same arguments.
-> 2. Its evaluation has no side effects.
-
-Notes:
-expliquer les 2 points (exemples de code à venir sur les slides suivants)
-
-##==##
-
-<!-- .slide: class="with-code consolas" -->
-
-# Its return value is the same for the same arguments.
-
-```javascript
-let a = 0;
-function impureFunction(b) {
-  return a + b;
-}
-impureFunction(1); // => 1
-a = 1;
-impureFunction(1); // => 2
-```
-
-<!-- .element: class="big-code" -->
-
-##==##
-
-<!-- .slide: class="with-code consolas" -->
-
-# Its return value is the same for the same arguments.
-
-```javascript
-function pureFunction(b) {
-  const a = 0;
-  return a + b;
-}
-pureFunction(1); // => 1
-pureFunction(1); // => 1
-```
-
-<!-- .element: class="big-code" -->
-
-##==##
-
-<!-- .slide: class="with-code consolas" -->
-
-# Its evaluation has no side effects
-
-```javascript
-let count = 0;
-const sideEffectFunction = () => count++;
-const dependantFunction = b => count + b;
-
-dependantFunction(1); // => 1
-sideEffectFunction(); // count changed
-dependantFunction(1); // => 2
-```
-
-<!-- .element: class="big-code" -->
-
-Notes:
-Expliquer que l'effet de bord si on a une autre méthode qui accède au paramètre count
-alors, notre méthode a modifier le comportement de l'autre => problème
-
-##==##
-
-##==##
-
 # How to return values ?
 
 <br><br>
@@ -181,9 +74,7 @@ Faire un livecoding de :
 
 1. Return single value
 2. Return finite multiple value
-3. Return a generator
-4. Controler le temps => retourner une promesse
-5. Comment controler le temps ? Le générateur peut générer des valeurs à tes temps différents
+3. Controler le temps => retourner une promesse
 
 ##==##
 
@@ -259,27 +150,42 @@ function asyncValue() {
 
 Notes:
 on ne sait pas quand la valeur va arriver, mais elle arrivera un jour ! Par contre elle est unique
+
 ##==##
 
-<!-- .slide: data-type-show="full" class="with-code consolas" -->
+<!-- .slide: class="exercice sfeir-bg-pink" -->
 
-# Return infinite values with time
+# Manipulate arrays
+
+## Exercice 0
+
+<br>
+1. Read a list of numbers from a file
+2. Reduce to a single value
+3. Solve day1 of AdventOfCode
+<br>
+
+### make the test pass, then run main.ts
+
+##==##
+
+# Lazyness
+
+When working with arrays, we manipulate evaluated data.
+Calling `getModuleMasses(...)` reads the file and returns its result.
+Every Array function will execute immediately.
+
+## Thunks
+
+We'd like to read the source only when needed. Let's try:
 
 ```javascript
-function* myGenerator() {
-  ...
-}
-const myIterator = myGenerator();
-console.log(myIterator.next());
-console.log(myIterator.next());
-setInterval(()=>console.log(myIterator.next()), 500);
+// instead of
+const nums = readInputFile(...)
+
+// we'll write
+const getNumns = () => readInputFile(...)
 ```
-
-<!-- .element: class="big-code" -->
-
-Notes:
-on récupère 0 et 1 très rapidement et ensuite on demande la suite toute les 500ms
-⚠️ Avec un générateur, on est dans une stratégie bloquante
 
 ##==##
 
@@ -329,6 +235,40 @@ Revenir sur le concept de finite vs infinite value
 
 ##==##
 
+<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition-white transition-center" data-type-show="prez" -->
+
+# Live coding !
+
+Notes:
+Faire un livecoding de :
+
+1. Return a generator
+2. Comment controler le temps ? Le générateur peut générer des valeurs à tes temps différents
+
+##==##
+
+<!-- .slide: data-type-show="full" class="with-code consolas" -->
+
+# Return infinite values with time
+
+```javascript
+function* myGenerator() {
+  ...
+}
+const myIterator = myGenerator();
+console.log(myIterator.next());
+console.log(myIterator.next());
+setInterval(()=>console.log(myIterator.next()), 500);
+```
+
+<!-- .element: class="big-code" -->
+
+Notes:
+on récupère 0 et 1 très rapidement et ensuite on demande la suite toute les 500ms
+⚠️ Avec un générateur, on est dans une stratégie bloquante
+
+##==##
+
 # How to return values ?
 
 <br><br>
@@ -344,3 +284,59 @@ Revenir sur le concept de finite vs infinite value
 
 Notes:
 Conclure sur le concept de réception
+
+##==##
+
+# Push vs Pull
+
+<br><br><br>
+
+|          | Single                                    | Multiple                                   |
+| -------- | ----------------------------------------- | ------------------------------------------ |
+| **Pull** | **Passive**: produces data when requested | **Active**: decides when data is requested |
+| **Pull** | Function                                  | Iterator                                   |
+| **Push** | **Active**: produces data at its own pace | **Passive**: Reacts to received data       |
+| **Push** | Promise                                   | Observable                                 |
+
+Notes:
+Revenir sur les concepts : Pull = On récupère
+Push = on pousse une information
+
+- A Function is a lazily evaluated computation that synchronously returns a single value on invocation.
+- A generator is a lazily evaluated computation that synchronously returns zero to (potentially) infinite values on iteration.
+- A Promise is a computation that may (or may not) eventually return a single value.
+- An Observable is a lazily evaluated computation that can synchronously or asynchronously return zero to (potentially) infinite values from the time it's invoked onwards.
+
+##==##
+
+<!-- .slide: class="with-code consolas" -->
+
+# Multiple Values management
+
+> A Sequence is a consider as a value. Except that, you can combined them with pure functions !
+
+To deal with multiples values, think about a callback called on each value (like Array.forEach)!
+
+Operator signature:
+
+```typescript
+export type SequenceOp<T, U> = (
+  source: Sequence<T>
+) => Sequence<U>;
+```
+
+<!-- .element: class="big-code block" -->
+
+##==##
+
+<!-- .slide: class="exercice sfeir-bg-pink" -->
+
+# Pipe
+
+## Exercice 1
+
+<br>
+1. Use Pipe to solve the problem
+<br>
+
+### make the test pass, then run main.ts
