@@ -1,10 +1,20 @@
 import { readFileSync, createReadStream, readFile } from 'fs';
 import { bindNodeCallback } from 'rxjs';
 
+/**
+ * Read a file to string
+ * @param filename the filename (starting from "lib" directory)
+ * @returns the string seperate by \n
+ */
 export function readInputFile(filename: string) {
   return readFileSync(`${__dirname}/${filename}`).toString();
 }
 
+/**
+ * Open a readable stream (node) for the file name
+ * @param filename the filename (starting from "lib" directory)
+ * @returns the stream node corresponding to file
+ */
 export function openInputFile(filename: string) {
   return createReadStream(`${__dirname}/${filename}`);
 }
@@ -14,10 +24,21 @@ export function streamInputFile(filename: string) {
   return getBuffer(`${__dirname}/${filename}`);
 }
 
+/**
+ * Calculate the need fuel for a Mass :
+ * Math.round(mass / 3) -2
+ * @param mass the mass number
+ * @returns the number corresponding to fuel needed
+ */
 export function getRequiredFuelForMass(mass: number) {
   return Math.floor(mass / 3) - 2;
 }
 
+/**
+ * Calculate the array of fuel for a mass, this include sub-masses according to new mass added. This method also use getRequiredFuelForMass
+ * @param mass
+ * @returns an iterator of all the mass of fuel needed
+ */
 export function* accumulateFuelForMass(
   mass: number
 ): Iterable<number> {
