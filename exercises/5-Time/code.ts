@@ -1,14 +1,5 @@
 import { Observable, interval, of, timer } from 'rxjs';
-import {
-  switchMap,
-  mapTo,
-  tap,
-  delay,
-  take,
-  flatMap,
-  takeUntil,
-  takeLast
-} from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 
 export function makeMetronome(
   director: Observable<number>
