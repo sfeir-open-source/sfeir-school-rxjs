@@ -21,6 +21,7 @@ Notes:
 
 Notes:
 Indiquer tout est question de stream et que tout Rx repose sur la notion de stream
+Revenir sur l'histoire de Reactive progamming pour C# Reactive Extension -> enrichir avec un traitement fonctionnel sur des collections
 
 ##==##
 

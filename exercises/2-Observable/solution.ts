@@ -12,11 +12,11 @@ export interface Observable<T> {
 }
 
 export function makeObservable<T>(
-  subscribe: (observer: Observer<T>) => void
+  subscribeFunction: (observer: Observer<T>) => void
 ): Observable<T> {
   return {
-    subscribe(observer) {
-      subscribe(observer);
+    subscribe(passedObserver) {
+      subscribeFunction(passedObserver);
     }
   };
 }
@@ -40,13 +40,13 @@ export function readLines(filename: string) {
 }
 
 export function map<T, U>(
-  f: (v: T) => U
-): (source: Observable<T>) => Observable<U> {
-  return source =>
+  functionToApply: (v: T) => U
+): (sourceObservable: Observable<T>) => Observable<U> {
+  return sourceObservable =>
     makeObservable(observer => {
-      source.subscribe({
-        next(v) {
-          observer.next(f(v));
+      sourceObservable.subscribe({
+        next(valueFromSourceObservable) {
+          observer.next(functionToApply(valueFromSourceObservable));
         },
         complete() {
           observer.complete();

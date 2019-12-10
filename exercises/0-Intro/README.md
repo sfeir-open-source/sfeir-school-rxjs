@@ -6,11 +6,11 @@ Implement the core of function to solve the advent of code 2019 day 1 problem in
 
 1. Replace in main.ts the import of `solution` by `code`
 1. Remove `declare` for the function `getModuleMasses`, `getRequiredFuel`, `getTotalRequiredFuel`
-1. Impmlement the functions
+1. Implement the functions
 
 ## getModuleMasses
 
-You should return the list of number of the file data.txt and transform it to numbers.
+You should return the list of number of the file data.txt and transform it to numbers. You should use `readInputFile` for this method
 
 ## getRequiredFuel
 
