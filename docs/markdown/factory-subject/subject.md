@@ -81,7 +81,7 @@ const obs$ = Observable.fromEvent(document, 'click') //
 
 ##--##
 
-### Cold Observable
+Cold Observable
 
 <!-- .slide: class="with-code consolas"  -->
 
@@ -96,7 +96,7 @@ const obs$ = Observable.from(['🍕', '🍪']) //
 
 ##--##
 
-### Become a Hot Observable
+Become a Hot Observable
 
 <!-- .slide: class="with-code consolas"  -->
 
@@ -118,7 +118,7 @@ const obs$ = Observable.from(['🍕', '🍪']) //
 
 ##--##
 
-### Hot Observable
+Hot Observable
 
 <!-- .slide: class="with-code consolas"  -->
 
@@ -137,7 +137,7 @@ const sub1 = obs$.subscribe(val => {
 
 ##--##
 
-### Become a Cold Observable
+Become a Cold Observable
 
 <!-- .slide: class="with-code consolas"  -->
 
@@ -268,7 +268,7 @@ const source = interval(1000).pipe(
 
 ##--##
 
-### Cold observable
+Cold observable
 
 <!-- .slide: class="with-code consolas" -->
 
@@ -292,7 +292,7 @@ const subscribe2 = example.subscribe(log);
 
 <!-- .slide: class="with-code consolas" -->
 
-### Share stream
+Share stream
 
 ```javascript
 //share observable among subscribers
@@ -447,7 +447,7 @@ Précisez qu'on peut bien entendu faire une desincription manuelle mais que c'es
 
 ##==##
 
-<!--.slide: data-background="./assets/images/wall-clock-at-5-50-707582.jpg" class="transition-black transition" -->
+<!--.slide: data-background="./assets/images/wall-clock-at-5-50-707582.jpg" class="transition" -->
 
 # How to deal with time?
 
@@ -494,7 +494,7 @@ d'une manière générale, c'est l'async qui est le plus utilisé. Sachez que le
 
 ##--##
 
-# AsyncScheduler
+AsyncScheduler
 
 <!-- .slide: class="with-code consolas" -->
 
@@ -517,7 +517,7 @@ console.log('just after subscribe');
 
 <!-- .slide: class="with-code consolas" -->
 
-# Will print
+Will print
 
 ```
 just before subscribe

@@ -162,7 +162,7 @@ function pipe(...fns) {
 
 ajax / bindCallback / bindNodeCallback / defer / empty / from / fromEvent / fromEventPattern / generate / interval / of / range / throwError / timer / iif / combineLatest / concat / forkJoin / merge / race / zip / buffer / bufferCount / bufferTime / bufferToggle / bufferWhen / concatMap / concatMapTo / exhaust / exhaustMap / expand / groupBy / map / mapTo / mergeMap / mergeMapTo / mergeScan / pairwise / partition / pluck / scan / switchMap / switchMapTo / window / windowCount / windowTime / windowToggle / windowWhen / audit / auditTime / debounce / debounceTime / distinct / distinctKey / distinctUntilChanged / distinctUntilKeyChanged / elementAt / filter / first / ignoreElements / last / sample / sampleTime / single / skip / skipLast / skipUntil / skipWhile / take / takeLast / takeUntil / takeWhile / throttle / throttleTime / combineAll / concatAll / exhaust / mergeAll / startWith / withLatestFrom / multicast / publish / publishBehavior / publishLast / publishReplay / share / catchError / retry / retryWhen / tap / delay / delayWhen / dematerialize / materialize / observeOn / subscribeOn / timeInterval / timestamp / timeout / timeoutWith / toArray / defaultIfEmpty / every / find / findIndex / isEmpty / count / max / min / reduce
 
-<h1 class="center">😱</h1>
+<p class="text-center">😱</p>
 
 ##==##
 

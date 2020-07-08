@@ -176,6 +176,9 @@ on ne sait pas quand la valeur va arriver, mais elle arrivera un jour ! Par cont
 When working with arrays, we manipulate evaluated data.
 Calling `getModuleMasses(...)` reads the file and returns its result.
 Every Array function will execute immediately.
+<br>
+<br>
+<br>
 
 ## Thunks
 
@@ -197,37 +200,37 @@ const getNumns = () => readInputFile(...)
 
 ##--##
 
-<!-- .slide: class="with-code consolas" -->
+<!-- .slide: class="with-code" -->
 
-### Array (Finite values)
+Array (Finite values)
 
 ```javascript
-const finiteArray = [1, 2, 3, 4];
+  const finiteArray = [1, 2, 3, 4];
 
-for (let number of finiteArray) {
-  console.log(number);
-}
+  for (let number of finiteArray) {
+    console.log(number);
+  }
 
-//will show '1', '2', '3', '4'
+  //will show '1', '2', '3', '4'
 ```
 
 <!-- .element: class="big-code" -->
 
 ##--##
 
-<!-- .slide: class="with-code consolas" -->
+<!-- .slide: class="with-code" -->
 
-### Generators (Infinite values ?)
+Generators (Infinite values ?)
 
 ```javascript
-function* myGenerator(max) {
-  let count = 0;
-  while (count < max) yield count++;
-  return;
-}
-for (let number of myGenerator(x)) {
-  console.log(number);
-}
+  function* myGenerator(max) {
+    let count = 0;
+    while (count < max) yield count++;
+    return;
+  }
+  for (let number of myGenerator(x)) {
+    console.log(number);
+  }
 ```
 
 <!-- .element: class="big-code" -->
