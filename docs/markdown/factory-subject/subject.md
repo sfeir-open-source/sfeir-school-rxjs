@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-white sfeir-bg-red" -->
+<!-- .slide: class="transition bg-pink" -->
 
 # Factories / Subject manipulations
 
@@ -25,13 +25,13 @@ Un Observable est un producteur d'événement mais qui peut être aussi bien mul
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition-white transition-center" data-type-show="prez" -->
+<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition" data-type-show="prez" -->
 
 # Live coding !
 
 ##==##
 
-<!-- .slide: class="transition-white sfeir-bg-blue" -->
+<!-- .slide: class="transition bg-blue" -->
 
 # Hot vs Cold
 
@@ -157,7 +157,7 @@ const sub1 = obsFactory().subscribe(val => {
 
 ##==##
 
-<!-- .slide: class="transition-white sfeir-bg-blue" -->
+<!-- .slide: class="transition bg-blue" -->
 
 # Sharable stream
 
@@ -248,7 +248,7 @@ const source = interval(1000).pipe(
 
 ##==##
 
-<!-- .slide: class="transition-white sfeir-bg-blue" -->
+<!-- .slide: class="transition bg-blue" -->
 
 # Side effects
 
@@ -308,7 +308,7 @@ const subscribe4 = shared.subscribe(log);
 
 ##==##
 
-<!-- .slide: class="transition-white sfeir-bg-blue" -->
+<!-- .slide: class="transition bg-blue" -->
 
 # Subjects
 
@@ -447,7 +447,7 @@ Précisez qu'on peut bien entendu faire une desincription manuelle mais que c'es
 
 ##==##
 
-<!--.slide: data-background="./assets/images/wall-clock-at-5-50-707582.jpg" class="transition-black transition-center" -->
+<!--.slide: data-background="./assets/images/wall-clock-at-5-50-707582.jpg" class="transition-black transition" -->
 
 # How to deal with time?
 

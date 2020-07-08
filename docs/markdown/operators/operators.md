@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-white sfeir-bg-red" -->
+<!-- .slide: class="transition bg-pink" -->
 
 # RxJS & Operators
 
@@ -148,7 +148,7 @@ function pipe(...fns) {
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue transition-white" -->
+<!-- .slide: class="bg-blue transition" -->
 
 # RxJS Operators
 
@@ -164,7 +164,7 @@ ajax / bindCallback / bindNodeCallback / defer / empty / from / fromEvent / from
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/chuttersnap-cY-SXZp6TUY-unsplash.jpg" class="transition-center transition-white"  -->
+<!-- .slide: data-background="./assets/images/chuttersnap-cY-SXZp6TUY-unsplash.jpg" class="transition"  -->
 
 # How to choose?
 
@@ -217,7 +217,7 @@ Expliquer pourquoi on en a besoin : Eviter une sorte de callback hell de l'obser
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition-white transition-center" data-type-show="prez" -->
+<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition" data-type-show="prez" -->
 
 # Live coding !
 
@@ -337,7 +337,7 @@ It takes the inner value to push it to final stream. Have a look at [Understandi
 
 ##==##
 
-<!-- .slide: class="transition-white sfeir-bg-blue" -->
+<!-- .slide: class="transition bg-blue" -->
 
 # Main Operators
 
@@ -447,7 +447,7 @@ Transform le contenu d'un stream
 
 ##==##
 
-<!-- .slide: class="exercice sfeir-bg-pink" -->
+<!-- .slide: class="exercice" -->
 
 # Loads of Streams
 

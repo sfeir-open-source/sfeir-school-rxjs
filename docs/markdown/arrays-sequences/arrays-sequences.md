@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-white sfeir-bg-red" -->
+<!-- .slide: class="transition bg-pink" -->
 
 # Arrays and Sequences
 
@@ -65,7 +65,7 @@ Ici pour récupérer des valeurs, on peut soit récupérer un nombre fini de val
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition-white transition-center" data-type-show="prez" -->
+<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition" data-type-show="prez" -->
 
 # Live coding !
 
@@ -235,7 +235,7 @@ Revenir sur le concept de finite vs infinite value
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition-white transition-center" data-type-show="prez" -->
+<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition" data-type-show="prez" -->
 
 # Live coding !
 
