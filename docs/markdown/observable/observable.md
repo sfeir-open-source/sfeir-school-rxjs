@@ -168,15 +168,17 @@ Faire le lien entre le marble et l'api
 
 ##==##
 
-<!-- .slide: class="exercice sfeir-bg-pink" -->
+<!-- .slide: class="exercice" -->
 
 # Create or Observable
 
 ## Exercice 2
 
 <br>
+
 1. Create an Observable
 2. Create the map Operator
+<br>
 <br>
 
 ### Make the test pass ;)

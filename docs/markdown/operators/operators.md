@@ -134,14 +134,16 @@ function pipe(...fns) {
 
 ##==##
 
-<!-- .slide: class="exercice sfeir-bg-pink" -->
+<!-- .slide: class="exercice" -->
 
 # RxObservables
 
 ## Exercice 3
 
 <br>
+
 1. Let's use RxObservables
+<br>
 <br>
 
 ### Make the test pass ;)
@@ -454,6 +456,9 @@ Transform le contenu d'un stream
 ## Exercice 4
 
 <br>
+
 1. Advent of code day 2
 <br>
+<br>
+
 ### run the tests

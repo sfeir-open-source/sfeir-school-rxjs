@@ -153,16 +153,18 @@ on ne sait pas quand la valeur va arriver, mais elle arrivera un jour ! Par cont
 
 ##==##
 
-<!-- .slide: class="exercice sfeir-bg-pink" -->
+<!-- .slide: class="exercice" -->
 
 # Manipulate arrays
 
 ## Exercice 0
-
 <br>
+
 1. Read a list of numbers from a file
 2. Reduce to a single value
 3. Solve day1 of AdventOfCode
+
+<br>
 <br>
 
 ### make the test pass, then run main.ts
@@ -331,15 +333,17 @@ export type SequenceOp<T, U> = (
 
 ##==##
 
-<!-- .slide: class="exercice sfeir-bg-pink" -->
+<!-- .slide: class="exercice" -->
 
 # Sequences
 
 ## Exercice 1
 
 <br>
+
 1. Produce values one by one
 2. Solve the same puzzle
+<br>
 <br>
 
 ### make the test pass, then run main.ts
