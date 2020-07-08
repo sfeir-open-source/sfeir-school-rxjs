@@ -67,10 +67,4 @@ typings/
 .tmp/
 exercises/**/*.js
 
-#Dev
-!docs/node_modules/
-docs/node_modules/*
-!docs/node_modules/sfeir-school-theme/
-docs/node_modules/sfeir-school-theme/*
-!docs/node_modules/sfeir-school-theme/dist
 

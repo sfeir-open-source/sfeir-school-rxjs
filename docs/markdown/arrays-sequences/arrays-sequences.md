@@ -200,7 +200,7 @@ const getNumns = () => readInputFile(...)
 
 ##--##
 
-<!-- .slide: class="with-code" -->
+<!-- .slide: class="with-code consolas" -->
 
 Array (Finite values)
 
@@ -214,7 +214,7 @@ Array (Finite values)
   //will show '1', '2', '3', '4'
 ```
 
-<!-- .element: class="big-code" -->
+<!-- .element: class="big-code consolas" -->
 
 ##--##
 
