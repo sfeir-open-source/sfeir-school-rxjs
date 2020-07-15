@@ -12,4 +12,4 @@
 ### @wgoedel
 <!-- .element: class="icon-twitter icon-second" -->
 
-![company](./assets/images/logo_sfeir_bleu_orange.png)
+![company](./assets/images/logo-sfeir-blanc.png)

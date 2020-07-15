@@ -440,10 +440,8 @@ setTimeout(() => {
 }, 1000);
 ```
 
-<!-- .element: class="big-code" -->
-
 Notes:
-Précisez qu'on peut bien entendu faire une desincription manuelle mais que c'est plus pratique dans ce sens
+Précisez qu'on peut bien entendu faire une désinscription manuelle mais que c'est plus pratique dans ce sens
 
 ##==##
 
