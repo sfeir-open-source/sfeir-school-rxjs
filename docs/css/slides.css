@@ -1,0 +1,23 @@
+.reveal .slides section.two-column-layout {
+  grid-column-gap: 20px; }
+
+.reveal .slides section.with-code pre.big-code.block {
+  position: initial;
+  top: initial; }
+
+.reveal .slides section .text-center {
+  text-align: center; }
+
+.reveal .slides section h1.cadre {
+  background: rgba(51, 51, 51, 0.7);
+  box-shadow: 5px 5px #333;
+  width: fit-content;
+  padding: 30px; }
+
+.reveal .slides section.transition-black h1 {
+  color: var(--black); }
+
+.reveal .slides section.with-code pre.no-max-height code {
+  max-height: initial; }
+
+/*# sourceMappingURL=slides.css.map */

@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-white sfeir-bg-red" -->
+<!-- .slide: class="transition bg-pink" -->
 
 # Factories / Subject manipulations
 
@@ -25,13 +25,13 @@ Un Observable est un producteur d'événement mais qui peut être aussi bien mul
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition-white transition-center" data-type-show="prez" -->
+<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition" data-type-show="prez" -->
 
 # Live coding !
 
 ##==##
 
-<!-- .slide: class="transition-white sfeir-bg-blue" -->
+<!-- .slide: class="transition bg-blue" -->
 
 # Hot vs Cold
 
@@ -81,7 +81,7 @@ const obs$ = Observable.fromEvent(document, 'click') //
 
 ##--##
 
-### Cold Observable
+Cold Observable
 
 <!-- .slide: class="with-code consolas"  -->
 
@@ -96,7 +96,7 @@ const obs$ = Observable.from(['🍕', '🍪']) //
 
 ##--##
 
-### Become a Hot Observable
+Become a Hot Observable
 
 <!-- .slide: class="with-code consolas"  -->
 
@@ -118,7 +118,7 @@ const obs$ = Observable.from(['🍕', '🍪']) //
 
 ##--##
 
-### Hot Observable
+Hot Observable
 
 <!-- .slide: class="with-code consolas"  -->
 
@@ -137,7 +137,7 @@ const sub1 = obs$.subscribe(val => {
 
 ##--##
 
-### Become a Cold Observable
+Become a Cold Observable
 
 <!-- .slide: class="with-code consolas"  -->
 
@@ -157,7 +157,7 @@ const sub1 = obsFactory().subscribe(val => {
 
 ##==##
 
-<!-- .slide: class="transition-white sfeir-bg-blue" -->
+<!-- .slide: class="transition bg-blue" -->
 
 # Sharable stream
 
@@ -248,7 +248,7 @@ const source = interval(1000).pipe(
 
 ##==##
 
-<!-- .slide: class="transition-white sfeir-bg-blue" -->
+<!-- .slide: class="transition bg-blue" -->
 
 # Side effects
 
@@ -268,7 +268,7 @@ const source = interval(1000).pipe(
 
 ##--##
 
-### Cold observable
+Cold observable
 
 <!-- .slide: class="with-code consolas" -->
 
@@ -292,7 +292,7 @@ const subscribe2 = example.subscribe(log);
 
 <!-- .slide: class="with-code consolas" -->
 
-### Share stream
+Share stream
 
 ```javascript
 //share observable among subscribers
@@ -308,7 +308,7 @@ const subscribe4 = shared.subscribe(log);
 
 ##==##
 
-<!-- .slide: class="transition-white sfeir-bg-blue" -->
+<!-- .slide: class="transition bg-blue" -->
 
 # Subjects
 
@@ -440,14 +440,12 @@ setTimeout(() => {
 }, 1000);
 ```
 
-<!-- .element: class="big-code" -->
-
 Notes:
-Précisez qu'on peut bien entendu faire une desincription manuelle mais que c'est plus pratique dans ce sens
+Précisez qu'on peut bien entendu faire une désinscription manuelle mais que c'est plus pratique dans ce sens
 
 ##==##
 
-<!--.slide: data-background="./assets/images/wall-clock-at-5-50-707582.jpg" class="transition-black transition-center" -->
+<!--.slide: data-background="./assets/images/wall-clock-at-5-50-707582.jpg" class="transition" -->
 
 # How to deal with time?
 
@@ -494,7 +492,7 @@ d'une manière générale, c'est l'async qui est le plus utilisé. Sachez que le
 
 ##--##
 
-# AsyncScheduler
+AsyncScheduler
 
 <!-- .slide: class="with-code consolas" -->
 
@@ -517,7 +515,7 @@ console.log('just after subscribe');
 
 <!-- .slide: class="with-code consolas" -->
 
-# Will print
+Will print
 
 ```
 just before subscribe

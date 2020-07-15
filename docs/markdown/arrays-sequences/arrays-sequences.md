@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-white sfeir-bg-red" -->
+<!-- .slide: class="transition bg-pink" -->
 
 # Arrays and Sequences
 
@@ -65,7 +65,7 @@ Ici pour récupérer des valeurs, on peut soit récupérer un nombre fini de val
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition-white transition-center" data-type-show="prez" -->
+<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition" data-type-show="prez" -->
 
 # Live coding !
 
@@ -153,16 +153,18 @@ on ne sait pas quand la valeur va arriver, mais elle arrivera un jour ! Par cont
 
 ##==##
 
-<!-- .slide: class="exercice sfeir-bg-pink" -->
+<!-- .slide: class="exercice" -->
 
 # Manipulate arrays
 
 ## Exercice 0
-
 <br>
+
 1. Read a list of numbers from a file
 2. Reduce to a single value
 3. Solve day1 of AdventOfCode
+
+<br>
 <br>
 
 ### make the test pass, then run main.ts
@@ -174,6 +176,9 @@ on ne sait pas quand la valeur va arriver, mais elle arrivera un jour ! Par cont
 When working with arrays, we manipulate evaluated data.
 Calling `getModuleMasses(...)` reads the file and returns its result.
 Every Array function will execute immediately.
+<br>
+<br>
+<br>
 
 ## Thunks
 
@@ -197,35 +202,35 @@ const getNumns = () => readInputFile(...)
 
 <!-- .slide: class="with-code consolas" -->
 
-### Array (Finite values)
+Array (Finite values)
 
 ```javascript
-const finiteArray = [1, 2, 3, 4];
+  const finiteArray = [1, 2, 3, 4];
 
-for (let number of finiteArray) {
-  console.log(number);
-}
+  for (let number of finiteArray) {
+    console.log(number);
+  }
 
-//will show '1', '2', '3', '4'
+  //will show '1', '2', '3', '4'
 ```
 
-<!-- .element: class="big-code" -->
+<!-- .element: class="big-code consolas" -->
 
 ##--##
 
-<!-- .slide: class="with-code consolas" -->
+<!-- .slide: class="with-code" -->
 
-### Generators (Infinite values ?)
+Generators (Infinite values ?)
 
 ```javascript
-function* myGenerator(max) {
-  let count = 0;
-  while (count < max) yield count++;
-  return;
-}
-for (let number of myGenerator(x)) {
-  console.log(number);
-}
+  function* myGenerator(max) {
+    let count = 0;
+    while (count < max) yield count++;
+    return;
+  }
+  for (let number of myGenerator(x)) {
+    console.log(number);
+  }
 ```
 
 <!-- .element: class="big-code" -->
@@ -235,7 +240,7 @@ Revenir sur le concept de finite vs infinite value
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition-white transition-center" data-type-show="prez" -->
+<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition" data-type-show="prez" -->
 
 # Live coding !
 
@@ -331,15 +336,17 @@ export type SequenceOp<T, U> = (
 
 ##==##
 
-<!-- .slide: class="exercice sfeir-bg-pink" -->
+<!-- .slide: class="exercice" -->
 
 # Sequences
 
 ## Exercice 1
 
 <br>
+
 1. Produce values one by one
 2. Solve the same puzzle
+<br>
 <br>
 
 ### make the test pass, then run main.ts

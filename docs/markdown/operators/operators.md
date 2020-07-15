@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-white sfeir-bg-red" -->
+<!-- .slide: class="transition bg-pink" -->
 
 # RxJS & Operators
 
@@ -134,21 +134,23 @@ function pipe(...fns) {
 
 ##==##
 
-<!-- .slide: class="exercice sfeir-bg-pink" -->
+<!-- .slide: class="exercice" -->
 
 # RxObservables
 
 ## Exercice 3
 
 <br>
+
 1. Let's use RxObservables
+<br>
 <br>
 
 ### Make the test pass ;)
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-blue transition-white" -->
+<!-- .slide: class="bg-blue transition" -->
 
 # RxJS Operators
 
@@ -160,11 +162,11 @@ function pipe(...fns) {
 
 ajax / bindCallback / bindNodeCallback / defer / empty / from / fromEvent / fromEventPattern / generate / interval / of / range / throwError / timer / iif / combineLatest / concat / forkJoin / merge / race / zip / buffer / bufferCount / bufferTime / bufferToggle / bufferWhen / concatMap / concatMapTo / exhaust / exhaustMap / expand / groupBy / map / mapTo / mergeMap / mergeMapTo / mergeScan / pairwise / partition / pluck / scan / switchMap / switchMapTo / window / windowCount / windowTime / windowToggle / windowWhen / audit / auditTime / debounce / debounceTime / distinct / distinctKey / distinctUntilChanged / distinctUntilKeyChanged / elementAt / filter / first / ignoreElements / last / sample / sampleTime / single / skip / skipLast / skipUntil / skipWhile / take / takeLast / takeUntil / takeWhile / throttle / throttleTime / combineAll / concatAll / exhaust / mergeAll / startWith / withLatestFrom / multicast / publish / publishBehavior / publishLast / publishReplay / share / catchError / retry / retryWhen / tap / delay / delayWhen / dematerialize / materialize / observeOn / subscribeOn / timeInterval / timestamp / timeout / timeoutWith / toArray / defaultIfEmpty / every / find / findIndex / isEmpty / count / max / min / reduce
 
-<h1 class="center">😱</h1>
+<p class="text-center">😱</p>
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/chuttersnap-cY-SXZp6TUY-unsplash.jpg" class="transition-center transition-white"  -->
+<!-- .slide: data-background="./assets/images/chuttersnap-cY-SXZp6TUY-unsplash.jpg" class="transition"  -->
 
 # How to choose?
 
@@ -217,7 +219,7 @@ Expliquer pourquoi on en a besoin : Eviter une sorte de callback hell de l'obser
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition-white transition-center" data-type-show="prez" -->
+<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition" data-type-show="prez" -->
 
 # Live coding !
 
@@ -337,7 +339,7 @@ It takes the inner value to push it to final stream. Have a look at [Understandi
 
 ##==##
 
-<!-- .slide: class="transition-white sfeir-bg-blue" -->
+<!-- .slide: class="transition bg-blue" -->
 
 # Main Operators
 
@@ -447,13 +449,16 @@ Transform le contenu d'un stream
 
 ##==##
 
-<!-- .slide: class="exercice sfeir-bg-pink" -->
+<!-- .slide: class="exercice" -->
 
 # Loads of Streams
 
 ## Exercice 4
 
 <br>
+
 1. Advent of code day 2
 <br>
+<br>
+
 ### run the tests
