@@ -66,5 +66,6 @@ typings/
 #SfeirSchoolSpecifics
 .tmp/
 exercises/**/*.js
+!exercises/react-chat/**/*.js
 
 

@@ -1,0 +1,20 @@
+.message-container {
+  margin-bottom: 1em;
+  padding-left: 2em;
+}
+
+.message {
+  background-color: #37b5bd;
+  border-radius: 15px;
+  color: white;
+  display: inline-block;
+  max-width: 100%;
+  padding: .5em 1em;
+  word-wrap: break-word;
+}
+
+.author {
+  color: gray;
+  font-size: small;
+  padding-left: .5em;
+}
