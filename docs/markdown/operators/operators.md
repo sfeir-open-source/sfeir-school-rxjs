@@ -451,9 +451,43 @@ Transform le contenu d'un stream
 
 <!-- .slide: class="exercice" -->
 
-# Loads of Streams
+# Create a chat (step 2)
 
 ## Exercice 4
+
+<br>
+
+1. In `App.js` and `Username.jsx` : delete the `handleSubmit` function and the `<form>` tag
+2. Create Observables that listen to the `Enter` key to send the data
+<br>
+<br>
+
+### Use the correct operators ;)
+
+##==##
+
+<!-- .slide: class="exercice" -->
+
+# Create a chat (step 3)
+
+## Exercice 5
+
+<br>
+
+1. Use the correct operators to create an anti-spamming feature :
+- A user cannot send an empty message
+- Each message must be different from the previous one sent by the user
+- A user cannot send multiple messages in less than 1 second
+<br>
+<br>
+
+##==##
+
+<!-- .slide: class="exercice" -->
+
+# Loads of Streams
+
+## Exercice 6
 
 <br>
 
