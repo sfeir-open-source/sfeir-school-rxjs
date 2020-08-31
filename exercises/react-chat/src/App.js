@@ -8,11 +8,11 @@ import Users from './Users'
 import './App.css'
 
 
-const messagesObservable = {}
+const messages$= {}
 
-const usersObservable = {}
+const users$= {}
 
-const usernameObservable = {}
+const username$= {}
 
 const App = () => {
   const [username, setUsername] = useState('')

@@ -8,19 +8,19 @@ import Users from './Users'
 import './App.css'
 
 
-const observable = new Observable(subscriber => {
+const messages$ = new Observable(subscriber => {
   SOCKET.on('new-message', (message) => {
     subscriber.next(message)
   })
 })
 
-const usersObservable = new Observable(subscriber => {
+const users$ = new Observable(subscriber => {
   SOCKET.on('refresh-users', (users) => {
     subscriber.next(users)
   })
 })
 
-const usernameObservable = new Observable(subscriber => {
+const username$ = new Observable(subscriber => {
   SOCKET.on('new-user', (response) => {
     if (response.ok) {
       subscriber.next(response)
@@ -46,13 +46,13 @@ const App = () => {
   }
 
   useEffect(() => {
-    const subscription = observable.subscribe(message => setMessages([...messages, message]))
+    const subscription = messages$.subscribe(message => setMessages([...messages, message]))
 
     return () => subscription.unsubscribe()
   }, [messages])
 
   useEffect(() => {
-    const subscription = usersObservable.subscribe(users => {
+    const subscription = users$.subscribe(users => {
       setUsers(users)
     })
 
@@ -60,7 +60,7 @@ const App = () => {
   })
 
   useEffect(() => {
-    const subscription = usernameObservable.subscribe({
+    const subscription = username$.subscribe({
       next (response) { setUsername(response.username) },
       error (errorMsg) { setError(errorMsg) }
     })
