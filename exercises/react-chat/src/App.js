@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Observable } from 'rxjs'
-import { getHeureMinutes } from './helpers'
+import { getHourTime } from './helpers'
 import { SOCKET } from './constants'
 import Messages from './Messages'
 import Username from './Username'
@@ -25,7 +25,7 @@ const App = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    SOCKET.emit('new-message', { author: username, content: text, time: getHeureMinutes() });
+    SOCKET.emit('new-message', { author: username, content: text, time: getHourTime() });
     setText('')
   }
 
