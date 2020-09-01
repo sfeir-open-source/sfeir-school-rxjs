@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Observable } from 'rxjs'
-import { getHeureMinutes } from './helpers'
+import { getHourTime } from './helpers'
 import { SOCKET } from './constants'
 import Messages from './Messages'
 import Username from './Username'
@@ -41,32 +41,33 @@ const App = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    SOCKET.emit('new-message', { author: username, content: text, time: getHeureMinutes() });
+    SOCKET.emit('new-message', { author: username, content: text, time: getHourTime() });
     setText('')
   }
 
-  useEffect(() => {
+  const subscribeToMessages = () => {
     const subscription = messages$.subscribe(message => setMessages([...messages, message]))
-
     return () => subscription.unsubscribe()
-  }, [messages])
+  }
 
-  useEffect(() => {
-    const subscription = users$.subscribe(users => {
-      setUsers(users)
-    })
-
+  const subscribeToUsers = () => {
+    const subscription = users$.subscribe(users => setUsers(users))
     return () => subscription.unsubscribe()
-  })
+  }
 
-  useEffect(() => {
+  const subscribeToUsername = () => {
     const subscription = username$.subscribe({
       next (response) { setUsername(response.username) },
       error (errorMsg) { setError(errorMsg) }
     })
-
     return () => subscription.unsubscribe()
-  })
+  }
+
+  useEffect(subscribeToMessages , [messages])
+
+  useEffect(subscribeToUsers, [])
+
+  useEffect(subscribeToUsername)
 
   return (
     <div className="App">

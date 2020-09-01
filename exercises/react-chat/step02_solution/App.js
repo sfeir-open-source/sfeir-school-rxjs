@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { Observable, fromEvent } from 'rxjs'
 import { filter, pluck } from 'rxjs/operators'
-import { getHeureMinutes } from './helpers'
+import { getHourTime } from './helpers'
 import { SOCKET } from './constants'
 import Messages from './Messages'
 import Username from './Username'
@@ -41,42 +41,45 @@ const App = () => {
 
   const handleChange = e => setText(e.target.value)
 
-  useEffect(() => {
+  const subscribeToMessages = () => {
     const subscription = messages$.subscribe(message => setMessages([...messages, message]))
-
     return () => subscription.unsubscribe()
-  }, [messages])
+  }
 
-  useEffect(() => {
-    const subscription = users$.subscribe(users => {
-      setUsers(users)
-    })
-
+  const subscribeToUsers = () => {
+    const subscription = users$.subscribe(users => setUsers(users))
     return () => subscription.unsubscribe()
-  })
+  }
 
-  useEffect(() => {
+  const subscribeToUsername = () => {
     const subscription = username$.subscribe({
       next (response) { setUsername(response.username) },
       error (errorMsg) { setError(errorMsg) }
     })
-
     return () => subscription.unsubscribe()
-  })
+  }
 
-  useEffect(() => {
+  const subscribeToInput = () => {
     if (textInput.current) {
       textInput.current.focus()
       const inputSubscription = fromEvent(textInput.current, 'keyup').pipe(
         filter(e => e.keyCode === 13),
         pluck('target', 'value'),
       ).subscribe(value => {
-        SOCKET.emit('new-message', { author: username, content: value, time: getHeureMinutes() })
+        SOCKET.emit('new-message', { author: username, content: value, time: getHourTime() })
         setText('')
       })
       return () => inputSubscription.unsubscribe()
     }
-  }, [username])
+  }
+
+  useEffect(subscribeToMessages , [messages])
+
+  useEffect(subscribeToUsers, [])
+
+  useEffect(subscribeToUsername)
+
+  useEffect(subscribeToInput, [username])
 
   return (
     <div className="App">

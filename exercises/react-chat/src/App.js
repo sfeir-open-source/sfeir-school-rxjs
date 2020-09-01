@@ -29,20 +29,32 @@ const App = () => {
     setText('')
   }
 
-  useEffect(() => {
+  const subscribeToMessages = () => {
     // subscribe to messages
-    // and don't forget to unsubscribe !
-  })
+   return () => { 
+    // and don't forget to unsubscribe here!
+    }
+  }
 
-  useEffect(() => {
+  const subscribeToUsers = () => {
     // subscribe to users
-    // and don't forget to unsubscribe !
-  })
+   return () => { 
+    // and don't forget to unsubscribe here!
+    }
+  }
 
-  useEffect(() => {
+  const subscribeToUsername = () => {
     // subscribe to username
-    // and don't forget to unsubscribe !
-  })
+    return () => { 
+    // and don't forget to unsubscribe here!
+    }
+  }
+
+  useEffect(subscribeToMessages , [messages])
+
+  useEffect(subscribeToUsers, [])
+
+  useEffect(subscribeToUsername)
 
   return (
     <div className="App">
