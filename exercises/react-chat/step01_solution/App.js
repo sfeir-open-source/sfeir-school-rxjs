@@ -46,7 +46,7 @@ const App = () => {
   }
 
   const subscribeToMessages = () => {
-    const subscription = messages$.subscribe(message => setMessages([...messages, message]))
+    const subscription = messages$.subscribe(message => setMessages(messages => [...messages, message]))
     return () => subscription.unsubscribe()
   }
 
@@ -63,7 +63,7 @@ const App = () => {
     return () => subscription.unsubscribe()
   }
 
-  useEffect(subscribeToMessages , [messages])
+  useEffect(subscribeToMessages, [])
 
   useEffect(subscribeToUsers, [])
 
