@@ -45,10 +45,16 @@ Run `npm run serve` and `npm run ngrok` and give the generated URL to the partic
 ## Second step
 We now want to handle the submission of the username and the message by a keypress on `Enter`.
 
-1. In `App.js` and `Username.jsx` : delete the `handleSubmit` function and the `<form>` tag
-2. Use the `fromEvent` operator to create observables that listen to the `Enter` key to send the data
+1. In `App.js` and `Username.jsx` : delete the `handleSubmit` function and the `<form>` tag.
+2. Use the `fromEvent` operator to create observables that listen to the `keyup` event and if the pressed key is `Enter`, send the data.
+
+#### Tips
+* The keycode for `Enter` is 13
 
 ## Third step
+Use the pipe method and the correct operators to recreate the behaviour coded in the previous step.
+
+## Fourth step
 Let's create an anti-spamming feature so that users can not spam all the participants !  
 Use the correct operators to set up the following constraints :
 - A user cannot send an empty message

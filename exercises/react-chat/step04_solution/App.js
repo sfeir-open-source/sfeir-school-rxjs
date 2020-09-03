@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { Observable, fromEvent } from 'rxjs'
-import { filter, pluck } from 'rxjs/operators'
+import { distinctUntilChanged, filter, pluck, throttleTime } from 'rxjs/operators'
 import { getHourTime } from './helpers'
 import { SOCKET } from './constants'
 import Messages from './Messages'
@@ -64,7 +64,10 @@ const App = () => {
       textInput.current.focus()
       const inputSubscription = fromEvent(textInput.current, 'keyup').pipe(
         filter(e => e.keyCode === 13),
+        throttleTime(1000),
         pluck('target', 'value'),
+        distinctUntilChanged(),
+        filter((message) => message.trim().length > 0),
       ).subscribe(value => {
         SOCKET.emit('new-message', { author: username, content: value, time: getHourTime() })
         setText('')

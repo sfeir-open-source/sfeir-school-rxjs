@@ -62,12 +62,11 @@ const App = () => {
   const subscribeToInput = () => {
     if (textInput.current) {
       textInput.current.focus()
-      const inputSubscription = fromEvent(textInput.current, 'keyup').pipe(
-        filter(e => e.keyCode === 13),
-        pluck('target', 'value'),
-      ).subscribe(value => {
-        SOCKET.emit('new-message', { author: username, content: value, time: getHourTime() })
-        setText('')
+      const inputSubscription = fromEvent(textInput.current, 'keyup').subscribe(event => {
+        if(event.keyCode === 13) {
+          SOCKET.emit('new-message', { author: username, content: event.target.value, time: getHourTime() })
+          setText('')
+        }
       })
       return () => inputSubscription.unsubscribe()
     }

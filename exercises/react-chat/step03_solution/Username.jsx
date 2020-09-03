@@ -12,8 +12,11 @@ const Username = ({ error }) => {
   useEffect(() => {
     if (usernameInput.current) {
       usernameInput.current.focus()
-      const usernameSubscription = fromEvent(usernameInput.current, 'keyup').subscribe(event => {
-        if(event.keyCode === 13) SOCKET.emit('new-user', { username: event.target.value })
+      const usernameSubscription = fromEvent(usernameInput.current, 'keyup').pipe(
+        filter(e => e.keyCode === 13),
+        pluck('target', 'value'),
+      ).subscribe(value => {
+        SOCKET.emit('new-user', { username: value })
       })
       return () => usernameSubscription.unsubscribe()
     }
