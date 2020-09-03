@@ -5,6 +5,7 @@
   "proxy": "http://localhost:8080",
   "dependencies": {
     "express": "^4.17.1",
+    "parallelshell": "^3.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -15,6 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "serve": "node server/server.js",
+    "localstart": "parallelshell \"npm run serve\" \"npm start\"",
     "ngrok": "ngrok http 8080"
   },
   "browserslist": {
