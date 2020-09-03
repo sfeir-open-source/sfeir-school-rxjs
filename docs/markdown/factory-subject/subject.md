@@ -7,6 +7,7 @@
 # Push: Observables & EventEmitters
 
 <br>
+
 > Contrary to popular claims, Observables are not like EventEmitters nor are they like Promises for multiple values. Observables may act like EventEmitters in some cases, namely when they are multicasted using RxJS Subjects, but usually they don't act like EventEmitters.
 
 Notes:
@@ -168,12 +169,14 @@ const sub1 = obsFactory().subscribe(val => {
 ## Share a stream to multiple Observers
 
 <br>
-The main idea is to share a stream amoung multiples observers but without replaying the totality of the stream. We want to deal with **hot observable**.
+
+The main idea is to share a stream amoung multiples observers but without replaying the totality of the stream. We want to deal with **concatAll()**
 
 <br>
 It could helps us to save memory, avoid multiples call to backend, ...
 
 <br>
+
 To share a stream, we also have to deal with **Subjects**
 
 ##==##
@@ -209,7 +212,8 @@ const connectable = source.connect();
 
 <!-- .element: class="big-code block" -->
 <br>
-with this code, the `connectable` is in charge of subscription and unsubscription. To disconnect us from the stream, we call `unsubscribe()` on `connectable``
+
+with this code, the `connectable` is in charge of subscription and unsubscription. To disconnect us from the stream, we call `unsubscribe()` on `connectable`
 
 ##==##
 
@@ -229,6 +233,7 @@ const source = interval(1000).pipe(
 <!-- .element: class="big-code block" -->
 
 <br>
+
 `refCount` maintain an counter of subscriptions and automaticly call the connect for us. When the number of observer is to 0, it call the `unsubscribe` on the stream source.
 
 ##==##
