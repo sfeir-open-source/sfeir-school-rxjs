@@ -8,11 +8,11 @@ import Users from './Users'
 import './App.css'
 
 
-const messages$= {}
+const messages$ = {}
 
-const users$= {}
+const users$ = {}
 
-const username$= {}
+const username$ = {}
 
 const App = () => {
   const [username, setUsername] = useState('')
