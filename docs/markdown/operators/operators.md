@@ -136,17 +136,15 @@ function pipe(...fns) {
 
 <!-- .slide: class="exercice" -->
 
-# RxObservables
+# Create a chat (step 3)
 
-## Exercice 3
+## Exercice 4
 
 <br>
 
-1. Let's use RxObservables
+1. Use the pipe method and the correct operators to recreate the behaviour coded in the previous step !
 <br>
 <br>
-
-### Make the test pass ;)
 
 ##==##
 
@@ -203,6 +201,7 @@ D'une manière générale un opérateur va retourner un observable et permet des
 > A Pipeable Operator is a function that takes an Observable as its input and returns another Observable. It is a pure operation: the previous Observable stays unmodified.
 
 <br>
+
 > A Creation Operator can be called as standalone functions to create a new Observable.
 
 Notes:
@@ -451,23 +450,6 @@ Transform le contenu d'un stream
 
 <!-- .slide: class="exercice" -->
 
-# Create a chat (step 2)
-
-## Exercice 4
-
-<br>
-
-1. In `App.js` and `Username.jsx` : delete the `handleSubmit` function and the `<form>` tag
-2. Create Observables that listen to the `Enter` key to send the data
-<br>
-<br>
-
-### Use the correct operators ;)
-
-##==##
-
-<!-- .slide: class="exercice" -->
-
 # Create a chat (step 3)
 
 ## Exercice 5
@@ -481,18 +463,3 @@ Transform le contenu d'un stream
 <br>
 <br>
 
-##==##
-
-<!-- .slide: class="exercice" -->
-
-# Loads of Streams
-
-## Exercice 6
-
-<br>
-
-1. Advent of code day 2
-<br>
-<br>
-
-### run the tests

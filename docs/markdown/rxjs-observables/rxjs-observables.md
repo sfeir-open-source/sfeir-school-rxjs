@@ -1,6 +1,6 @@
 <!-- .slide: class="transition bg-pink" -->
 
-# Introduction
+# RxJS and Observables
 
 ##==##
 

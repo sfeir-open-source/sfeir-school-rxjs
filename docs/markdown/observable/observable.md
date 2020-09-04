@@ -168,20 +168,51 @@ Faire le lien entre le marble et l'api
 
 ##==##
 
-<!-- .slide: class="exercice" -->
+<!-- .slide: class="with-code consolas" -->
 
-# Create or Observable
+# Subcription / Unsubscription
 
-## Exercice 2
+### When subcribe to an observable you can stop receive events
 
-<br>
+```javascript
+import { interval } from 'rxjs';
 
-1. Create an Observable
-2. Create the map Operator
-<br>
-<br>
+const observable = interval(1000);
+const subscription = observable.subscribe(x => console.log(x));
+// Later:
+// This cancels the ongoing Observable execution which
+// was started by calling subscribe with an Observer.
+subscription.unsubscribe();
+```
 
-### Make the test pass ;)
+<!-- .element: class="big-code" -->
+
+##==##
+
+<!-- .slide: class="with-code consolas" -->
+
+# Multiple unsubscription
+
+### You can also group all the subscriptions
+
+```javascript
+const subscription = observable1.subscribe(x =>
+  console.log('first: ' + x)
+);
+const childSubscription = observable2.subscribe(x =>
+  console.log('second: ' + x)
+);
+
+subscription.add(childSubscription);
+
+setTimeout(() => {
+  // Unsubscribes BOTH subscription and childSubscription
+  subscription.unsubscribe();
+}, 1000);
+```
+
+Notes:
+Précisez qu'on peut bien entendu faire une désinscription manuelle mais que c'est plus pratique dans ce sens
 
 ##==##
 
@@ -189,7 +220,7 @@ Faire le lien entre le marble et l'api
 
 # Create a chat (step 1)
 
-## Exercice 3
+## Exercice 2
 
 <br>
 
@@ -200,3 +231,149 @@ Faire le lien entre le marble et l'api
 <br>
 
 ### Don't forget to unsubscribe ;)
+
+##==##
+
+<!-- .slide: class="transition bg-blue" -->
+
+# Hot vs Cold
+
+Notes:
+On parle souvent de 2 types d'observables
+
+##==##
+
+<!-- .slide: class="with-code consolas" -->
+
+# Cold Observable
+
+> We call an Observable "Cold" when the data are produce by the observable itself. For example, observables created using the `of`, `from`, `range`, `interval` and `timer` operators will be cold.
+
+```javascript
+let obs = Observable.create(observer => observer.next(1));
+```
+
+<!-- .element: class="big-code block" -->
+
+Notes:
+Un cold observable partagera tout le temps le même stream pour ses subscribers sauf si on le transforme en hot
+
+##==##
+
+<!-- .slide: class="with-code consolas" -->
+
+# Hot Observable
+
+> We call an Observable "Hot" when the data are produce outside of the observable itself. For example, observables created using the `fromEvent` operators will be hot.
+
+```javascript
+const obs$ = Observable.fromEvent(document, 'click') //
+  .map(event => ({
+    clientX: event.clientX,
+    clientY: event.clientY
+  }));
+```
+
+<!-- .element: class="big-code block" -->
+
+##==##
+
+<!-- .slide: class="two-column-layout" -->
+
+# Cold Observable could become Hot
+
+##--##
+
+Cold Observable
+
+<!-- .slide: class="with-code consolas"  -->
+
+```javascript
+const obs$ = Observable.from(['🍕', '🍪']) //
+  .map(val => {
+    return `Miam ${val}!`;
+  });
+```
+
+<!-- .element: class="big-code"-->
+
+##--##
+
+Become a Hot Observable
+
+<!-- .slide: class="with-code consolas"  -->
+
+```javascript
+const obs$ = Observable.from(['🍕', '🍪']) //
+  .map(val => {
+    return `Miam ${val}!`;
+  })
+  .share();
+```
+
+<!-- .element: class="big-code"-->
+
+##==##
+
+<!-- .slide: class="two-column-layout" -->
+
+# Hot Observable could become Cold
+
+##--##
+
+Hot Observable
+
+<!-- .slide: class="with-code consolas"  -->
+
+```javascript
+const obs$ = Observable.fromEvent(
+  document, //
+  'click'
+).map(e => ({ clientX: e.clientX }));
+
+const sub1 = obs$.subscribe(val => {
+  console.log('Sub1:', val);
+});
+```
+
+<!-- .element: class="big-code"-->
+
+##--##
+
+Become a Cold Observable
+
+<!-- .slide: class="with-code consolas"  -->
+
+```javascript
+const obsFactory = () =>
+  Observable.fromEvent(
+    document, //
+    'click'
+  ).map(e => ({ clientX: e.clientX }));
+
+const sub1 = obsFactory().subscribe(val => {
+  console.log('Sub1:', val);
+});
+```
+
+<!-- .element: class="big-code"-->
+
+##==##
+
+<!-- .slide: class="exercice" -->
+
+# Create a chat (step 2)
+
+## Exercice 3
+
+<br>
+
+We now want to handle the submission of the username and the message by a keypress on `Enter`.
+
+1. In `App.js` and `Username.jsx` : delete the `handleSubmit` function and the `<form>` tag.
+2. Use the `fromEvent` operator to create observables that listen to the `keyup` event and if the pressed key is `Enter`, send the data.
+
+<br>
+<br>
+
+### The keycode for `Enter` is 13

@@ -15,6 +15,95 @@ Un Observable est un producteur d'événement mais qui peut être aussi bien mul
 
 ##==##
 
+<!-- .slide: class="transition bg-blue" -->
+
+# Subjects
+
+##==##
+
+# What is a Subject ?
+
+> A Subject is like an Observable, but can multicast to many Observers. Subjects are like EventEmitters: they maintain a registry of many listeners.
+
+<br>
+
+By default, an Observable can only be cast to **one** observer for **one** event.
+
+##==##
+
+# Observable vs Subject
+
+![center](./assets/images/Observable-vs-Subject.png)
+
+##==##
+
+<!-- .slide: class="two-column-layout" -->
+
+# Observable vs Subject
+
+##--##
+
+<!-- .slide: class="with-code consolas" -->
+
+```javascript
+const store = new Rx.Subject();
+store.subscribe(v => console.log(v));
+store.subscribe(v => console.log(v));
+store.next(1);
+store.next(2);
+// Log 1
+// Log 1
+// Log 2
+// Log 2
+```
+
+<!-- .element: class="big-code no-max-height block" -->
+
+##--##
+
+<!-- .slide: class="with-code consolas" -->
+
+```javascript
+const base = Rx.Observable.create((observer){
+  observer.next(1);
+  observer.next(2);
+  observer.complete();
+})
+base.subscribe(v => console.log(v));
+base.subscribe(v => console.log(v));
+// Log 1
+// Log 2
+// Log 1
+// Log 2
+```
+
+<!-- .element: class="big-code no-max-height block" -->
+
+##==##
+
+# Multicasting Observable?
+
+> A multicasted Observable uses a Subject under the hood to make multiple Observers see the same Observable execution.
+
+You should connect an observable to the stream
+
+Notes:
+Y a pas de secret, un Observable multi casté est en fait un subject
+
+##==##
+
+# Other Subjects
+
+<br><br>
+
+| Type            | Action                                                                                               |
+| --------------- | ---------------------------------------------------------------------------------------------------- |
+| BehaviorSubject | Can send old value to new subscribers. Replay the last event when subscribe                          |
+| ReplaySubject   | Like BehaviorSubject but can replay the last X events or the last event since de last X milliseconds |
+| AsyncSubject    | Wait the completion of observable to send the events since the subcription                           |
+
+##==##
+
 # EventEmitters
 
 <br>
@@ -29,132 +118,6 @@ Un Observable est un producteur d'événement mais qui peut être aussi bien mul
 <!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition" data-type-show="prez" -->
 
 # Live coding !
-
-##==##
-
-<!-- .slide: class="transition bg-blue" -->
-
-# Hot vs Cold
-
-Notes:
-On parle souvent de 2 types d'observables
-
-##==##
-
-<!-- .slide: class="with-code consolas" -->
-
-# Cold Observable
-
-> We call an Observable "Cold" when the data are produce by the observable itself. For example, observables created using the `of`, `from`, `range`, `interval` and `timer` operators will be cold.
-
-```javascript
-let obs = Observable.create(observer => observer.next(1));
-```
-
-<!-- .element: class="big-code block" -->
-
-Notes:
-Un cold observable partagera tout le temps le même stream pour ses subscribers sauf si on le transforme en hot
-
-##==##
-
-<!-- .slide: class="with-code consolas" -->
-
-# Hot Observable
-
-> We call an Observable "Hot" when the data are produce outside of the observable itself. For example, observables created using the `fromEvent` operators will be hot.
-
-```javascript
-const obs$ = Observable.fromEvent(document, 'click') //
-  .map(event => ({
-    clientX: event.clientX,
-    clientY: event.clientY
-  }));
-```
-
-<!-- .element: class="big-code block" -->
-
-##==##
-
-<!-- .slide: class="two-column-layout" -->
-
-# Cold Observable could become Hot
-
-##--##
-
-Cold Observable
-
-<!-- .slide: class="with-code consolas"  -->
-
-```javascript
-const obs$ = Observable.from(['🍕', '🍪']) //
-  .map(val => {
-    return `Miam ${val}!`;
-  });
-```
-
-<!-- .element: class="big-code"-->
-
-##--##
-
-Become a Hot Observable
-
-<!-- .slide: class="with-code consolas"  -->
-
-```javascript
-const obs$ = Observable.from(['🍕', '🍪']) //
-  .map(val => {
-    return `Miam ${val}!`;
-  })
-  .share();
-```
-
-<!-- .element: class="big-code"-->
-
-##==##
-
-<!-- .slide: class="two-column-layout" -->
-
-# Hot Observable could become Cold
-
-##--##
-
-Hot Observable
-
-<!-- .slide: class="with-code consolas"  -->
-
-```javascript
-const obs$ = Observable.fromEvent(
-  document, //
-  'click'
-).map(e => ({ clientX: e.clientX }));
-
-const sub1 = obs$.subscribe(val => {
-  console.log('Sub1:', val);
-});
-```
-
-<!-- .element: class="big-code"-->
-
-##--##
-
-Become a Cold Observable
-
-<!-- .slide: class="with-code consolas"  -->
-
-```javascript
-const obsFactory = () =>
-  Observable.fromEvent(
-    document, //
-    'click'
-  ).map(e => ({ clientX: e.clientX }));
-
-const sub1 = obsFactory().subscribe(val => {
-  console.log('Sub1:', val);
-});
-```
-
-<!-- .element: class="big-code"-->
 
 ##==##
 
@@ -310,143 +273,6 @@ const subscribe4 = shared.subscribe(log);
 ```
 
 <!-- .element: class="big-code no-max-height block" -->
-
-##==##
-
-<!-- .slide: class="transition bg-blue" -->
-
-# Subjects
-
-##==##
-
-# What is a Subject ?
-
-> A Subject is like an Observable, but can multicast to many Observers. Subjects are like EventEmitters: they maintain a registry of many listeners.
-
-<br>
-
-By default, an Observable can only be cast to **one** observer for **one** event.
-
-##==##
-
-# Observable vs Subject
-
-![center](./assets/images/Observable-vs-Subject.png)
-
-##==##
-
-<!-- .slide: class="two-column-layout" -->
-
-# Observable vs Subject
-
-##--##
-
-<!-- .slide: class="with-code consolas" -->
-
-```javascript
-const store = new Rx.Subject();
-store.subscribe(v => console.log(v));
-store.subscribe(v => console.log(v));
-store.next(1);
-store.next(2);
-// Log 1
-// Log 1
-// Log 2
-// Log 2
-```
-
-<!-- .element: class="big-code no-max-height block" -->
-
-##--##
-
-<!-- .slide: class="with-code consolas" -->
-
-```javascript
-const base = Rx.Observable.create((observer){
-  observer.next(1);
-  observer.next(2);
-  observer.complete();
-})
-base.subscribe(v => console.log(v));
-base.subscribe(v => console.log(v));
-// Log 1
-// Log 2
-// Log 1
-// Log 2
-```
-
-<!-- .element: class="big-code no-max-height block" -->
-
-##==##
-
-# Multicasting Observable?
-
-> A multicasted Observable uses a Subject under the hood to make multiple Observers see the same Observable execution.
-
-You should connect an observable to the stream
-
-Notes:
-Y a pas de secret, un Observable multi casté est en fait un subject
-
-##==##
-
-# Other Subjects
-
-<br><br>
-
-| Type            | Action                                                                                               |
-| --------------- | ---------------------------------------------------------------------------------------------------- |
-| BehaviorSubject | Can send old value to new subscribers. Replay the last event when subscribe                          |
-| ReplaySubject   | Like BehaviorSubject but can replay the last X events or the last event since de last X milliseconds |
-| AsyncSubject    | Wait the completion of observable to send the events since the subcription                           |
-
-##==##
-
-<!-- .slide: class="with-code consolas" -->
-
-# Subcription / Unsubscription
-
-### When subcribe to an observable you can stop receive events
-
-```javascript
-import { interval } from 'rxjs';
-
-const observable = interval(1000);
-const subscription = observable.subscribe(x => console.log(x));
-// Later:
-// This cancels the ongoing Observable execution which
-// was started by calling subscribe with an Observer.
-subscription.unsubscribe();
-```
-
-<!-- .element: class="big-code" -->
-
-##==##
-
-<!-- .slide: class="with-code consolas" -->
-
-# Multiple unsubscription
-
-### You can also group all the subscriptions
-
-```javascript
-const subscription = observable1.subscribe(x =>
-  console.log('first: ' + x)
-);
-const childSubscription = observable2.subscribe(x =>
-  console.log('second: ' + x)
-);
-
-subscription.add(childSubscription);
-
-setTimeout(() => {
-  // Unsubscribes BOTH subscription and childSubscription
-  subscription.unsubscribe();
-}, 1000);
-```
-
-Notes:
-Précisez qu'on peut bien entendu faire une désinscription manuelle mais que c'est plus pratique dans ce sens
 
 ##==##
 

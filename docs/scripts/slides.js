@@ -2,12 +2,12 @@ function schoolSlides() {
   return ['00-school/00-TITLE.md', '00-school/speaker-jef.md', '00-school/speaker-wolf.md'];
 }
 
-function introSlides() {
-  return ['intro/00-TITLE.md'];
-}
-
 function arraySequencesSlides() {
   return ['arrays-sequences/arrays-sequences.md'];
+}
+
+function rxjsObservablesSlides() {
+  return ['rxjs-observables/rxjs-observables.md'];
 }
 
 function observableSlides() {
@@ -29,8 +29,8 @@ function formation() {
   return [
       //
       ...schoolSlides(),
-      ...introSlides(),
       ...arraySequencesSlides(),
+      ...rxjsObservablesSlides(),
       ...observableSlides(),
       ...operatorsSlides(),
       ...subjectSlides(),
