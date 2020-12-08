@@ -37,7 +37,7 @@ Run `npm run serve` and `npm run ngrok` and give the generated URL to the partic
 ### Display messages
 1. Create the `messages$` observable using the constructor `new Observable(...)` that listens to the event `new-message` sent by the server.
 
-2. In the function `susbscribeToMessages`, subscribe to the observable `messages$` and add the new message to the message list.
+2. In the function `subscribeToMessages`, subscribe to the observable `messages$` and add the new message to the message list.
 
 #### Tips
 * The server's reponse looks like this : `{ author: "string", content: "string", time: "string" }`
