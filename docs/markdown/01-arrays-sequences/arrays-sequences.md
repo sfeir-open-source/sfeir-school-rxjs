@@ -194,8 +194,8 @@ on ne sait pas quand la valeur va arriver, mais elle arrivera un jour ! Par cont
 <br>
 
 1. Read a list of numbers from a file
-2. Reduce to a single value
-3. Solve day1 of AdventOfCode
+1. Manipulate array with functions
+1. Run the test with `npm run test` or `npm run 0` for exercice 0
 
 <br>
 <br>
@@ -306,21 +306,19 @@ Conclure sur le concept de réception
 
 <br><br><br>
 
-|          | Single                                    | Multiple                                   |
-| -------- | ----------------------------------------- | ------------------------------------------ |
-| **Pull** | **Passive**: produces data when requested | **Active**: decides when data is requested |
-| **Pull** | Function                                  | Iterator                                   |
-| **Push** | **Active**: produces data at its own pace | **Passive**: Reacts to received data       |
-| **Push** | Promise                                   | Observable                                 |
+|          | Single                                                 | Multiple                                                 |
+| -------- | ------------------------------------------------------ | -------------------------------------------------------- |
+| **Pull** | Function <br>**Passive**: produces data when requested | Iterator <br> **Active**: decides when data is requested |
+| **Push** | Promise <br>**Active**: produces data at its own pace  | Observable <br>**Passive**: Reacts to received data      |
 
 Notes:
 Revenir sur les concepts : Pull = On récupère
 Push = on pousse une information
 
-- A Function is a lazily evaluated computation that synchronously returns a single value on invocation.
-- A generator is a lazily evaluated computation that synchronously returns zero to (potentially) infinite values on iteration.
-- A Promise is a computation that may (or may not) eventually return a single value.
-- An Observable is a lazily evaluated computation that can synchronously or asynchronously return zero to (potentially) infinite values from the time it's invoked onwards.
+- Une fonction est évaluée de façon syncrhone et retourne une valeur à son invocation
+- Un générateur va être évalué de façon syncrhone et retourne de 0 à un nombre infini de valeurs
+- Une promesse est une opération asyncrhone qui peut ou pas retourner une valeur
+- Un observable est une opération qui de manière syncrhone ou asynchrone va produire 0 ou un nombre infini de valeurs du moment qu'il est invoqué.
 
 ##==##
 
