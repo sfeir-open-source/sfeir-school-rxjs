@@ -23,8 +23,8 @@ Expliquer programmation déclarative
 
 ```javascript
 input
-  .map(x => x ** 2)
-  .filter(x => x % 3 !== 0)
+  .map((x) => x ** 2)
+  .filter((x) => x % 3 !== 0)
   .reduce((x, y) => x * y);
 ```
 
@@ -75,6 +75,38 @@ Faire un livecoding de :
 1. Return single value
 2. Return finite multiple value
 3. Controler le temps => retourner une promesse
+4. Code avec un itérateur
+
+```javascript
+function singleValue() {
+  return 'Hello World';
+}
+function multipleValue() {
+  return ['Hello', 'World'];
+}
+function* infiniteValues() {
+  let wontFinish = true;
+  let count = 0;
+  while (wontFinish) {
+    wontFinish = yield count++;
+  }
+}
+function promessify(f) {
+  return new Promise((resolve, reject) => {
+    resolve(f());
+  });
+}
+
+console.log(singleValue());
+console.log(multipleValue());
+promessify(singleValue).then(console.log);
+promessify(multipleValue).then(console.log);
+
+const gen = infiniteValues();
+console.log(gen.next(true));
+console.log(gen.next(true));
+console.log(gen.next());
+```
 
 ##==##
 
@@ -121,7 +153,7 @@ function* myGenerator() {
   let wontFinish = false;
   let count = 0;
   while (wontFinish) {
-    wonFinish = yield count++;
+    wontFinish = yield count++;
   }
 }
 ```
@@ -158,6 +190,7 @@ on ne sait pas quand la valeur va arriver, mais elle arrivera un jour ! Par cont
 # Manipulate arrays
 
 ## Exercice 0
+
 <br>
 
 1. Read a list of numbers from a file
@@ -167,30 +200,7 @@ on ne sait pas quand la valeur va arriver, mais elle arrivera un jour ! Par cont
 <br>
 <br>
 
-### make the test pass, then run main.ts
-
-##==##
-
-# Lazyness
-
-When working with arrays, we manipulate evaluated data.
-Calling `getModuleMasses(...)` reads the file and returns its result.
-Every Array function will execute immediately.
-<br>
-<br>
-<br>
-
-## Thunks
-
-We'd like to read the source only when needed. Let's try:
-
-```javascript
-// instead of
-const nums = readInputFile(...)
-
-// we'll write
-const getNumns = () => readInputFile(...)
-```
+### make the test pass, then run main.ts (0-Intro)
 
 ##==##
 
@@ -205,13 +215,13 @@ const getNumns = () => readInputFile(...)
 Array (Finite values)
 
 ```javascript
-  const finiteArray = [1, 2, 3, 4];
+const finiteArray = [1, 2, 3, 4];
 
-  for (let number of finiteArray) {
-    console.log(number);
-  }
+for (let number of finiteArray) {
+  console.log(number);
+}
 
-  //will show '1', '2', '3', '4'
+//will show '1', '2', '3', '4'
 ```
 
 <!-- .element: class="big-code consolas" -->
@@ -223,14 +233,14 @@ Array (Finite values)
 Generators (Infinite values ?)
 
 ```javascript
-  function* myGenerator(max) {
-    let count = 0;
-    while (count < max) yield count++;
-    return;
-  }
-  for (let number of myGenerator(x)) {
-    console.log(number);
-  }
+function* myGenerator(max) {
+  let count = 0;
+  while (count < max) yield count++;
+  return;
+}
+for (let number of myGenerator(x)) {
+  console.log(number);
+}
 ```
 
 <!-- .element: class="big-code" -->
@@ -346,7 +356,7 @@ export type SequenceOp<T, U> = (
 
 1. Produce values one by one
 2. Solve the same puzzle
-<br>
-<br>
+   <br>
+   <br>
 
 ### make the test pass, then run main.ts
