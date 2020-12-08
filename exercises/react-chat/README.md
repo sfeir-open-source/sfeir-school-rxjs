@@ -22,7 +22,7 @@ Run `npm run serve` and `npm run ngrok` and give the generated URL to the partic
 2. In the function `susbscribeToUsername`, subscribe to the observable `username$` and set the username accordingly. The server send an error if the username is already taken, deal with the error case !
 
 #### Tips
-* Use `socket.on('event-name')` to listens to an event sent by the server
+* Use `socket.on('event-name')` to listen to an event sent by the server
 * The server's reponse looks like this : `{ ok: boolean, username: "string" }` with `ok` being false when a username is already taken.
 * Use the observer's error callback to deal with the error case
 
