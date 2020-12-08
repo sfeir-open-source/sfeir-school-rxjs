@@ -29,7 +29,7 @@ Run `npm run serve` and `npm run ngrok` and give the generated URL to the partic
 ### Display online users
 1. Create the `users$` observable using the constructor `new Observable(...)` that listens to the event `refresh-users` sent by the server.
 
-2. In the function `susbscribeToUsers`, subscribe to the observable `users$` ans set the users list accordingly.
+2. In the function `subscribeToUsers`, subscribe to the observable `users$` and set the user list accordingly.
 
 #### Tips
 * The server's reponse looks like this : `["user1", "user2"]`
