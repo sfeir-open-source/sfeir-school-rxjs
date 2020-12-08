@@ -7,26 +7,67 @@ function schoolSlides() {
 }
 
 function arraySequencesSlides() {
-  return ['01-arrays-sequences/arrays-sequences.md'];
+  const directory = '01-arrays-sequences';
+  return [
+    `${directory}/00-title.md`,
+    `${directory}/01-intro.md`,
+    `${directory}/02-exercice-intro.md`,
+    `${directory}/03-array-vs-generator.md`,
+    `${directory}/04-exercice-sequence.md`,
+  ];
 }
 
 function rxjsObservablesSlides() {
-  return ['02-rxjs-observables/rxjs-observables.md'];
+  const directory = '02-rxjs-observables';
+  return [
+    `${directory}/00-title.md`,
+    `${directory}/01-observable-pattern.md`,
+    `${directory}/02-rxjs-observables.md`,
+  ];
 }
 
 function observableSlides() {
-  return ['03-observable/observable.md'];
+  const directory = '03-observable';
+  return [
+    `${directory}/00-title.md`,
+    `${directory}/01-intro.md`,
+    `${directory}/02-subscription.md`,
+    `${directory}/03-exercice-tchat-1.md`,
+    `${directory}/04-hot-cold.md`,
+    `${directory}/05-exercice-tchat-2.md`,
+  ];
 }
 
 function operatorsSlides() {
-  return ['04-operators/operators.md'];
+  const directory = '04-operators';
+  return [
+    `${directory}/00-title.md`,
+    `${directory}/01-intro.md`,
+    `${directory}/02-exercice-tchat-3.md`,
+    `${directory}/03-rxjs-operators.md`,
+    `${directory}/04-main-operators.md`,
+    `${directory}/05-exercice-tchat-4.md`,
+  ];
 }
 
 function subjectSlides() {
-  return ['05-factory-subject/subject.md'];
+  const directory = '05-factory-subject';
+  return [
+    `${directory}/00-title.md`,
+    `${directory}/01-intro.md`,
+    `${directory}/02-subjects.md`,
+    `${directory}/03-sharables.md`,
+    `${directory}/04-side-effects.md`,
+    `${directory}/05-time.md`,
+  ];
 }
 function testsSlides() {
-  return ['06-tests/tests.md'];
+  const directory = '06-tests';
+  return [
+    `${directory}/00-title.md`,
+    `${directory}/01-marbles.md`,
+    `${directory}/02-scheduler.md`,
+  ];
 }
 
 function formation() {
