@@ -1,42 +1,46 @@
 function schoolSlides() {
-  return ['00-school/00-TITLE.md', '00-school/speaker-jef.md', '00-school/speaker-wolf.md'];
+  return [
+    '00-school/00-TITLE.md',
+    '00-school/speaker-jef.md',
+    '00-school/speaker-wolf.md',
+  ];
 }
 
 function arraySequencesSlides() {
-  return ['arrays-sequences/arrays-sequences.md'];
+  return ['01-arrays-sequences/arrays-sequences.md'];
 }
 
 function rxjsObservablesSlides() {
-  return ['rxjs-observables/rxjs-observables.md'];
+  return ['02-rxjs-observables/rxjs-observables.md'];
 }
 
 function observableSlides() {
-  return ['observable/observable.md'];
+  return ['03-observable/observable.md'];
 }
 
 function operatorsSlides() {
-  return ['operators/operators.md'];
+  return ['04-operators/operators.md'];
 }
 
 function subjectSlides() {
-  return ['factory-subject/subject.md'];
-} 
+  return ['05-factory-subject/subject.md'];
+}
 function testsSlides() {
-  return ['tests/tests.md'];
+  return ['06-tests/tests.md'];
 }
 
 function formation() {
   return [
-      //
-      ...schoolSlides(),
-      ...arraySequencesSlides(),
-      ...rxjsObservablesSlides(),
-      ...observableSlides(),
-      ...operatorsSlides(),
-      ...subjectSlides(),
-      ...testsSlides()
-  ].map(slidePath => {
-      return { path: slidePath };
+    //
+    ...schoolSlides(),
+    ...arraySequencesSlides(),
+    ...rxjsObservablesSlides(),
+    ...observableSlides(),
+    ...operatorsSlides(),
+    ...subjectSlides(),
+    ...testsSlides(),
+  ].map((slidePath) => {
+    return { path: slidePath };
   });
 }
 
