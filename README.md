@@ -34,6 +34,8 @@ To run the tchat exercices, simply run `npm install` at the root of repository t
 
 A websocket server will be run on port 3000 and the app is available on port 8080.
 
+`npm start`run the final solution
+
 ## Run exercices (The tchat)
 
 To run a step of the exercice, simply run `npm start --step=XXX`
