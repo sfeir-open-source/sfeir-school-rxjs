@@ -81,7 +81,10 @@ export default class App {
   listenerUserName(event) {
     switch (event.type) {
       case 'change':
-        this.changeToState({ username: event.username });
+        this.changeToState({
+          username: event.username,
+          error: event.error
+        });
         break;
       case 'submit':
         SOCKET.emit('new-user', { username: event.username });
