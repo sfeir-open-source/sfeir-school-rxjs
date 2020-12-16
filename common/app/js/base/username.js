@@ -1,30 +1,41 @@
 import { html } from 'lit-html';
-import { SOCKET } from './constants.js';
-import '../css/username.css';
 
-const usernameDirective = ({ error, listenerRender }) => {
+import '../../css/username.css';
+
+/**
+ * Basic directive that render the "login screen"
+ * @param {Object} state
+ */
+const usernameDirective = ({ error, eventListener }) => {
   let usernameTemp = undefined;
 
+  // Listener for change event, it will bubble the event
   const listenerChange = {
     handleEvent(e) {
+      // We check that the input change since last event
       if (e.target.value !== usernameTemp) {
         usernameTemp = e.target.value;
-        listenerRender({ username: usernameTemp });
-        console.log('clicked');
+        eventListener({
+          type: 'change',
+          username: usernameTemp,
+          error: null
+        });
       }
     },
     capture: true
   };
 
+  // Listener for submit event, it will bubble the event
   const listenerSubmit = {
     handleEvent(e) {
+      // We cancel the dom event to avoid a refresh of the page
       e.preventDefault();
-      console.log('New User submit', usernameTemp);
-      SOCKET.emit('new-user', { username: usernameTemp });
+      eventListener({ type: 'submit', username: usernameTemp });
     },
     capture: true
   };
 
+  // We return the lit template
   return html`
     <div class="username-container">
       <h2>Choose a username</h2>

@@ -1,6 +1,10 @@
 import { render, html } from 'lit-html';
-import '../css/users.css';
+import '../../css/users.css';
 
+/**
+ * Basic directive that render the list of users
+ * @param {Object} state
+ */
 const usersDirective = ({ users }) => {
   return html`
     <div className="users">
