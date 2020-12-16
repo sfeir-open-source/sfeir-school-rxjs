@@ -1,17 +1,15 @@
 <!-- .slide: class="exercice" -->
 
-# Create a chat (step 2)
+# Create a chat (step 1)
 
-## Exercice 3
+## Exercice 2
 
-<br>
+ <br>
 
-We now want to handle the submission of the username and the message by a keypress on `Enter`.
+1. Create an Observable that listens to the event 'new-user' sent by the server
+2. Susbscribe to the previous Observable and set the username accordingly. Deal with the error case.
+3. Do the same for the events 'refresh-users' and 'new-message' that respectively update the online users and update the displayed messages
+   <br>
+   <br>
 
-1. In `App.js` and `Username.jsx` : delete the `handleSubmit` function and the `<form>` tag.
-2. Use the `fromEvent` operator to create observables that listen to the `keyup` event and if the pressed key is `Enter`, send the data.
-
-<br>
-<br>
-
-### The keycode for `Enter` is 13
+### Don't forget to unsubscribe ;)
