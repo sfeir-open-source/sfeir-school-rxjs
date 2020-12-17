@@ -51,3 +51,8 @@ to go to a step run the npm script with --step=XX :
 
 - `npm start --step=exercice-3` for an exercise
 - `npm start --step=exercice-3-solution` for the solution
+
+## For Trainers :
+
+To play with RxJS in devtools for livecoding, you can use this snippet :
+https://gist.github.com/jefBinomed/ddafcbb1932c865690c792b3fd3f5286
