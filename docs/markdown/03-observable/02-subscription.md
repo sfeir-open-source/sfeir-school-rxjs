@@ -20,11 +20,11 @@ Retourner un Observable ne fait que retourner une fonction !
 
 ```javascript
 console.log('before');
-const foo = new Observable((subscriber) => {
+const foo = new Observable(subscriber => {
   console.log('Hello');
   subscriber.next(42);
 });
-foo.subscribe((x) => {
+foo.subscribe(x => {
   console.log(x);
 });
 console.log('after');
@@ -84,11 +84,8 @@ Faire le lien entre le marble et l'api
 import { interval } from 'rxjs';
 
 const observable = interval(1000);
-const subscription = observable.subscribe((x) =>
-  console.log(x)
-);
-// Later:
-// This cancels the ongoing Observable execution which
+const subscription = observable.subscribe(x => console.log(x));
+// Later: This cancels the ongoing Observable execution which
 // was started by calling subscribe with an Observer.
 subscription.unsubscribe();
 ```
@@ -104,10 +101,10 @@ subscription.unsubscribe();
 ### You can also group all the subscriptions
 
 ```javascript
-const subscription = observable1.subscribe((x) =>
+const subscription = observable1.subscribe(x =>
   console.log('first: ' + x)
 );
-const childSubscription = observable2.subscribe((x) =>
+const childSubscription = observable2.subscribe(x =>
   console.log('second: ' + x)
 );
 

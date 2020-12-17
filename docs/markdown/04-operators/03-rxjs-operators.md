@@ -26,6 +26,8 @@ ajax / bindCallback / bindNodeCallback / defer / empty / from / fromEvent / from
 
 > Use [Operator Decision Tree](https://rxjs.dev/operator-decision-tree)
 
+https://rxjs.dev/operator-decision-tree
+
 Or back to basics 😉
 
 Notes:
@@ -88,8 +90,8 @@ Notes:
 ```javascript
 const button = document.querySelector('button');
 
-Observable.fromEvent(button, 'click').subscribe((event) => {
-  Observable.interval(1000).subscribe((num) => {
+Observable.fromEvent(button, 'click').subscribe(event => {
+  Observable.interval(1000).subscribe(num => {
     console.log(num);
   });
 });
@@ -107,11 +109,11 @@ You have to manualy unsubscribe from yourself and start looking like callback He
 const click$ = Observable.fromEvent(button, 'click');
 const interval$ = Observable.interval(1000);
 
-const clicksToInterval$ = click$.map((event) => {
+const clicksToInterval$ = click$.map(event => {
   return interval$;
 });
 
-clicksToInterval$.subscribe((intervalObservable) =>
+clicksToInterval$.subscribe(intervalObservable =>
   console.log(intervalObservable)
 );
 ```
@@ -128,12 +130,12 @@ You write a HOO but we log Observables!
 const click$ = Observable.fromEvent(button, 'click');
 const interval$ = Observable.interval(1000);
 
-const clicksToInterval$ = click$.map((event) => {
+const clicksToInterval$ = click$.map(event => {
   return interval$;
 });
 
-clicksToInterval$.subscribe((intervalObservable$) => {
-  intervalObservable$.subscribe((num) => {
+clicksToInterval$.subscribe(intervalObservable$ => {
+  intervalObservable$.subscribe(num => {
     console.log(num);
   });
 });

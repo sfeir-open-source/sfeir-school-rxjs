@@ -54,6 +54,16 @@ Faire un livecoding de :
 1. Return a generator
 2. Comment controler le temps ? Le générateur peut générer des valeurs à tes temps différents
 
+```javascript
+function* myGenerator() {
+  ...
+}
+const myIterator = myGenerator();
+console.log(myIterator.next());
+console.log(myIterator.next());
+setInterval(()=>console.log(myIterator.next()), 500);
+```
+
 ##==##
 
 <!-- .slide: data-type-show="full" class="with-code consolas" -->
