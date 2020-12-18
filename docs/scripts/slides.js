@@ -1,42 +1,87 @@
 function schoolSlides() {
-  return ['00-school/00-TITLE.md', '00-school/speaker-jef.md', '00-school/speaker-wolf.md'];
-}
-
-function introSlides() {
-  return ['intro/00-TITLE.md'];
+  return [
+    '00-school/00-TITLE.md',
+    '00-school/speaker-jef.md',
+    '00-school/speaker-wolf.md',
+  ];
 }
 
 function arraySequencesSlides() {
-  return ['arrays-sequences/arrays-sequences.md'];
+  const directory = '01-arrays-sequences';
+  return [
+    `${directory}/00-title.md`,
+    `${directory}/01-intro.md`,
+    `${directory}/02-exercice-intro.md`,
+    `${directory}/03-array-vs-generator.md`,
+    `${directory}/04-exercice-sequence.md`,
+  ];
+}
+
+function rxjsObservablesSlides() {
+  const directory = '02-rxjs-observables';
+  return [
+    `${directory}/00-title.md`,
+    `${directory}/01-observable-pattern.md`,
+    `${directory}/02-rxjs-observables.md`,
+  ];
 }
 
 function observableSlides() {
-  return ['observable/observable.md'];
+  const directory = '03-observable';
+  return [
+    `${directory}/00-title.md`,
+    `${directory}/01-intro.md`,
+    `${directory}/02-subscription.md`,
+    `${directory}/03-exercice-tchat-1.md`,
+    `${directory}/04-hot-cold.md`,
+    `${directory}/05-exercice-tchat-2.md`,
+  ];
 }
 
 function operatorsSlides() {
-  return ['operators/operators.md'];
+  const directory = '04-operators';
+  return [
+    `${directory}/00-title.md`,
+    `${directory}/01-intro.md`,
+    `${directory}/02-exercice-tchat-3.md`,
+    `${directory}/03-rxjs-operators.md`,
+    `${directory}/04-main-operators.md`,
+    `${directory}/05-exercice-tchat-4.md`,
+  ];
 }
 
 function subjectSlides() {
-  return ['factory-subject/subject.md'];
-} 
+  const directory = '05-factory-subject';
+  return [
+    `${directory}/00-title.md`,
+    `${directory}/01-intro.md`,
+    `${directory}/02-subjects.md`,
+    `${directory}/03-sharables.md`,
+    `${directory}/04-side-effects.md`,
+    `${directory}/05-time.md`,
+  ];
+}
 function testsSlides() {
-  return ['tests/tests.md'];
+  const directory = '06-tests';
+  return [
+    `${directory}/00-title.md`,
+    `${directory}/01-marbles.md`,
+    `${directory}/02-scheduler.md`,
+  ];
 }
 
 function formation() {
   return [
-      //
-      ...schoolSlides(),
-      ...introSlides(),
-      ...arraySequencesSlides(),
-      ...observableSlides(),
-      ...operatorsSlides(),
-      ...subjectSlides(),
-      ...testsSlides()
-  ].map(slidePath => {
-      return { path: slidePath };
+    //
+    ...schoolSlides(),
+    ...arraySequencesSlides(),
+    ...rxjsObservablesSlides(),
+    ...observableSlides(),
+    ...operatorsSlides(),
+    ...subjectSlides(),
+    ...testsSlides(),
+  ].map((slidePath) => {
+    return { path: slidePath };
   });
 }
 
