@@ -15,8 +15,8 @@ Expliquer programmation déclarative
 
 ```javascript
 input
-  .map((x) => x ** 2)
-  .filter((x) => x % 3 !== 0)
+  .map(x => x ** 2)
+  .filter(x => x % 3 !== 0)
   .reduce((x, y) => x * y);
 ```
 
@@ -32,7 +32,7 @@ input
 const square = x => x ** 2;
 const isMultipleOf = y => x => x % y === 0;
 const not = f => x => !f(x);
-const muliply => (a, b) => a * b;
+const multiply => (a, b) => a * b;
 
 input
   .map(square)

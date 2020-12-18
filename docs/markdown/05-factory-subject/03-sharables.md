@@ -74,7 +74,7 @@ const source = interval(1000).pipe(
 
 <br>
 
-`refCount` maintain an counter of subscriptions and automaticly call the connect for us. When the number of observer is to 0, it call the `unsubscribe` on the stream source.
+`refCount` maintain a counter of subscriptions and automatically call the connect for us. When the number of observer is to 0, it call the `unsubscribe` on the stream source.
 
 ##==##
 
