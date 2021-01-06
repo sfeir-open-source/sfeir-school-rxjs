@@ -57,7 +57,7 @@ const textInput$ = () => {
   // TODO add operators to fit the problem
   return fromEvent(textInput, 'keyup').pipe(
     filter(e => e.code === 'Enter'),
-    pluck('target', 'value')
+    pluck('target')
   );
 };
 
@@ -126,16 +126,17 @@ export const subscribeToSocketObservable = changeToState => {
  */
 export const subscribeInput = ({ username }) => {
   const subscribeToInput = () => {
-    const textInput = document.getElementById('text-input');
-    const inputSubscription = textInput$().subscribe(value => {
-      // When the stream emit a message we forward it to socket
-      SOCKET.emit('new-message', {
-        author: username,
-        content: value,
-        time: getHourTime()
-      });
-      textInput.value = '';
-    });
+    const inputSubscription = textInput$().subscribe(
+      inputElt => {
+        // When the stream emit a message we forward it to socket
+        SOCKET.emit('new-message', {
+          author: username,
+          content: inputElt.value,
+          time: getHourTime()
+        });
+        inputElt.value = '';
+      }
+    );
     return () => inputSubscription.unsubscribe();
   };
 

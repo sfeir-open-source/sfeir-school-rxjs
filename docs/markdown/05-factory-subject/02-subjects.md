@@ -30,8 +30,8 @@ By default, an Observable can only be cast to **one** observer for **one** event
 
 ```javascript
 const store = new Rx.Subject();
-store.subscribe((v) => console.log(v));
-store.subscribe((v) => console.log(v));
+store.subscribe(v => console.log(v));
+store.subscribe(v => console.log(v));
 store.next(1);
 store.next(2);
 // Log 1
@@ -98,6 +98,6 @@ Y a pas de secret, un Observable multi casté est en fait un subject
 
 ##==##
 
-<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition" data-type-show="prez" -->
+<!-- .slide: data-background="./assets/images/computer-keyboard-34153.jpg" class="transition" data-type-show="hide" -->
 
 # Live coding !
