@@ -59,7 +59,7 @@ const username$ = new Observable(subscriber => {
 const textInput$ = () => {
   const textInput = document.getElementById('text-input');
   return fromEvent(textInput, 'keyup').pipe(
-    filter(e => e.keyCode === 13),
+    filter(e => e.code === 'Enter'),
     throttleTime(1000),
     pluck('target', 'value'),
     distinctUntilChanged(),

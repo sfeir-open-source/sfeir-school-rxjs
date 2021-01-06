@@ -17,17 +17,17 @@ import { getHourTime } from '../../../../../common/app/js/helpers/helpers';
  */
 
 /**
- * Observable that transform socket message to observable of message
+ * Observable that transform socket 'new-message' to observable of message
  */
 // TODO create Observable message$
 
 /**
- * Observable that transform socket refresh-user to observable of users
+ * Observable that transform socket 'refresh-users' to observable of users
  */
 // TODO create Observable users$
 
 /**
- * Observable that transform socket new user to observable of user (with error management)
+ * Observable that transform socket 'new-user' to observable of user (with error management)
  */
 // TODO create Observable username$
 
@@ -57,7 +57,7 @@ export const subscribeToSocketObservable = changeToState => {
    * Subscriptions to incoming users
    */
   const subscribeToUsers = () => {
-    // Subscribe to message$
+    // Subscribe to users$
     // use changeToState to propagate the message (an Object) {users:...}
     return () => {
       // and don't forget to unsubscribe here!
@@ -68,7 +68,7 @@ export const subscribeToSocketObservable = changeToState => {
    * Subscriptions to user validation
    */
   const subscribeToUsername = () => {
-    // Subscribe to message$
+    // Subscribe to username$
     // use changeToState to propagate the message (an Object)   {username:...}
     // don't forget to deal with error ;) and propagate error with changeToState {error:...}
     return () => {

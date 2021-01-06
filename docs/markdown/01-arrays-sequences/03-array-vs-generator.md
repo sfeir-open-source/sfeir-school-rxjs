@@ -56,12 +56,17 @@ Faire un livecoding de :
 
 ```javascript
 function* myGenerator() {
-  ...
+  let onlyFive = 0;
+  while (onlyFive < 5) {
+    yield 'value';
+    onlyFive++;
+  }
 }
 const myIterator = myGenerator();
 console.log(myIterator.next());
 console.log(myIterator.next());
-setInterval(()=>console.log(myIterator.next()), 500);
+
+setInterval(() => console.log(myIterator.next()), 500);
 ```
 
 ##==##

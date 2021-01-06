@@ -120,16 +120,15 @@ export const subscribeToSocketObservable = changeToState => {
  */
 export const subscribeInput = ({ username }) => {
   const subscribeToInput = () => {
-    const textInput = document.getElementById('text-input');
     const inputSubscription = textInput$().subscribe(event => {
-      if (event.keyCode === 13) {
+      if (event.code === 'Enter') {
         // When the stream emit a message we forward it to socket
         SOCKET.emit('new-message', {
           author: username,
           content: event.target.value,
           time: getHourTime()
         });
-        textInput.value = '';
+        event.target.value = '';
       }
     });
     return () => inputSubscription.unsubscribe();

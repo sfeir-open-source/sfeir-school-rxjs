@@ -56,7 +56,7 @@ const textInput$ = () => {
   const textInput = document.getElementById('text-input');
   // TODO add operators to fit the problem
   return fromEvent(textInput, 'keyup').pipe(
-    filter(e => e.keyCode === 13),
+    filter(e => e.code === 'Enter'),
     pluck('target', 'value')
   );
 };

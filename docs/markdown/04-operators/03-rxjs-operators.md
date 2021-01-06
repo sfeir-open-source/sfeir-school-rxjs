@@ -90,8 +90,8 @@ Notes:
 ```javascript
 const button = document.querySelector('button');
 
-Observable.fromEvent(button, 'click').subscribe(event => {
-  Observable.interval(1000).subscribe(num => {
+fromEvent(button, 'click').subscribe(event => {
+  interval(1000).subscribe(num => {
     console.log(num);
   });
 });
@@ -106,12 +106,14 @@ You have to manualy unsubscribe from yourself and start looking like callback He
 # The problem : solution ?
 
 ```javascript
-const click$ = Observable.fromEvent(button, 'click');
-const interval$ = Observable.interval(1000);
+const click$ = fromEvent(button, 'click');
+const interval$ = interval(1000);
 
-const clicksToInterval$ = click$.map(event => {
-  return interval$;
-});
+const clicksToInterval$ = click$.pipe(
+  map(event => {
+    return interval$;
+  })
+);
 
 clicksToInterval$.subscribe(intervalObservable =>
   console.log(intervalObservable)
@@ -127,12 +129,14 @@ You write a HOO but we log Observables!
 # The problem : solution ?
 
 ```javascript
-const click$ = Observable.fromEvent(button, 'click');
-const interval$ = Observable.interval(1000);
+const click$ = fromEvent(button, 'click');
+const interval$ = interval(1000);
 
-const clicksToInterval$ = click$.map(event => {
-  return interval$;
-});
+const clicksToInterval$ = click$.pipe(
+  map(event => {
+    return interval$;
+  })
+);
 
 clicksToInterval$.subscribe(intervalObservable$ => {
   intervalObservable$.subscribe(num => {
@@ -150,12 +154,12 @@ It log again the number, but is to close to callback Hell
 # The problem : solution (mergeAll)
 
 ```javascript
-const click$ = Observable.fromEvent(button, ‘click’);
-const interval$ = Observable.interval(1000);
+const click$ = fromEvent(button, ‘click’);
+const interval$ = interval(1000);
 
-const observable$ = click$.map(event => {
+const observable$ = click$.pipe(map(event => {
    return interval$;
-});
+}));
 
 observable$.mergeAll().subscribe(num => console.log(num));
 ```

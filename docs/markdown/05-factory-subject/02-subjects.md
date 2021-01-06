@@ -47,7 +47,7 @@ store.next(2);
 <!-- .slide: class="with-code consolas" -->
 
 ```javascript
-const base = Rx.Observable.create((observer){
+const base = Rx.create((observer){
   observer.next(1);
   observer.next(2);
   observer.complete();

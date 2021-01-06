@@ -13,4 +13,4 @@ We now want to handle the submission of the username and the message by a keypre
 <br>
 <br>
 
-### The keycode for `Enter` is 13
+### The code for `Enter` is 'Enter'

@@ -21,6 +21,21 @@
 - Use `socket.on('event-name')` to listen to an event sent by the server
 - The server's response looks like this : `{ ok: boolean, username: string }` with `ok` being false when a username is already taken.
 - Use the observer's error callback to deal with the error case
+- To deal with error the subcription, give an object with methods (next, error, complete)
+
+```javascript
+myObservable$.subscribe({
+  next(everythingIsGood)=>{},
+  error(aBadError) => {},
+  complete() =>{}
+})
+// Or like this
+myObservable$.subscribe(
+  (everythingIsGood)=>{}, // CallBack Next
+  (aBadError) => {}, // CallBack Error
+  () =>{} // CallBack Complete
+})
+```
 
 ### Display online users
 

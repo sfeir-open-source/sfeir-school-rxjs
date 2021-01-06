@@ -14,7 +14,7 @@ On parle souvent de 2 types d'observables
 > We call an Observable "Cold" when the data are produce by the observable itself. For example, observables created using the `of`, `from`, `range`, `interval` and `timer` operators will be cold.
 
 ```javascript
-let obs = Observable.create((observer) => observer.next(1));
+let obs = create(observer => observer.next(1));
 ```
 
 <!-- .element: class="big-code block" -->
@@ -31,11 +31,13 @@ Un cold observable partagera tout le temps le même stream pour ses subscribers 
 > We call an Observable "Hot" when the data are produce outside of the observable itself. For example, observables created using the `fromEvent` operators will be hot.
 
 ```javascript
-const obs$ = Observable.fromEvent(document, 'click') //
-  .map((event) => ({
-    clientX: event.clientX,
-    clientY: event.clientY,
-  }));
+const obs$ = fromEvent(document, 'click') //
+  .pipe(
+    map(event => ({
+      clientX: event.clientX,
+      clientY: event.clientY
+    }))
+  );
 ```
 
 <!-- .element: class="big-code block" -->
@@ -53,10 +55,12 @@ Cold Observable
 <!-- .slide: class="with-code consolas"  -->
 
 ```javascript
-const obs$ = Observable.from(['🍕', '🍪']) //
-  .map((val) => {
-    return `Miam ${val}!`;
-  });
+const obs$ = from(['🍕', '🍪']) //
+  .pipe(
+    map(val => {
+      return `Miam ${val}!`;
+    })
+  );
 ```
 
 <!-- .element: class="big-code"-->
@@ -68,11 +72,13 @@ Become a Hot Observable
 <!-- .slide: class="with-code consolas"  -->
 
 ```javascript
-const obs$ = Observable.from(['🍕', '🍪']) //
-  .map((val) => {
-    return `Miam ${val}!`;
-  })
-  .share();
+const obs$ = from(['🍕', '🍪']) //
+  .pipe(
+    map(val => {
+      return `Miam ${val}!`;
+    }),
+    share()
+  );
 ```
 
 <!-- .element: class="big-code"-->
@@ -90,12 +96,12 @@ Hot Observable
 <!-- .slide: class="with-code consolas"  -->
 
 ```javascript
-const obs$ = Observable.fromEvent(
+const obs$ = fromEvent(
   document, //
   'click'
-).map((e) => ({ clientX: e.clientX }));
+).pipe(map(e => ({ clientX: e.clientX })));
 
-const sub1 = obs$.subscribe((val) => {
+const sub1 = obs$.subscribe(val => {
   console.log('Sub1:', val);
 });
 ```
@@ -110,12 +116,12 @@ Become a Cold Observable
 
 ```javascript
 const obsFactory = () =>
-  Observable.fromEvent(
+  fromEvent(
     document, //
     'click'
-  ).map((e) => ({ clientX: e.clientX }));
+  ).pipe(map(e => ({ clientX: e.clientX })));
 
-const sub1 = obsFactory().subscribe((val) => {
+const sub1 = obsFactory().subscribe(val => {
   console.log('Sub1:', val);
 });
 ```
