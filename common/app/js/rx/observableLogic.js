@@ -1,6 +1,6 @@
 import { SOCKET } from '../helpers/constants';
 import { getHourTime } from '../helpers/helpers';
-import { Observable, fromEvent } from 'rxjs';
+import { fromEvent, Observable } from 'rxjs';
 import {
   distinctUntilChanged,
   filter,
@@ -56,19 +56,17 @@ const username$ = new Observable(subscriber => {
 /**
  * Observable that transforms input text to stream of messages that are validated only if Enter has been hit
  */
-const textInput$ = () => {
-  const textInput = document.getElementById('text-input');
-  return fromEvent(textInput, 'keyup').pipe(
-    filter(e => e.code === 'Enter'),
-    filter(e => e.target.value.trim().length > 0),
-    throttleTime(1000),
-    pluck('target'),
-    distinctUntilChanged(
-      (value1, value2) => value1 === value2,
-      target => target.value
-    )
-  );
-};
+const textInput$ = fromEvent(document, 'keyup').pipe(
+  filter(e => e.target.getAttribute('id') === 'text-input'),
+  filter(e => e.code === 'Enter'),
+  filter(e => e.target.value.trim().length > 0),
+  throttleTime(1000),
+  pluck('target'),
+  distinctUntilChanged(
+    (value1, value2) => value1 === value2,
+    target => target.value
+  )
+);
 
 /**
  * *************************
@@ -135,17 +133,15 @@ export const subscribeToSocketObservable = updateState => {
  */
 export const subscribeInput = ({ username }) => {
   const subscribeToInput = () => {
-    const inputSubscription = textInput$().subscribe(
-      inputElement => {
-        // When the stream emits a message we forward it to socket
-        SOCKET.emit('new-message', {
-          author: username,
-          content: inputElement.value,
-          time: getHourTime()
-        });
-        inputElement.value = '';
-      }
-    );
+    const inputSubscription = textInput$.subscribe(inputElt => {
+      // When the stream emits a message we forward it to socket
+      SOCKET.emit('new-message', {
+        author: username,
+        content: inputElt.value,
+        time: getHourTime()
+      });
+      inputElt.value = '';
+    });
     return () => inputSubscription.unsubscribe();
   };
 

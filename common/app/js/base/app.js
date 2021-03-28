@@ -6,8 +6,8 @@ import messagesDirective from './messages.js';
 import { SOCKET } from '../helpers/constants.js';
 import '../../css/app.css';
 import {
-  subscribeToSocketObservable,
-  subscribeInput
+  subscribeInput,
+  subscribeToSocketObservable
 } from '../rx/observableLogic.js';
 
 /**
