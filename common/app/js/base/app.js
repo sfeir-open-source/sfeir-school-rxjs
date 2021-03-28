@@ -1,5 +1,5 @@
 //import React, { useEffect, useState } from 'react';
-import { render, html } from 'lit-html';
+import { html, render } from 'lit-html';
 
 import usersDirective from './users.js';
 import usernameDirective from './username.js';
@@ -7,8 +7,8 @@ import messagesDirective from './messages.js';
 import { SOCKET } from '../helpers/constants.js';
 import '../../css/app.css';
 import {
-  subscribeToSocketObservable,
-  subscribeInput
+  subscribeInput,
+  subscribeToSocketObservable
 } from '../rx/observableLogic.js';
 
 /**
@@ -75,7 +75,7 @@ export default class App {
   }
 
   /**
-   * Listen to event emits by directive userName (to recieve username and submission)
+   * Listen to event emits by directive userName (to receive username and submission)
    * @param {Object} event
    */
   listenerUserName(event) {
@@ -119,15 +119,7 @@ export default class App {
     if (!this.unsubscriptionInput) {
       // Minor Hack to avoid multiples subscriptions
       this.unsubscriptionInput = 'notNull';
-      // We do a litle timeout to be sure that the rendering of input field is done
-      // this is a hack (not the best way to do this but, it's enough for thise example)
-      setTimeout(
-        () =>
-          (this.unsubscriptionInput = subscribeInput({
-            username
-          })),
-        500
-      );
+      this.unsubscriptionInput = subscribeInput({ username });
     }
     // We return the litHtml template
     return html`

@@ -68,4 +68,8 @@ typings/
 exercises/**/*.js
 !exercises/react-chat/**/*.js
 
+# IDE specific
+.idea
+.vscode
+
 

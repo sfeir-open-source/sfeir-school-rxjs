@@ -1,6 +1,6 @@
 import { SOCKET } from '../helpers/constants';
 import { getHourTime } from '../helpers/helpers';
-import { Observable, fromEvent } from 'rxjs';
+import { fromEvent, Observable } from 'rxjs';
 import {
   distinctUntilChanged,
   filter,
@@ -54,21 +54,19 @@ const username$ = new Observable(subscriber => {
 });
 
 /**
- * Observable that transform input type to stream of message that is validate only is Enter is hit
+ * Observable that transforms input text to stream of messages that are validated only if Enter has been hit
  */
-const textInput$ = () => {
-  const textInput = document.getElementById('text-input');
-  return fromEvent(textInput, 'keyup').pipe(
-    filter(e => e.code === 'Enter'),
-    filter(e => e.target.value.trim().length > 0),
-    throttleTime(1000),
-    pluck('target'),
-    distinctUntilChanged(
-      (value1, value2) => value1 === value2,
-      target => target.value
-    )
-  );
-};
+const textInput$ = fromEvent(document, 'keyup').pipe(
+  filter(e => e.target.getAttribute('id') === 'text-input'),
+  filter(e => e.code === 'Enter'),
+  filter(e => e.target.value.trim().length > 0),
+  throttleTime(1000),
+  pluck('target'),
+  distinctUntilChanged(
+    (value1, value2) => value1 === value2,
+    target => target.value
+  )
+);
 
 /**
  * *************************
@@ -77,7 +75,7 @@ const textInput$ = () => {
  */
 
 /**
- * Method that subscribe all Observable comming from Socket
+ * Method that subscribes to all Observables coming from Socket
  * @param {function} changeToState
  */
 export const subscribeToSocketObservable = changeToState => {
@@ -130,22 +128,20 @@ export const subscribeToSocketObservable = changeToState => {
 };
 
 /**
- * Method that subscribe stream of text input (message)
+ * Method that subscribes to stream of text input (message)
  * @param {Object} state
  */
 export const subscribeInput = ({ username }) => {
   const subscribeToInput = () => {
-    const inputSubscription = textInput$().subscribe(
-      inputElt => {
-        // When the stream emit a message we forward it to socket
-        SOCKET.emit('new-message', {
-          author: username,
-          content: inputElt.value,
-          time: getHourTime()
-        });
-        inputElt.value = '';
-      }
-    );
+    const inputSubscription = textInput$.subscribe(inputElt => {
+      // When the stream emits a message we forward it to socket
+      SOCKET.emit('new-message', {
+        author: username,
+        content: inputElt.value,
+        time: getHourTime()
+      });
+      inputElt.value = '';
+    });
     return () => inputSubscription.unsubscribe();
   };
 
