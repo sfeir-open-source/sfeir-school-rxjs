@@ -1,23 +1,22 @@
 import { html } from 'lit-html';
-
 import '../../css/username.css';
 
 /**
- * Basic directive that render the "login screen"
+ * Basic directive that renders the "login screen"
  * @param {Object} state
  */
 const usernameDirective = ({ error, eventListener }) => {
-  let usernameTemp = undefined;
+  let savedUsername = undefined;
 
-  // Listener for change event, it will bubble the event
-  const listenerChange = {
+  // Listener for change event, it will capture the event
+  const changeListener = {
     handleEvent(e) {
-      // We check that the input change since last event
-      if (e.target.value !== usernameTemp) {
-        usernameTemp = e.target.value;
+      const username = e.target.value;
+      if (username !== savedUsername) {
+        savedUsername = username;
         eventListener({
           type: 'change',
-          username: usernameTemp,
+          username,
           error: null
         });
       }
@@ -25,12 +24,15 @@ const usernameDirective = ({ error, eventListener }) => {
     capture: true
   };
 
-  // Listener for submit event, it will bubble the event
-  const listenerSubmit = {
+  // Listener for submit event, it will capture the event
+  const submitListener = {
     handleEvent(e) {
       // We cancel the dom event to avoid a refresh of the page
       e.preventDefault();
-      eventListener({ type: 'submit', username: usernameTemp });
+      eventListener({
+        type: 'submit',
+        username: savedUsername
+      });
     },
     capture: true
   };
@@ -40,13 +42,13 @@ const usernameDirective = ({ error, eventListener }) => {
     <div class="username-container">
       <h2>Choose a username</h2>
       <div>
-        <form id="myForm" @submit="${listenerSubmit}">
+        <form id="myForm" @submit="${submitListener}">
           <input
             id="username-input"
             type="text"
-            value=${usernameTemp ? usernameTemp : ''}
+            value=${savedUsername ? savedUsername : ''}
             placeholder="Type your username here"
-            @change="${listenerChange}"
+            @change="${changeListener}"
           />
           <button type="submit">Send</button>
         </form>

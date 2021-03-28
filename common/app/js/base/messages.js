@@ -3,14 +3,14 @@ import messageDirective from './message.js';
 import '../../css/messages.css';
 
 /**
- * Basic directive that render the list of messages
+ * Basic directive that renders the list of messages
  * @param {Object} state
  */
 const messagesDirective = ({ messages, username }) => {
   return html`
     <div id="messages-container" class="messages-container">
       ${messages.map(
-        (message, index) =>
+        message =>
           html`
             ${messageDirective({
               key: '${username}_${index}',

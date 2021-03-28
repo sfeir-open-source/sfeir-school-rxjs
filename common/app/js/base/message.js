@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import '../../css/message.css';
 
 /**
- * Basic directive that render a single message
+ * Basic directive that renders a single message
  * @param {Object} state
  */
 const messageDirective = ({ author, content, key, time }) => {

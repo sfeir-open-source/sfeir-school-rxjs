@@ -23,7 +23,7 @@ import {
  */
 
 /**
- * Observable that transform socket message to observable of message
+ * Observable that transforms socket of new-message events to observable of message
  */
 const messages$ = new Observable(subscriber => {
   SOCKET.on('new-message', message => {
@@ -32,7 +32,7 @@ const messages$ = new Observable(subscriber => {
 });
 
 /**
- * Observable that transform socket refresh-user to observable of users
+ * Observable that transforms socket of refresh-users events to observable of users
  */
 const users$ = new Observable(subscriber => {
   SOCKET.on('refresh-users', users => {
@@ -41,7 +41,7 @@ const users$ = new Observable(subscriber => {
 });
 
 /**
- * Observable that transform socket new user to observable of user (with error management)
+ * Observable that transforms socket of new-user events to observable of user (with error management)
  */
 const username$ = new Observable(subscriber => {
   SOCKET.on('new-user', response => {
@@ -54,7 +54,7 @@ const username$ = new Observable(subscriber => {
 });
 
 /**
- * Observable that transform input type to stream of message that is validate only is Enter is hit
+ * Observable that transforms input text to stream of messages that are validated only if Enter has been hit
  */
 const textInput$ = () => {
   const textInput = document.getElementById('text-input');
@@ -77,47 +77,47 @@ const textInput$ = () => {
  */
 
 /**
- * Method that subscribe all Observable comming from Socket
- * @param {function} changeToState
+ * Method that subscribes to all Observables coming from Socket
+ * @param {function} updateState
  */
-export const subscribeToSocketObservable = changeToState => {
+export const subscribeToSocketObservable = updateState => {
   /**
-   * Subscriptions to incoming messages
+   * Subscription to incoming messages
    */
   const subscribeToMessages = () => {
     const subscription = messages$.subscribe(message => {
-      changeToState({ messages: [message] });
+      updateState({ messages: [message] });
     });
     return () => subscription.unsubscribe();
   };
 
   /**
-   * Subscriptions to incoming users
+   * Subscription to incoming users
    */
   const subscribeToUsers = () => {
     const subscription = users$.subscribe(users => {
-      changeToState({ users });
+      updateState({ users });
     });
     return () => subscription.unsubscribe();
   };
 
   /**
-   * Subscriptions to user validation
+   * Subscription to user validation
    */
   const subscribeToUsername = () => {
     const subscription = username$.subscribe({
       next(response) {
-        changeToState({ username: response.username });
+        updateState({ username: response.username });
       },
-      error(errorMsg) {
-        changeToState({ error: errorMsg });
+      error(errorMessage) {
+        updateState({ error: errorMessage });
       }
     });
     return () => subscription.unsubscribe();
   };
 
   /**
-   * Subscription to all stream to get unsubscriptions methods
+   * Subscription to all streams to get unsubscription methods
    */
   const unsubscribeToMessages = subscribeToMessages();
   const unsubscribeToUsers = subscribeToUsers();
@@ -130,20 +130,20 @@ export const subscribeToSocketObservable = changeToState => {
 };
 
 /**
- * Method that subscribe stream of text input (message)
+ * Method that subscribes to stream of text input (message)
  * @param {Object} state
  */
 export const subscribeInput = ({ username }) => {
   const subscribeToInput = () => {
     const inputSubscription = textInput$().subscribe(
-      inputElt => {
-        // When the stream emit a message we forward it to socket
+      inputElement => {
+        // When the stream emits a message we forward it to socket
         SOCKET.emit('new-message', {
           author: username,
-          content: inputElt.value,
+          content: inputElement.value,
           time: getHourTime()
         });
-        inputElt.value = '';
+        inputElement.value = '';
       }
     );
     return () => inputSubscription.unsubscribe();
