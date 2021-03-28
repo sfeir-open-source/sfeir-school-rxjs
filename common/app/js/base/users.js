@@ -2,12 +2,12 @@ import { render, html } from 'lit-html';
 import '../../css/users.css';
 
 /**
- * Basic directive that render the list of users
+ * Basic directive that renders the list of users
  * @param {Object} state
  */
 const usersDirective = ({ users }) => {
   return html`
-    <div className="users">
+    <div class="users">
       <h2>Who's online ?</h2>
       <ul>
         ${users.map(

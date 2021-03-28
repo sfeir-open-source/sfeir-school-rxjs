@@ -1,4 +1,3 @@
-//import React, { useEffect, useState } from 'react';
 import { render, html } from 'lit-html';
 
 import usersDirective from './users.js';
@@ -22,7 +21,7 @@ export default class App {
     // State of the app
     this.state = {
       error: undefined, // Error Message
-      username: undefined, // User name of current use
+      username: undefined, // User name of current user
       messages: [], // List of incoming messages
       users: [] // List of connected users
     };
@@ -50,38 +49,37 @@ export default class App {
   }
 
   /**
-   *
-   * Apply the changes in state according to entry (copy of properties)
-   * @param {Object} state
+   * Apply the changes in stateh according to entry (copy of properties)
+   * @param {Object} statePatch
    */
-  changeToState(state) {
-    if (state.messages) {
+  updateState(statePatch) {
+    if (statePatch.messages) {
       this.state.messages = [
         ...this.state.messages,
-        ...state.messages
+        ...statePatch.messages
       ];
     } else {
-      this.state = { ...this.state, ...state };
+      this.state = { ...this.state, ...statePatch };
     }
   }
 
   /**
    * Apply the changes and do a re-render
-   * @param {Object} state
+   * @param {Object} statePatch
    */
-  changeToStateAndReRender(state) {
-    this.changeToState(state);
+  updateStateAndReRender(statePatch) {
+    this.updateState(statePatch);
     this.renderApp();
   }
 
   /**
-   * Listen to event emits by directive userName (to recieve username and submission)
+   * Listen to event emitted by username directive (to receive username and submission)
    * @param {Object} event
    */
-  listenerUserName(event) {
+  usernameListener(event) {
     switch (event.type) {
       case 'change':
-        this.changeToState({
+        this.updateState({
           username: event.username,
           error: event.error
         });
@@ -100,7 +98,7 @@ export default class App {
 
   rxjsSubscriptions() {
     subscribeToSocketObservable(
-      this.changeToStateAndReRender.bind(this)
+      this.updateStateAndReRender.bind(this)
     );
   }
 
@@ -111,7 +109,7 @@ export default class App {
    */
 
   /**
-   * Directive that show the users and messages (this will do an observable registration)
+   * Directive that shows the users and messages (this will do an observable registration)
    * @param {Object} state
    */
   displayUsersAndMessages({ users, messages, username }) {
@@ -165,7 +163,7 @@ export default class App {
           ? usernameDirective({
               error,
               username,
-              eventListener: this.listenerUserName.bind(this)
+              eventListener: this.usernameListener.bind(this)
             })
           : this.displayUsersAndMessages({
               users,

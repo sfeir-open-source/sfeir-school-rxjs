@@ -14,9 +14,9 @@ const users = new Map();
 io.on('connection', socket => {
   console.log('user connected');
 
-  socket.on('new-message', message =>
-    io.emit('new-message', message)
-  );
+  socket.on('new-message', message => {
+    io.emit('new-message', message);
+  });
 
   socket.on('new-user', user => {
     if (Array.from(users.values()).includes(user.username)) {
