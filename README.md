@@ -1,4 +1,4 @@
-# RXjs
+# RxJS
 
 A [SFEIR School](https://www.sfeir.com/formation/school/)
 
@@ -8,15 +8,15 @@ A [SFEIR School](https://www.sfeir.com/formation/school/)
 
 You can view the slides [here](https://sfeir-open-source.github.io/sfeir-school-rxjs/).
 
-# Exercises (Not the tchat)
+# Exercises (Not the chat)
 
-To run exercises, you have to go to "exercises" directory, run `npm install` to init the dependancies.
+To run exercises, you have to go to "exercises" directory, run `npm install` to init the dependencies.
 
-⚠️ You have to use Node 11+ to execute thoses exercises because some of the function used in javascript require node 11.
+⚠️ You have to use Node 11+ to execute these exercises because some functions used in JavaScript require node 11.
 
-## Run exercises (Not the tchat)
+## Run exercises (Not the chat)
 
-To run an exercise, you can first `npm run tsc XXX/FILE.ts` and after `node XXX/FILE.js` or run the script corresponding to exercise:
+To run an exercise, you can first run `npm run tsc XXX/FILE.ts` and after `node XXX/FILE.js` or run the script corresponding to exercise:
 
 - `npm run 00`
 - `npm run 0-intro`
@@ -26,33 +26,33 @@ To run an exercise, you can first `npm run tsc XXX/FILE.ts` and after `node XXX/
 
 ## Solutions
 
-Each directory has a solution.ts file that contains the solution of exercice. You can test it by running `npx jest`
+Each directory has a solution.ts file that contains the solution to the exercise. You can test it by running `npx jest`
 
-# Exercices (The tchat)
+# Exercises (The chat)
 
-To run the tchat exercices, simply run `npm install` at the root of repository to init the dependancies.
+To run the chat exercises, simply run `npm install` at the root of repository to init the dependencies.
 
-A websocket server will be run on port 3000 and the app is available on port 8080.
+A websocket server will be run on port 3000, and the app is available on port 8080.
 
-`npm start`run the final solution
+`npm start` runs the final solution.
 
-## Run exercices (The tchat)
+## Run exercises (The chat)
 
-To run a step of the exercice, simply run `npm start --step=XXX`
+To run a step of the exercise, run `npm start --step=XXX`
 
 ### Steps
 
 Each exercise has two directories:
 
-- a clean directory to get you started (ex: exercice-3)
-- a solution directory (ex: exercice-3-solution)
+- a clean directory to get you started (ex: exercise-3)
+- a solution directory (ex: exercise-3-solution)
 
-to go to a step run the npm script with --step=XX :
+to go to a step, run the npm script with --step=XX :
 
-- `npm start --step=exercice-3` for an exercise
-- `npm start --step=exercice-3-solution` for the solution
+- `npm start --step=exercise-3` for an exercise
+- `npm start --step=exercise-3-solution` for the solution
 
 ## For Trainers :
 
-To play with RxJS in devtools for livecoding, you can use this snippet :
+To play with RxJS in devtools for live coding, you can use this snippet :
 https://gist.github.com/jefBinomed/ddafcbb1932c865690c792b3fd3f5286
