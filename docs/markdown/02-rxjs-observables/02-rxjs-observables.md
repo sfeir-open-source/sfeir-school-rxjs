@@ -6,7 +6,7 @@
 
 Notes:
 
-RxJS est donc l'implémentation javascript du concept Reactive Programming. Il est existe aussi RxJava, ...
+RxJS est donc l'implémentation JavaScript du concept Reactive Programming. Il existe aussi RxJava, ...
 
 ##==##
 

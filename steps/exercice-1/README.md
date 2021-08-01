@@ -1,6 +1,6 @@
 # Create a chat (step 1)
 
-## Exercice 2
+## Exercise 2
 
 1. Create an Observable that listens to the event 'new-user' sent by the server
 2. Susbscribe to the previous Observable and set the username accordingly. Deal with the error case.

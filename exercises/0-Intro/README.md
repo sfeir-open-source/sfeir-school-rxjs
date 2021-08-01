@@ -1,6 +1,6 @@
-# Exercice 0
+# Exercise 0
 
-Exercice taken from advent of code 2019 day 1.
+Exercise taken from advent of code 2019 day 1.
 
 Fill the 3 following methods in code.ts: getModuleMasses/getRequiredFuel/getTotalRequiredFuel (see after)
 

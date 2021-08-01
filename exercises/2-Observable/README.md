@@ -1,4 +1,4 @@
-# Exercice 2
+# Exercise 2
 
 Make the test pass.
 

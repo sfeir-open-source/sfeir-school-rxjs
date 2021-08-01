@@ -1,6 +1,6 @@
 # Create a chat (step 4)
 
-## Exercice 5
+## Exercise 5
 
 1. Use the correct operators to create an anti-spamming feature :
 

@@ -2,7 +2,7 @@
 
 # Sequences
 
-## Exercice 1
+## Exercise 1
 
 <br>
 
