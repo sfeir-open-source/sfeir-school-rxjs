@@ -4,17 +4,17 @@
 
 ##==##
 
-# Side effet of sharable
+# Side effect of shareable
 
 <br><br>
 
-**Side Effect** represent operator that don't touch the stream but execute some external operations. For example, `tap` is a side effect operator.
+**Side Effect** represents operator that don't touch the stream but execute some external operations. For example, `tap` is a side effect operator.
 
 ##==##
 
 <!-- .slide: class="two-column-layout" -->
 
-# Side effet of sharable
+# Side effect of shareable
 
 ##--##
 

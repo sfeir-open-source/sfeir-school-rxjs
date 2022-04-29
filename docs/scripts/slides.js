@@ -12,9 +12,9 @@ function arraySequencesSlides() {
   return [
     `${directory}/00-title.md`,
     `${directory}/01-intro.md`,
-    `${directory}/02-exercice-intro.md`,
+    `${directory}/02-exercise-intro.md`,
     `${directory}/03-array-vs-generator.md`,
-    `${directory}/04-exercice-sequence.md`
+    `${directory}/04-exercise-sequence.md`
   ];
 }
 
@@ -33,9 +33,9 @@ function observableSlides() {
     `${directory}/00-title.md`,
     `${directory}/01-intro.md`,
     `${directory}/02-subscription.md`,
-    `${directory}/03-exercice-tchat-1.md`,
+    `${directory}/03-exercise-chat-1.md`,
     `${directory}/04-hot-cold.md`,
-    `${directory}/05-exercice-tchat-2.md`
+    `${directory}/05-exercise-chat-2.md`
   ];
 }
 
@@ -44,10 +44,10 @@ function operatorsSlides() {
   return [
     `${directory}/00-title.md`,
     `${directory}/01-intro.md`,
-    `${directory}/02-exercice-tchat-3.md`,
+    `${directory}/02-exercise-chat-3.md`,
     `${directory}/03-rxjs-operators.md`,
     `${directory}/04-main-operators.md`,
-    `${directory}/05-exercice-tchat-4.md`
+    `${directory}/05-exercise-chat-4.md`
   ];
 }
 
@@ -57,7 +57,7 @@ function subjectSlides() {
     `${directory}/00-title.md`,
     `${directory}/01-intro.md`,
     `${directory}/02-subjects.md`,
-    `${directory}/03-sharables.md`,
+    `${directory}/03-shareables.md`,
     `${directory}/04-side-effects.md`,
     `${directory}/05-time.md`
   ];

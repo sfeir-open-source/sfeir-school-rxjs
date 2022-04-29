@@ -11,7 +11,7 @@ On parle souvent de 2 types d'observables
 
 # Cold Observable
 
-> We call an Observable "Cold" when the data are produce by the observable itself. For example, observables created using the `of`, `from`, `range`, `interval` and `timer` operators will be cold.
+> We call an Observable "Cold" when the data are produced by the observable itself. For example, observables created using the `of`, `from`, `range`, `interval` and `timer` operators will be cold.
 
 ```javascript
 let obs = create(observer => observer.next(1));
@@ -28,7 +28,7 @@ Un cold observable partagera tout le temps le même stream pour ses subscribers 
 
 # Hot Observable
 
-> We call an Observable "Hot" when the data are produce outside of the observable itself. For example, observables created using the `fromEvent` operators will be hot.
+> We call an Observable "Hot" when the data are produced outside of the observable itself. For example, observables created using the `fromEvent` operators will be hot.
 
 ```javascript
 const obs$ = fromEvent(document, 'click') //

@@ -22,7 +22,7 @@ ajax / bindCallback / bindNodeCallback / defer / empty / from / fromEvent / from
 
 ##==##
 
-# How to choose it's operator?
+# How to choose an operator?
 
 > Use [Operator Decision Tree](https://rxjs.dev/operator-decision-tree)
 
@@ -44,7 +44,7 @@ Expliquer le principe et le regarder ensemble
 > Operators are pure functions that enable a functional programming style of dealing with collections with operations like map, filter, concat, reduce, etc.
 
 Notes:
-D'une manière générale un opérateur va retourner un observable et permet des actions qui sont soit chainable, soit créatives (cf slide après)
+D'une manière générale un opérateur va retourner un observable et permet des actions qui sont soit chainables, soit créatives (cf slide après)
 
 ##==##
 
@@ -57,7 +57,7 @@ D'une manière générale un opérateur va retourner un observable et permet des
 > A Creation Operator can be called as standalone functions to create a new Observable.
 
 Notes:
-Différencier le role de l'opérateur
+Différencier le rôle de l'opérateur
 
 ##==##
 
@@ -66,7 +66,7 @@ Différencier le role de l'opérateur
 > A higher order observable is just a fancy name for an observable that emits observable. Let’s change the example a little bit so you can see what I’m talking about.
 
 Notes:
-Expliquer pourquoi on en a besoin : Eviter une sorte de callback hell de l'observable avec des mécanismes de desynscription
+Expliquer pourquoi on en a besoin : Eviter une sorte de callback hell de l'observable avec des mécanismes de désinscription
 
 ##==##
 
@@ -77,7 +77,7 @@ Expliquer pourquoi on en a besoin : Eviter une sorte de callback hell de l'obser
 Notes:
 
 1. Coder le problème
-2. Coder la première solution (montrer qu'on récupère que des observables)
+2. Coder la première solution (montrer qu'on ne récupère que des observables)
 3. Ajouter la récupération du pull du dernier stream (mais préciser que c'est toujours pas mieux)
 4. présenter les merge operators pour montrer comment les utiliser proprement
 
@@ -97,7 +97,7 @@ fromEvent(button, 'click').subscribe(event => {
 });
 ```
 
-You have to manualy unsubscribe from yourself and start looking like callback Hell
+You have to manually unsubscribe by yourself and it starts looking like callback Hell
 
 ##==##
 
@@ -145,7 +145,7 @@ clicksToInterval$.subscribe(intervalObservable$ => {
 });
 ```
 
-It log again the number, but is to close to callback Hell
+It logs again the number, but is to close to callback Hell
 
 ##==##
 

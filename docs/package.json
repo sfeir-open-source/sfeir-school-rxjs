@@ -1,7 +1,7 @@
 {
   "name": "sfeirschoolrxjsdocs",
   "version": "1.0.0",
-  "description": "Sfeir School RXjs with revealJS",
+  "description": "Sfeir School RxJS with revealJS",
   "main": "index.js",
   "scripts": {
     "sass": "node-sass ./scss/slides.scss -o ./css/ --source-map=true --watch=\"scss\" --recursive=\"scss\"",

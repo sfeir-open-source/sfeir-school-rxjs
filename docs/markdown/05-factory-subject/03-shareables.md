@@ -1,19 +1,19 @@
 <!-- .slide: class="transition bg-blue" -->
 
-# Sharable stream
+# Shareable stream
 
 ##==##
 
-# Sharable steam
+# Shareable steam
 
 ## Share a stream to multiple Observers
 
 <br>
 
-The main idea is to share a stream amoung multiples observers but without replaying the totality of the stream. We want to deal with **concatAll()**
+The main idea is to share a stream among multiple observers but without replaying the totality of the stream. We want to deal with **concatAll()**
 
 <br>
-It could helps us to save memory, avoid multiples call to backend, ...
+It could help us to save memory, avoid multiple calls to backend, ...
 
 <br>
 
@@ -34,7 +34,7 @@ const source = interval(1000).pipe(multicast(new Subject()));
 <!-- .element: class="big-code block" -->
 
 <br>
-When creating a multicast Observable, we allow it to multiple subscription. But it's not enough. We don't know when start the the subscription and how manage the unsubscription flow.
+When creating a multicast Observable, we allow it to multiple subscriptions. But it's not enough. We don't know when to start the subscription and how to manage the unsubscription flow.
 
 ##==##
 
@@ -74,11 +74,11 @@ const source = interval(1000).pipe(
 
 <br>
 
-`refCount` maintain a counter of subscriptions and automatically call the connect for us. When the number of observer is to 0, it call the `unsubscribe` on the stream source.
+`refCount` maintains a counter of subscriptions and automatically call the connect for us. When the number of observer is to 0, it call the `unsubscribe` on the stream source.
 
 ##==##
 
-# Variants operators
+# Variant operators
 
 ### Some operators are doing multiples actions
 

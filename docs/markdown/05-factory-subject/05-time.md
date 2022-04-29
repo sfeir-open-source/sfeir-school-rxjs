@@ -11,7 +11,7 @@
 > An **Operator** can use a **Scheduler** to affect the timing of publication in the stream.
 
 Notes:
-Préciser qu'un opérateur jouant sur le temps va surement utiliser une scheduler et pas l'inverse
+Préciser qu'un opérateur jouant sur le temps va sûrement utiliser un scheduler et pas l'inverse
 
 ##==##
 
@@ -73,7 +73,7 @@ Will print
 ```
 just before subscribe
 just after subscribe
-got balue 1
+got value 1
 ```
 
 <!-- .element: class="big-code block"-->
@@ -89,7 +89,7 @@ got balue 1
 > Use subscribeOn to schedule in what context will the subscribe() call happen.
 
 Notes:
-Par défaut, le subscribe est syncrhone et immédiat (rappel -> appel de fonction!)
+Par défaut, le subscribe est synchrone et immédiat (rappel -> appel de fonction!)
 
 ##==##
 
@@ -110,15 +110,15 @@ Use subscribeOn to schedule in what context will the subscribe() call happen. By
 **List of operators using schedulers:**
 
 ```
-bindCallback / bindNodeCallback /combineLatest / concat
-empty / from / fromPromise / interval /merge / of
+bindCallback / bindNodeCallback / combineLatest / concat
+empty / from / fromPromise / interval / merge / of
 range / throw / timer
 ```
 
 <!-- .element: class="big-code block" -->
 
 Notes:
-On met donc en place une sorte de proxy observable de façon controler le timing de notification
+On met donc en place une sorte de proxy observable de façon à contrôler le timing des notifications
 
 ##==##
 
@@ -131,7 +131,7 @@ Use observeOn to schedule in what context will notifications be delivered. As we
 **List of operators using schedulers:**
 
 ```
-bindCallback / bindNodeCallback /combineLatest / concat
-empty / from / fromPromise / interval /merge / of
+bindCallback / bindNodeCallback / combineLatest / concat
+empty / from / fromPromise / interval / merge / of
 range / throw / timer
 ```

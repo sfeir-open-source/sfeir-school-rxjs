@@ -52,7 +52,7 @@ pureFunction(1); // => 1
 ```javascript
 let count = 0;
 const sideEffectFunction = () => count++;
-const dependantFunction = (b) => count + b;
+const dependantFunction = b => count + b;
 
 dependantFunction(1); // => 1
 sideEffectFunction(); // count changed
@@ -62,8 +62,8 @@ dependantFunction(1); // => 2
 <!-- .element: class="big-code" -->
 
 Notes:
-Expliquer que l'effet de bord si on a une autre méthode qui accède au paramètre count
-alors, notre méthode a modifier le comportement de l'autre => problème
+Expliquer l'effet de bord : si on a une autre méthode qui accède au paramètre count
+alors, notre méthode a modifié le comportement de l'autre => problème
 
 ##==##
 
@@ -91,14 +91,14 @@ classics: map, filter, reduce (what?), flatMap (but how?)
 
 # Piping
 
-You can use operators like function and chain them. But it's not readable
+You can use operators like functions and chain them. But it's not readable
 
 ```
 op2()(op1()(obs))
 ```
 
 <br>
-So welcome to Pipe method !
+So welcome to the Pipe method !
 
 ```
 obs.pipe(
@@ -120,7 +120,7 @@ Même si un pipeable operator retourne un observable, il ne fait que réutiliser
 
 ```typescript
 function pipe(...fns) {
-  return (fns) => (x) => fns.reduce((acc, f) => f(acc), x);
+  return fns => x => fns.reduce((acc, f) => f(acc), x);
 }
 ```
 

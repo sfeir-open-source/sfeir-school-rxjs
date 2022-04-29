@@ -10,7 +10,7 @@
 
 <br>
 
-By default, an Observable can only be cast to **one** observer for **one** event.
+By default, an Observable can only be casted to **one** observer for **one** event.
 
 ##==##
 
@@ -83,7 +83,7 @@ Y a pas de secret, un Observable multi casté est en fait un subject
 | --------------- | ---------------------------------------------------------------------------------------------------- |
 | BehaviorSubject | Can send old value to new subscribers. Replay the last event when subscribe                          |
 | ReplaySubject   | Like BehaviorSubject but can replay the last X events or the last event since de last X milliseconds |
-| AsyncSubject    | Wait the completion of observable to send the events since the subcription                           |
+| AsyncSubject    | Wait for the completion of observable to send the events since the subcription                       |
 
 ##==##
 
@@ -91,7 +91,7 @@ Y a pas de secret, un Observable multi casté est en fait un subject
 
 <br>
 
-- EventEmitters can have multiples subscribers for a dedicated channel
+- EventEmitters can have multiple subscribers for a dedicated channel
 - EventEmitters emit a message to All the subscribers and executes side effects in all subscribers
 
 > As opposed to EventEmitters which share the side effects and have eager execution regardless of the existence of subscribers, Observables have no shared execution and are lazy.

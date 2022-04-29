@@ -102,6 +102,6 @@ Transform le contenu d'un stream
 
 # Utility - Tap
 
-> Perform a side effect for every emission on the source Observable, but return an Observable that is identical to the source.
+> Perform a side effect for every emission on the source Observable, but returns an Observable that is identical to the source.
 
 ![center hm-600](./assets/images/tap.png)

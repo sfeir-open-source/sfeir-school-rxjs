@@ -24,11 +24,11 @@
     "rxjs"
   ],
   "scripts": {
-    "0": "ts-node exercices/0-Intro/main.ts",
-    "1": "ts-node exercices/1-Sequences/main.ts",
-    "2": "ts-node exercices/2-Observable/main.ts",
-    "3": "ts-node exercices/3-RxObservable/main.ts",
-    "4": "ts-node exercices/4-Operators/main.ts",
+    "0": "ts-node exercises/0-Intro/main.ts",
+    "1": "ts-node exercises/1-Sequences/main.ts",
+    "2": "ts-node exercises/2-Observable/main.ts",
+    "3": "ts-node exercises/3-RxObservable/main.ts",
+    "4": "ts-node exercises/4-Operators/main.ts",
     "start": "parallelshell \"npm run start-app $npm_config_step\" \"npm run server\"",
     "start-app": "cross-var webpack-dev-server --step-$npm_config_step",
     "dev": "webpack-dev-server",
