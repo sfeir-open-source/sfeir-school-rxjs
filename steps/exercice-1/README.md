@@ -19,21 +19,21 @@
 #### Tips
 
 - Use `socket.on('event-name')` to listen to an event sent by the server
-- The server's response looks like this : `{ ok: boolean, username: string }` with `ok` being false when a username is already taken.
-- Use the observer's error callback to deal with the error case
-- To deal with error the subcription, give an object with methods (next, error, complete)
+- The server response looks like this : `{ ok: boolean, username: string }` with `ok` being false when a username is already taken.
+- Use the observer error callback to deal with the error case
+- To deal with error in the subcription, give an object with methods (next, error, complete)
 
 ```javascript
 myObservable$.subscribe({
-  next(everythingIsGood)=>{},
+  next(everythingIsGood) => {},
   error(aBadError) => {},
-  complete() =>{}
+  complete() => {}
 })
 // Or like this
 myObservable$.subscribe(
-  (everythingIsGood)=>{}, // CallBack Next
+  (everythingIsGood) => {}, // CallBack Next
   (aBadError) => {}, // CallBack Error
-  () =>{} // CallBack Complete
+  () => {} // CallBack Complete
 })
 ```
 
@@ -45,7 +45,7 @@ myObservable$.subscribe(
 
 #### Tips
 
-- The server's reponse looks like this : `["user1", "user2"]`
+- The server reponse looks like this : `["user1", "user2"]`
 
 ### Display messages
 
@@ -55,4 +55,4 @@ myObservable$.subscribe(
 
 #### Tips
 
-- The server's reponse looks like this : `{ author: "string", content: "string", time: "string" }`
+- The server reponse looks like this : `{ author: "string", content: "string", time: "string" }`

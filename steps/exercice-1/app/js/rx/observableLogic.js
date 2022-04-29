@@ -17,17 +17,17 @@ import { getHourTime } from '../../../../../common/app/js/helpers/helpers';
  */
 
 /**
- * Observable that transform socket 'new-message' to observable of message
+ * Observable that transforms socket 'new-message' to observable of message
  */
 // TODO create Observable message$
 
 /**
- * Observable that transform socket 'refresh-users' to observable of users
+ * Observable that transforms socket 'refresh-users' to observable of users
  */
 // TODO create Observable users$
 
 /**
- * Observable that transform socket 'new-user' to observable of user (with error management)
+ * Observable that transforms socket 'new-user' to observable of user (with error management)
  */
 // TODO create Observable username$
 
@@ -38,12 +38,12 @@ import { getHourTime } from '../../../../../common/app/js/helpers/helpers';
  */
 
 /**
- * Method that subscribe all Observable comming from Socket
+ * Method that subscribes all Observables coming from Socket
  * @param {function} changeToState
  */
 export const subscribeToSocketObservable = changeToState => {
   /**
-   * Subscriptions to incoming messages
+   * Subscription to incoming messages
    */
   const subscribeToMessages = () => {
     // Subscribe to message$
@@ -54,7 +54,7 @@ export const subscribeToSocketObservable = changeToState => {
   };
 
   /**
-   * Subscriptions to incoming users
+   * Subscription to incoming users
    */
   const subscribeToUsers = () => {
     // Subscribe to users$
@@ -65,7 +65,7 @@ export const subscribeToSocketObservable = changeToState => {
   };
 
   /**
-   * Subscriptions to user validation
+   * Subscription to user validation
    */
   const subscribeToUsername = () => {
     // Subscribe to username$
@@ -77,14 +77,14 @@ export const subscribeToSocketObservable = changeToState => {
   };
 
   /**
-   * Subscription to all stream to get unsubscriptions methods
+   * Subscription to all streams to get unsubscriptions methods
    */
   // TODO Do something to really listen ;) Remember observable is just a function
   return {};
 };
 
 /**
- * Method that subscribe stream of text input (message)
+ * Method that subscribes to stream of text input (message)
  * @param {function} changeToState
  */
 export const subscribeInput = ({ username, changeToState }) => {

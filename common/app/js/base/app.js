@@ -73,7 +73,7 @@ export default class App {
   }
 
   /**
-   * Listen to event emitted by username directive (to receive username and submission)
+   * Listen to events emitted by username directive (to receive username and submission)
    * @param {Object} event
    */
   usernameListener(event) {
