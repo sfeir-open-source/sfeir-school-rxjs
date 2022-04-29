@@ -10,7 +10,7 @@ Fill the 3 following methods in code.ts: getModuleMasses/getRequiredFuel/getTota
 
 ## getModuleMasses
 
-You should return the list of number of the file data.txt and transform it to numbers. You should use `readInputFile` for this method. Each line represent a mass
+You should return the list of number of the file data.txt and transform it to numbers. You should use `readInputFile` for this method. Each line represent a mass.
 
 ## getRequiredFuel
 
