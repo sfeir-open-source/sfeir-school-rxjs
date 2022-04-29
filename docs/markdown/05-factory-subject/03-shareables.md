@@ -80,7 +80,7 @@ const source = interval(1000).pipe(
 
 # Variant operators
 
-### Some operators are doing multiples actions
+### Some operators are doing multiple actions
 
 | Operator        | Action                                                           |
 | --------------- | ---------------------------------------------------------------- |

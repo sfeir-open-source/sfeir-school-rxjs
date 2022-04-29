@@ -54,7 +54,7 @@ D'une manière générale un opérateur va retourner un observable et permet des
 
 <br>
 
-> A Creation Operator can be called as standalone functions to create a new Observable.
+> A Creation Operator can be called as a standalone function to create a new Observable.
 
 Notes:
 Différencier le rôle de l'opérateur
@@ -181,13 +181,13 @@ It takes the inner value to push it to final stream. Have a look at [Understandi
 
 <br>
 
-- Creation Operators: creates Observables (from, of, ...)
-- Join Creation Operators: creates Observables from multiples (merge, race, ...) <!-- .element: class="fragment" -->
+- Creation Operators: create Observables (from, of, ...)
+- Join Creation Operators: create Observables from multiple (merge, race, ...) <!-- .element: class="fragment" -->
 - Transformation Operators: transform the value emit by observable (map, scan, ...) <!-- .element: class="fragment" -->
 - Filtering Operators: filter the values emit by observable (first, take, ...) <!-- .element: class="fragment" -->
 - Join Operators: use to combine Observables (combineAll, concatAll, ...) <!-- .element: class="fragment" -->
 - Multicasting Operators: share an observable to multiple subcribers (share, ...) <!-- .element: class="fragment" -->
 - Error Handling Operators: help to deal with error emission <!-- .element: class="fragment" -->
 - Utility Operators: affect the timing or the way the observable values are emit (tap, delay, ...) <!-- .element: class="fragment" -->
-- Conditional and Boolean Operators: basic boolean operation (isEmpty, find, ...)<!-- .element: class="fragment" -->
+- Conditional and Boolean Operators: basic boolean operations (isEmpty, find, ...)<!-- .element: class="fragment" -->
 - Mathematical and Aggregate Operators: reduce values (reduce, count, ...) <!-- .element: class="fragment" -->

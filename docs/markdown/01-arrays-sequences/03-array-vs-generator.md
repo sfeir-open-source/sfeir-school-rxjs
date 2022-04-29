@@ -135,9 +135,9 @@ Push = on pousse une information
 
 # Multiple Values management
 
-> A Sequence is considered as a value. Except that, you can combined them with pure functions !
+> A Sequence is considered as a value. Except that, you can combine them with pure functions !
 
-To deal with multiples values, think about a callback called on each value (like Array.forEach)!
+To deal with multiple values, think about a callback called on each value (like Array.forEach)!
 
 Operator signature:
 

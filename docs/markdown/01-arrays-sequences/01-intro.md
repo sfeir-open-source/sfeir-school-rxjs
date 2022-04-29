@@ -121,7 +121,7 @@ Ici on ne retourne qu'une seule valeure via notre function
 
 <!-- .slide: data-type-show="full" class="with-code consolas" -->
 
-# Return multiples values
+# Return multiple values
 
 ```javascript
 function singleValue() {

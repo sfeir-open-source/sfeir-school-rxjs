@@ -11,4 +11,4 @@
    <br>
    <br>
 
-### make the test pass, then run main.ts
+### make the tests pass, then run main.ts
