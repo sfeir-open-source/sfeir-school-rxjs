@@ -1,7 +1,7 @@
 {
   "name": "@sfeir/school-rxjs",
   "version": "2.0.0",
-  "description": "Exercices and demos for the RxJS School",
+  "description": "Exercises and demos for the RxJS School",
   "contributors": [
     {
       "name": "Wolfgang Goedel",
@@ -24,11 +24,11 @@
     "rxjs"
   ],
   "scripts": {
-    "0": "ts-node exercices/0-Intro/main.ts",
-    "1": "ts-node exercices/1-Sequences/main.ts",
-    "2": "ts-node exercices/2-Observable/main.ts",
-    "3": "ts-node exercices/3-RxObservable/main.ts",
-    "4": "ts-node exercices/4-Operators/main.ts",
+    "0": "ts-node exercises/0-Intro/main.ts",
+    "1": "ts-node exercises/1-Sequences/main.ts",
+    "2": "ts-node exercises/2-Observable/main.ts",
+    "3": "ts-node exercises/3-RxObservable/main.ts",
+    "4": "ts-node exercises/4-Operators/main.ts",
     "start": "parallelshell \"npm run start-app $npm_config_step\" \"npm run server\"",
     "start-app": "cross-var webpack-dev-server --step-$npm_config_step",
     "dev": "webpack-dev-server",
@@ -45,18 +45,19 @@
   "homepage": "https://github.com/sfeir-open-source/sfeir-school-rxjs#readme",
   "dependencies": {
     "@babel/core": "^7.4.3",
-    "@webcomponents/webcomponentsjs": "^2.2.7",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.14",
     "@types/ramda": "^0.26.37",
+    "@webcomponents/webcomponentsjs": "^2.2.7",
     "express": "^4.17.1",
     "jest": "^24.9.0",
     "lit-element": "^2.1.0",
     "normalize.css": "8.0.1",
     "pwa-helpers": "^0.9.1",
     "ramda": "^0.26.1",
-    "socket.io": "^2.3.0",
     "rxjs": "^6.6.3",
+    "socket.io": "^2.4.1",
+    "socket.io-client": "^2.4.0",
     "ts-jest": "^24.2.0",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.3"

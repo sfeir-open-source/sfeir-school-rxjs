@@ -1,4 +1,4 @@
-# Exercice 1
+# Exercise 1
 
 You will expect the same output but by using Sequence (an object representing sequences)
 
@@ -20,6 +20,6 @@ export type SequenceOp<T, U> = (
 
 ## getModuleMasses, getRequiredFuel, getTotalRequiredFuel
 
-They should be rewrite using sequence like in Exercice 0 (you can use map, filter, reduce and pipe we recode for you and integrate as import)
+They should be rewritten using sequence like in Exercise 0 (you can use map, filter, reduce and pipe we recode for you and integrate as import)
 
 Here you cannot chain map, filter, .... you should use pipe (from ramda lib) function to do this

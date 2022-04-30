@@ -22,7 +22,7 @@ export default class App {
     // State of the app
     this.state = {
       error: undefined, // Error Message
-      username: undefined, // User name of current use
+      username: undefined, // Username of current user
       messages: [], // List of incoming messages
       users: [] // List of connected users
     };
@@ -75,7 +75,7 @@ export default class App {
   }
 
   /**
-   * Listen to event emits by directive userName (to recieve username and submission)
+   * Listen to events emitted by directive userName (to receive username and submission)
    * @param {Object} event
    */
   listenerUserName(event) {
@@ -111,26 +111,24 @@ export default class App {
    */
 
   /**
-   * Directive that show the users and messages (this will do an observable registration)
+   * Directive that shows the users and messages (this will do an observable registration)
    * @param {Object} state
    */
   displayUsersAndMessages({ users, messages, username }) {
-    // We will only do a subscription if not already done
+    // We will do a subscription only if not already done
     if (!this.unsubscriptionInput) {
-      // Minor Hack to avoid multiples subscriptions
+      // Minor Hack to avoid multiple subscriptions
       this.unsubscriptionInput = 'notNull';
-      // We do a litle timeout to be sure that the rendering of input field is done
-      // this is a hack (not the best way to do this but, it's enough for thise example)
-      setTimeout(
-        () =>
-          (this.unsubscriptionInput = subscribeInput({
-            username,
-            changeToState: this.changeToStateAndReRender.bind(
-              this
-            )
-          })),
-        500
-      );
+      // We do a little timeout to be sure that the rendering of input field is done
+      // this is a hack (not the best way to do this but, it's enough for this example)
+      setTimeout(() => {
+        this.unsubscriptionInput = subscribeInput({
+          username,
+          changeToState: this.changeToStateAndReRender.bind(
+            this
+          )
+        });
+      }, 500);
     }
     // We return the litHtml template
     return html`

@@ -1,6 +1,6 @@
 # Create a chat (step 2)
 
-## Exercice 3
+## Exercise 3
 
 We now want to handle the submission of the username and the message by a keypress on `Enter`.
 

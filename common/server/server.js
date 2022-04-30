@@ -1,11 +1,6 @@
-const express = require('express');
-const app = express();
-
-const http = require('http');
-const server = http.Server(app);
-
-const socketIO = require('socket.io');
-const io = socketIO(server);
+const app = require('express')();
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
 
 const port = process.env.PORT || 3000;
 
@@ -14,9 +9,9 @@ const users = new Map();
 io.on('connection', socket => {
   console.log('user connected');
 
-  socket.on('new-message', message =>
-    io.emit('new-message', message)
-  );
+  socket.on('new-message', message => {
+    io.emit('new-message', message);
+  });
 
   socket.on('new-user', user => {
     if (Array.from(users.values()).includes(user.username)) {

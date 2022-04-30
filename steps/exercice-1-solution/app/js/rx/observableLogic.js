@@ -17,7 +17,7 @@ import { Observable } from 'rxjs';
  */
 
 /**
- * Observable that transform socket message to observable of message
+ * Observable that transforms socket new-message to observable of messages
  */
 const messages$ = new Observable(subscriber => {
   SOCKET.on('new-message', message => {
@@ -26,7 +26,7 @@ const messages$ = new Observable(subscriber => {
 });
 
 /**
- * Observable that transform socket refresh-user to observable of users
+ * Observable that transforms socket refresh-user to observable of users
  */
 const users$ = new Observable(subscriber => {
   SOCKET.on('refresh-users', users => {
@@ -35,7 +35,7 @@ const users$ = new Observable(subscriber => {
 });
 
 /**
- * Observable that transform socket new user to observable of user (with error management)
+ * Observable that transforms socket new-user to observable of users (with error management)
  */
 const username$ = new Observable(subscriber => {
   SOCKET.on('new-user', response => {
@@ -53,12 +53,12 @@ const username$ = new Observable(subscriber => {
  */
 
 /**
- * Method that subscribe all Observable comming from Socket
+ * Method that subscribes all Observables coming from Socket
  * @param {function} changeToState
  */
 export const subscribeToSocketObservable = changeToState => {
   /**
-   * Subscriptions to incoming messages
+   * Subscription to incoming messages
    */
   const subscribeToMessages = () => {
     const subscription = messages$.subscribe(message => {
@@ -68,7 +68,7 @@ export const subscribeToSocketObservable = changeToState => {
   };
 
   /**
-   * Subscriptions to incoming users
+   * Subscription to incoming users
    */
   const subscribeToUsers = () => {
     const subscription = users$.subscribe(users => {
@@ -78,7 +78,7 @@ export const subscribeToSocketObservable = changeToState => {
   };
 
   /**
-   * Subscriptions to user validation
+   * Subscription to user validation
    */
   const subscribeToUsername = () => {
     const subscription = username$.subscribe({
@@ -93,7 +93,7 @@ export const subscribeToSocketObservable = changeToState => {
   };
 
   /**
-   * Subscription to all stream to get unsubscriptions methods
+   * Subscription to all streams to get unsubscriptions methods
    */
   const unsubscribeToMessages = subscribeToMessages();
   const unsubscribeToUsers = subscribeToUsers();
@@ -106,7 +106,7 @@ export const subscribeToSocketObservable = changeToState => {
 };
 
 /**
- * Method that subscribe stream of text input (message)
+ * Method that subscribes to stream of text input (message)
  * @param {function} changeToState
  */
 export const subscribeInput = ({ username, changeToState }) => {

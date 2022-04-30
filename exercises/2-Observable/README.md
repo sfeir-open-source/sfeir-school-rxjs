@@ -1,8 +1,8 @@
-# Exercice 2
+# Exercise 2
 
 Make the test pass.
 
-Think about the contract of interfaces -> you could return a single object that match with the contract of interface.
+Think about the contract of interfaces -> you could return a single object that matches with the contract of interface.
 
 ## Helper for opening file
 

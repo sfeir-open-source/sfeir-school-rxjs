@@ -78,7 +78,7 @@ Faire le lien entre le marble et l'api
 
 # Subcription / Unsubscription
 
-### When subcribe to an observable you can stop receive events
+### When you subscribe to an observable you can stop receive events
 
 ```javascript
 import { interval } from 'rxjs';
@@ -96,7 +96,7 @@ subscription.unsubscribe();
 
 <!-- .slide: class="with-code consolas" -->
 
-# Multiple unsubscription
+# Multiple unsubscriptions
 
 ### You can also group all the subscriptions
 

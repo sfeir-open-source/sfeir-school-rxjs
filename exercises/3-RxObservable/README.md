@@ -1,3 +1,3 @@
-# Exercice 3
+# Exercise 3
 
-This time resolve advent of code prolblem using RxJS. For readline, use the same mecanism as for exercice 2
+This time resolve advent of code problem using RxJS. For readline, use the same mechanism as for exercise 2

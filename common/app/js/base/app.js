@@ -1,4 +1,3 @@
-//import React, { useEffect, useState } from 'react';
 import { render, html } from 'lit-html';
 
 import usersDirective from './users.js';
@@ -22,7 +21,7 @@ export default class App {
     // State of the app
     this.state = {
       error: undefined, // Error Message
-      username: undefined, // User name of current use
+      username: undefined, // Username of current user
       messages: [], // List of incoming messages
       users: [] // List of connected users
     };
@@ -50,38 +49,37 @@ export default class App {
   }
 
   /**
-   *
    * Apply the changes in state according to entry (copy of properties)
-   * @param {Object} state
+   * @param {Object} statePatch
    */
-  changeToState(state) {
-    if (state.messages) {
+  updateState(statePatch) {
+    if (statePatch.messages) {
       this.state.messages = [
         ...this.state.messages,
-        ...state.messages
+        ...statePatch.messages
       ];
     } else {
-      this.state = { ...this.state, ...state };
+      this.state = { ...this.state, ...statePatch };
     }
   }
 
   /**
    * Apply the changes and do a re-render
-   * @param {Object} state
+   * @param {Object} statePatch
    */
-  changeToStateAndReRender(state) {
-    this.changeToState(state);
+  updateStateAndReRender(statePatch) {
+    this.updateState(statePatch);
     this.renderApp();
   }
 
   /**
-   * Listen to event emits by directive userName (to recieve username and submission)
+   * Listen to events emitted by username directive (to receive username and submission)
    * @param {Object} event
    */
-  listenerUserName(event) {
+  usernameListener(event) {
     switch (event.type) {
       case 'change':
-        this.changeToState({
+        this.updateState({
           username: event.username,
           error: event.error
         });
@@ -100,7 +98,7 @@ export default class App {
 
   rxjsSubscriptions() {
     subscribeToSocketObservable(
-      this.changeToStateAndReRender.bind(this)
+      this.updateStateAndReRender.bind(this)
     );
   }
 
@@ -111,23 +109,21 @@ export default class App {
    */
 
   /**
-   * Directive that show the users and messages (this will do an observable registration)
+   * Directive that shows the users and messages (this will do an observable registration)
    * @param {Object} state
    */
   displayUsersAndMessages({ users, messages, username }) {
-    // We will only do a subscription if not already done
+    // We will do a subscription only if not already done
     if (!this.unsubscriptionInput) {
-      // Minor Hack to avoid multiples subscriptions
+      // Minor Hack to avoid multiple subscriptions
       this.unsubscriptionInput = 'notNull';
-      // We do a litle timeout to be sure that the rendering of input field is done
-      // this is a hack (not the best way to do this but, it's enough for thise example)
-      setTimeout(
-        () =>
-          (this.unsubscriptionInput = subscribeInput({
-            username
-          })),
-        500
-      );
+      // We do a little timeout to be sure that the rendering of input field is done
+      // this is a hack (not the best way to do this but, it's enough for this example)
+      setTimeout(() => {
+        this.unsubscriptionInput = subscribeInput({
+          username
+        });
+      }, 500);
     }
     // We return the litHtml template
     return html`
@@ -165,7 +161,7 @@ export default class App {
           ? usernameDirective({
               error,
               username,
-              eventListener: this.listenerUserName.bind(this)
+              eventListener: this.usernameListener.bind(this)
             })
           : this.displayUsersAndMessages({
               users,

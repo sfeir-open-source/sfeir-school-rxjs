@@ -3,7 +3,7 @@
 ## What can we do if the value should be returned later?
 
 - We could use **Callbacks**. What's the problem ?
-- When stop it and how?
+- When to stop it and how?
 
 ##==##
 
@@ -74,12 +74,12 @@ console.log(y);
 
 ```javascript
 import { Observable } from 'rxjs';
-const foo = new Observable((subscriber) => {
+const foo = new Observable(subscriber => {
   console.log('Hello');
   subscriber.next(42);
 });
-foo.subscribe((x) => console.log(x));
-foo.subscribe((y) => console.log(y));
+foo.subscribe(x => console.log(x));
+foo.subscribe(y => console.log(y));
 ```
 
 <!-- .element: class="big-code"-->

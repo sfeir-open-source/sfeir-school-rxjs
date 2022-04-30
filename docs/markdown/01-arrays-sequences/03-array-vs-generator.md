@@ -1,6 +1,6 @@
 <!-- .slide: class="two-column-layout" -->
 
-# Recap: Array vs Generators
+# Recap: Array vs Generator
 
 ##--##
 
@@ -11,11 +11,11 @@ Array (Finite values)
 ```javascript
 const finiteArray = [1, 2, 3, 4];
 
-for (let number of finiteArray) {
+for (const number of finiteArray) {
   console.log(number);
 }
 
-//will show '1', '2', '3', '4'
+// will show '1', '2', '3', '4'
 ```
 
 <!-- .element: class="big-code consolas" -->
@@ -32,7 +32,7 @@ function* myGenerator(max) {
   while (count < max) yield count++;
   return;
 }
-for (let number of myGenerator(x)) {
+for (const number of myGenerator(x)) {
   console.log(number);
 }
 ```
@@ -49,10 +49,10 @@ Revenir sur le concept de finite vs infinite value
 # Live coding !
 
 Notes:
-Faire un livecoding de :
+Faire un live coding de :
 
 1. Return a generator
-2. Comment controler le temps ? Le générateur peut générer des valeurs à tes temps différents
+2. Comment contrôler le temps ? Le générateur peut générer des valeurs à des temps différents
 
 ```javascript
 function* myGenerator() {
@@ -77,18 +77,18 @@ setInterval(() => console.log(myIterator.next()), 500);
 
 ```javascript
 function* myGenerator() {
-  ...
+  // ...
 }
 const myIterator = myGenerator();
 console.log(myIterator.next());
 console.log(myIterator.next());
-setInterval(()=>console.log(myIterator.next()), 500);
+setInterval(() => console.log(myIterator.next()), 500);
 ```
 
 <!-- .element: class="big-code" -->
 
 Notes:
-on récupère 0 et 1 très rapidement et ensuite on demande la suite toute les 500ms
+On récupère 0 et 1 très rapidement puis on demande la suite toutes les 500ms
 ⚠️ Avec un générateur, on est dans une stratégie bloquante
 
 ##==##
@@ -103,8 +103,8 @@ on récupère 0 et 1 très rapidement et ensuite on demande la suite toute les 5
 
 <br>
 
-- A function return an array of a single value (sync or not)
-- A generator return an iterator (sync)
+- A function returns an array of a single value (sync or not)
+- A generator returns an iterator (sync)
 
 Notes:
 Conclure sur le concept de réception
@@ -124,10 +124,10 @@ Notes:
 Revenir sur les concepts : Pull = On récupère
 Push = on pousse une information
 
-- Une fonction est évaluée de façon syncrhone et retourne une valeur à son invocation
-- Un générateur va être évalué de façon syncrhone et retourne de 0 à un nombre infini de valeurs
-- Une promesse est une opération asyncrhone qui peut ou pas retourner une valeur
-- Un observable est une opération qui de manière syncrhone ou asynchrone va produire 0 ou un nombre infini de valeurs du moment qu'il est invoqué.
+- Une fonction est évaluée de façon synchrone et retourne une valeur à son invocation
+- Un générateur va être évalué de façon synchrone et retourne de 0 à un nombre infini de valeurs
+- Une promesse est une opération asynchrone qui peut ou pas retourner une valeur
+- Un observable est une opération qui de manière synchrone ou asynchrone va produire 0 ou un nombre infini de valeurs du moment qu'il est invoqué.
 
 ##==##
 
@@ -135,9 +135,9 @@ Push = on pousse une information
 
 # Multiple Values management
 
-> A Sequence is a consider as a value. Except that, you can combined them with pure functions !
+> A Sequence is considered as a value. Except that, you can combine them with pure functions !
 
-To deal with multiples values, think about a callback called on each value (like Array.forEach)!
+To deal with multiple values, think about a callback called on each value (like Array.forEach)!
 
 Operator signature:
 

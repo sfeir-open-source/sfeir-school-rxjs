@@ -2,7 +2,7 @@
 
 # Create a chat (step 4)
 
-## Exercice 5
+## Exercise 5
 
 <br>
 
