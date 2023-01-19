@@ -1,0 +1,5 @@
+marble operator_reduce
+{
+    source a:               +-1-4-2-2-|
+    operator reduce(sum):   +---------9|
+}

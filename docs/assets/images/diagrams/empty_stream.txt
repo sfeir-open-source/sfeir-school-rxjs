@@ -1,0 +1,4 @@
+marble empty_stream
+{
+    source a:     +--->
+}

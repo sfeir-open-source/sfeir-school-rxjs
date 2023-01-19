@@ -1,0 +1,5 @@
+marble operator_debouncetime
+{
+    source a:                        +1--2-3-4-5-6->
+    operator debounceTime(3000):     +--1--3--4--6->
+}

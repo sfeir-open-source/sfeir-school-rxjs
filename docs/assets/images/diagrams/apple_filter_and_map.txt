@@ -1,0 +1,6 @@
+marble apple_filter_and_map
+{
+    source a:                   +-R-R-G-R->
+    operator filter(isRed):     +-R-R---R->
+    operator map(cutInSlices):  +-S-S---S->
+}

@@ -1,0 +1,5 @@
+marble operator_takewhile
+{
+    source a:                         +-1-2-3-4-5-6-7-|
+    operator takeWhile(lowerThan5):   +-1-2-3-4-|
+}

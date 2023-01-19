@@ -1,0 +1,6 @@
+marble operator_takeuntil
+{
+    source a:                                +-1-4-2-2-|
+    source tick:                             +----1>
+    operator takeUntil(emitAfter5seconds):   +-1-4-|
+}

@@ -1,0 +1,4 @@
+marble infinite_apple
+{
+    source a:     +-R-R-G-R->
+}

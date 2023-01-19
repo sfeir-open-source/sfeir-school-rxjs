@@ -1,0 +1,9 @@
+marble operator_debounce
+{
+    source a:                                 +1--2-3-4-5-6->
+    source time1:                             +--1>
+    source time2:                             ...+--1>
+    source time3:                             ......+--1>
+    source time4:                             .........+--1>
+    operator debounce(emitAfter3seconds):     +--1--3--4--6->
+}

@@ -1,0 +1,6 @@
+marble operator_switchmap
+{
+    source a:                         +-1----2--3->
+    source grabData:                  .+-i-i-i|
+    operator switchMap(grabData):     +-2-2-24-46-6-6->
+}

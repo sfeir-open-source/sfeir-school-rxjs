@@ -1,0 +1,6 @@
+marble operator_mergemap
+{
+    source a:                         +-1----2--3->
+    source grabData:                  .+-i-i-i|  
+    operator mergeMap(grabData):      +-2-2-24-4646-6->
+}

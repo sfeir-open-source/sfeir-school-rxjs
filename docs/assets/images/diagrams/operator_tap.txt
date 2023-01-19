@@ -1,0 +1,5 @@
+marble operator_tap
+{
+    source a:                      +-1-4-2-3->
+    operator tap(printInLog):      +-1-4-2-3->
+}
