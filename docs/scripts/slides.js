@@ -29,6 +29,7 @@ function patternObservableSlides() {
     '02-pattern-observable/01-patterns.md', //
     '02-pattern-observable/02-observables.md', //
     '02-pattern-observable/03-lab.md', //
+    '02-pattern-observable/99-pause.md', //
   ];
 }
 
@@ -64,6 +65,9 @@ function factoriesSlides() {
 function subjectMulticastingSlides() {
   return [
     '05-subject-multicasting/00-transition.md', //
+    '05-subject-multicasting/01-observable-vs-subject.md', //
+    '05-subject-multicasting/99-lab.md', //
+    '05-subject-multicasting/99-pause.md', //
   ];
 }
 
