@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice" -->
 
-# Démarrer les lignes !
+# Retour à l'usine !
 
 ## Lab
 

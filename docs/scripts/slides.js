@@ -6,6 +6,7 @@ function schoolSlides() {
     '00-school/00-TITLE.md', //
     '00-school/speaker-garreau-jf.md', //
     '00-school/speaker-pena-a.md', //
+    '00-school/speaker-molza-j.md', //
   ];
 }
 
