@@ -1,4 +1,4 @@
 <!-- .slide: class="transition bg-pink" -->
 
-# Introduction
+# Factories (ou Creation Operators)
 

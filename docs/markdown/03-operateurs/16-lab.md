@@ -1,8 +1,8 @@
 <!-- .slide: class="exercice" -->
 
-# Préparer nos éléments !
+# Préparons nos ingrédients !
 
-## Lab
+## Lab 2
 
 <br>
 
@@ -14,15 +14,14 @@ Côté pommes :
 4. Bonus : cuire les pommes pourries en compote (après avoir retirer les parties pourries) pour un stream avec des portions de compote
 5. Bonus : il faut attendre 10s que la cuisson soit fini (notre système de cuission est ultra efficace !)
 
-### Step: TODO
 
 ##==##
 
 <!-- .slide: class="exercice" -->
 
-# Préparer nos éléments !
+# Préparons nos ingrédients !
 
-## Lab
+## Lab 2
 
 <br>
 
@@ -32,7 +31,7 @@ Côté pâtes :
 
 <br>
 
-### Step: TODO
+### npm run start:02
 
 Notes:
 

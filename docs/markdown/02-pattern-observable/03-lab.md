@@ -1,8 +1,8 @@
 <!-- .slide: class="exercice" -->
 
-# Retour à l'usine !
+# Ouverture de l'usine !
 
-## Lab
+## Lab 1
 
 <br>
 
@@ -11,4 +11,4 @@
 
 <br>
 
-### Step: TODO
+### npm run start:01

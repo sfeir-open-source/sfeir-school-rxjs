@@ -8,8 +8,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="550.0px"
-   height="340.0px"
-   viewBox="0 0 550.0 340.0 "
+   height="80.0px"
+   viewBox="0 0 550.0 80.0 "
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -84,7 +84,7 @@
      y="7"
      x="75.0"
      style="font-size:20px;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;"
-     xml:space="preserve">1</text>
+     xml:space="preserve">R</text>
 </g>
 
 <g style="filter:url(#filter3443)">
@@ -92,12 +92,12 @@
      r="22"
      cy="0"
      cx="175.0"
-     style="opacity:1;fill:#48b3cd;fill-opacity:1;stroke:#003080;stroke-width:1px;" />
+     style="opacity:1;fill:#ffcc00;fill-opacity:1;stroke:#003080;stroke-width:1px;" />
   <text
      y="7"
      x="175.0"
      style="font-size:20px;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;"
-     xml:space="preserve">4</text>
+     xml:space="preserve">R</text>
 </g>
 
 <g style="filter:url(#filter3443)">
@@ -105,12 +105,12 @@
      r="22"
      cy="0"
      cx="275.0"
-     style="opacity:1;fill:#ffaacc;fill-opacity:1;stroke:#003080;stroke-width:1px;" />
+     style="opacity:1;fill:#48b3cd;fill-opacity:1;stroke:#003080;stroke-width:1px;" />
   <text
      y="7"
      x="275.0"
      style="font-size:20px;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;"
-     xml:space="preserve">2</text>
+     xml:space="preserve">G</text>
 </g>
 
 <g style="filter:url(#filter3443)">
@@ -118,85 +118,17 @@
      r="22"
      cy="0"
      cx="375.0"
-     style="opacity:1;fill:#ffaacc;fill-opacity:1;stroke:#003080;stroke-width:1px;" />
+     style="opacity:1;fill:#ffcc00;fill-opacity:1;stroke:#003080;stroke-width:1px;" />
   <text
      y="7"
      x="375.0"
      style="font-size:20px;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;"
-     xml:space="preserve">2</text>
+     xml:space="preserve">R</text>
 </g>
 
 <g>
    <path d="m 475.0,-12 0,24"
        style="fill:none;fill-rule:evenodd;stroke:#003080;stroke-width:4px;" />
 </g>
-</g><g id="source_e5e5c0754f1e26bf915455e21cf2eba5" transform="rotate(0 0.0 110.0) translate(0.0,110.0)">
-  <path 
-     style="fill:none;fill-rule:evenodd;stroke:#003080;stroke-width:2px;marker-end:url(#Arrow1Lend)"
-     d="m 0,0 347.0,0"
-     inkscape:connector-curvature="0" />
-
-<g style="filter:url(#filter3443)">
-  <circle
-     r="22"
-     cy="0"
-     cx="225.0"
-     style="opacity:1;fill:#ffcc00;fill-opacity:1;stroke:#003080;stroke-width:1px;" />
-  <text
-     y="7"
-     x="225.0"
-     style="font-size:20px;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;"
-     xml:space="preserve">1</text>
 </g>
-</g><g transform="translate(0 170.0)">
-<g style="filter:url(#filter3443)">
-  <rect
-     x="2"
-     y="0"
-     width="546.0"
-     height="80"
-     style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;" />
-      <text
-         x="275.0"
-         y="40.0"
-         style="font-size:22px;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;"
-         xml:space="preserve">takeUntil(emitAfter5seconds)</text>
-    </g>
-<g id="operator_2a93113c3f6affcbe5172f1c7f15236d" transform="rotate(0 0.0 120) translate(0.0,120)">
-  <path 
-     style="fill:none;fill-rule:evenodd;stroke:#003080;stroke-width:2px;marker-end:url(#Arrow1Lend)"
-     d="m 0,0 347.0,0"
-     inkscape:connector-curvature="0" />
-
-<g style="filter:url(#filter3443)">
-  <circle
-     r="22"
-     cy="0"
-     cx="75.0"
-     style="opacity:1;fill:#ffcc00;fill-opacity:1;stroke:#003080;stroke-width:1px;" />
-  <text
-     y="7"
-     x="75.0"
-     style="font-size:20px;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;"
-     xml:space="preserve">1</text>
-</g>
-
-<g style="filter:url(#filter3443)">
-  <circle
-     r="22"
-     cy="0"
-     cx="175.0"
-     style="opacity:1;fill:#48b3cd;fill-opacity:1;stroke:#003080;stroke-width:1px;" />
-  <text
-     y="7"
-     x="175.0"
-     style="font-size:20px;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;"
-     xml:space="preserve">4</text>
-</g>
-
-<g>
-   <path d="m 275.0,-12 0,24"
-       style="fill:none;fill-rule:evenodd;stroke:#003080;stroke-width:4px;" />
-</g>
-</g></g>
  </svg>

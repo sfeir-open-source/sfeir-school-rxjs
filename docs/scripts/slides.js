@@ -4,20 +4,22 @@ import { SfeirThemeInitializer } from '../web_modules/sfeir-school-theme/sfeir-s
 function schoolSlides() {
   return [
     '00-school/00-TITLE.md', //
-    '00-school/speaker-garreau-jf.md', //
-    '00-school/speaker-pena-a.md', //
-    '00-school/speaker-molza-j.md', //
+    '00-school/01-speaker-garreau-jf.md', //
+    '00-school/01-speaker-molza-j.md', //
+    '00-school/01-speaker-pena-a.md', //
+    '00-school/02-tour-de-table.md', //
   ];
 }
 
 function introSlides() {
   return [
     '01-intro/00-transition.md', //
-    '01-intro/01-a-quoi-sert-rxjs.md', //
-    '01-intro/02-reactivex.md', //
-    '01-intro/03-rappel-typescript.md', //
-    '01-intro/04-rappel-functions.md', //
-    '01-intro/05-installation.md', //
+    '01-intro/01-recette-tarte-aux-pommes.md',
+    '01-intro/02-a-quoi-sert-rxjs.md', //
+    '01-intro/03-reactivex.md', //
+    '01-intro/04-rappel-typescript.md', //
+    '01-intro/05-rappel-functions.md', //
+    '01-intro/06-installation.md', //
   ];
 }
 
@@ -53,15 +55,15 @@ function operateursSlides() {
   ];
 }
 
-function subjectMulticastingSlides() {
+function factoriesSlides() {
   return [
-    '04-subject-multicasting/00-transition.md', //
+    '04-factories/00-transition.md', //
   ];
 }
 
-function factoriesSlides() {
+function subjectMulticastingSlides() {
   return [
-    '05-factories/00-transition.md', //
+    '05-subject-multicasting/00-transition.md', //
   ];
 }
 
@@ -71,9 +73,17 @@ function testsSlides() {
   ];
 }
 
+function erreursAEviterSlides() {
+  return [
+    '07-erreur-a-eviter/00-transition.md', //
+    '07-erreur-a-eviter/01-subscribe-in-subscribe.md', //
+    '07-erreur-a-eviter/01-function-binding.md', //
+  ];
+}
+
 function conclusionSlides() {
   return [
-    '07-conclusion/00-transition.md', //
+    '08-conclusion/00-transition.md', //
   ];
 }
 
@@ -83,9 +93,10 @@ function formation() {
     ...introSlides(),
     ...patternObservableSlides(),
     ...operateursSlides(),
-    ...subjectMulticastingSlides(),
     ...factoriesSlides(),
+    ...subjectMulticastingSlides(),
     ...testsSlides(),
+    ...erreursAEviterSlides(),
     ...conclusionSlides(),
   ].map((slidePath) => {
     return { path: slidePath };

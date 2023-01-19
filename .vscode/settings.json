@@ -1,0 +1,7 @@
+{
+    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontSize": 14,
+    "editor.fontWeight": "normal",
+    "editor.formatOnSave": true,
+    "workbench.colorTheme": "Default Dark+"
+}

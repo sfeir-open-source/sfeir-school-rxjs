@@ -60,7 +60,7 @@ Notes:
 
 # Subscribe
 
-![w-1000 center](../../assets/images/diagrams/infinite_apple.svg)
+![w-1000 center](../../assets/images/diagrams/apple_subscribe.svg)
 
 ##==##
 
@@ -94,6 +94,12 @@ Notes:
 
 - pour couper l'abonnement (= arrêter d'écouter l'événement), on appelle unsubscribe
 - il faut toujours unsubscribe sinon risque de fuite mémoire
+
+##==##
+
+# Unsubscribe
+
+![w-1000 center](../../assets/images/diagrams/apple_subscribe_unsubscribe.svg)
 
 ##==## 
 

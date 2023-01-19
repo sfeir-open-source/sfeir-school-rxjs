@@ -4,7 +4,7 @@
   "description": "Description de la tâche...",
   "main": "index.js",
   "scripts": {
-    "start:01": "ts-node ./01-workshop-example-solution/src/index.ts",
+    "start:01:solution": "ts-node ./01-ouverture-de-l-usine-solution/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

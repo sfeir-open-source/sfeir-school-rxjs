@@ -10,9 +10,9 @@ RxJS est donc l'implémentation JavaScript du Reactive Programming et de la norm
 
 ##==##
 
-# [The Reactive Manifesto](https://www.reactivemanifesto.org/)
+# [The Reactive Manifesto](https://www.reactivemanifesto.org/fr)
 
-TODO choper l'image du reactive manifesto
+![w-1000 center](../../assets/images/reactive-traits-fr.svg)
 
 Notes:
 - évoquer le manifest
