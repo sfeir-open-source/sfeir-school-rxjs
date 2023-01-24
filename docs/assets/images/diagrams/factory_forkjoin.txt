@@ -1,0 +1,6 @@
+marble factory_forkjoin
+{
+    source a:                           +-a---b---c---d---|
+    source b:                           +---1---2---3---4-|
+    operator forkJoin(letter$,number$): +-----------------E|
+}

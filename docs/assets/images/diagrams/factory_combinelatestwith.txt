@@ -1,0 +1,6 @@
+marble factory_combinelatestwith
+{
+    source a:                            +-a---b---c---d---|
+    source b:                            +---1---2---3---4-|
+    operator combineLatestWith(number$): +---A-B-C-D-E-F-G-|
+}

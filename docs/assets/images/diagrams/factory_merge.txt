@@ -1,0 +1,6 @@
+marble factory_merge
+{
+    source a:                           +-a---b---c---d--->
+    source b:                           +---1---2---3---4->
+    operator merge(letter$,number$):    +-a-1-b-2-c-3-d-4->
+}

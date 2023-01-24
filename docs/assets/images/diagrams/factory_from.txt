@@ -1,0 +1,4 @@
+marble factory_from
+{
+    operator from([1,2,3]):     +-1-2-3|
+}

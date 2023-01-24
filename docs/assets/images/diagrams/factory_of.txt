@@ -1,0 +1,4 @@
+marble factory_of
+{
+    operator of(1,2,3):     +-1-2-3|
+}

@@ -59,6 +59,15 @@ function operateursSlides() {
 function factoriesSlides() {
   return [
     '04-factories/00-transition.md', //
+    '04-factories/01-creer-un-observable.md', //
+    '04-factories/02-factory-of.md', //
+    '04-factories/03-factory-from.md', //
+    '04-factories/04-factory-fromevent.md', //
+    '04-factories/05-factory-merge.md', //
+    '04-factories/06-factory-forkjoin.md', //
+    '04-factories/07-factory-combinelatestwith.md', //
+    '04-factories/08-factory-throwerror.md', //
+    '04-factories/09-lab.md', //
   ];
 }
 
