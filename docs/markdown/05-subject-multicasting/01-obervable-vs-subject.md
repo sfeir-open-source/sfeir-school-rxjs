@@ -103,20 +103,20 @@ Notes:
 
 # Plusieurs types de Subject
 
-- BehaviorSubject : nécessite une valeur initial, porte une valeur qui est émise au moment du subscribe
+- BehaviorSubject : nécessite une valeur initiale, porte une valeur qui est émise au moment du subscribe
 
 ##==##
 
 # Plusieurs types de Subject
 
-- BehaviorSubject : nécessite une valeur initial, porte une valeur qui est émise au moment du subscribe
-- ReplaySubject : va rejouer les N dernier événements au moment du subscribe
+- BehaviorSubject : nécessite une valeur initiale, porte une valeur qui est émise au moment du subscribe
+- ReplaySubject : va rejouer les N derniers événements au moment du subscribe
 
 ##==##
 
 # Plusieurs types de Subject
 
-- BehaviorSubject : nécessite une valeur initial, porte une valeur qui est émise au moment du subscribe
-- ReplaySubject : va rejouer les N dernier événements au moment du subscribe
+- BehaviorSubject : nécessite une valeur initiale, porte une valeur qui est émise au moment du subscribe
+- ReplaySubject : va rejouer les N derniers événements au moment du subscribe
 - AsyncSubject : va émettre une seule fois quand il est complété
 

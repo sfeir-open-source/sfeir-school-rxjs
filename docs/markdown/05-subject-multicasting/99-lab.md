@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice" -->
 
-# Démarrer les lignes !
+# Démarrons les lignes !
 
 ## Lab 4
 

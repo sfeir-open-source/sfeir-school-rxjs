@@ -122,7 +122,7 @@ Notes:
 
 <blockquote>
 <cite>
-  Les opérations doivent être pur
+  Les opérations doivent être pures
 </cite>
 </blockquote>
 
