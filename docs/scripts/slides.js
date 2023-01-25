@@ -74,7 +74,9 @@ function factoriesSlides() {
 function subjectMulticastingSlides() {
   return [
     '05-subject-multicasting/00-transition.md', //
-    '05-subject-multicasting/01-observable-vs-subject.md', //
+    '05-subject-multicasting/01-obervable-vs-subject.md', //
+    '05-subject-multicasting/02-rendre-multicast-un-observable.md', //
+    '05-subject-multicasting/03-custom-operator.md', //
     '05-subject-multicasting/99-lab.md', //
     '05-subject-multicasting/99-pause.md', //
   ];
