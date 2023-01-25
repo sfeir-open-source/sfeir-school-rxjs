@@ -102,6 +102,13 @@ function conclusionSlides() {
   ];
 }
 
+function bonusSlides() {
+  return [
+    '09-lab-bonus/99-lab-bonus-1.md', //
+    '09-lab-bonus/99-lab-bonus-2.md', //
+  ];
+}
+
 function formation() {
   return [
     ...schoolSlides(),
@@ -113,6 +120,7 @@ function formation() {
     ...testsSlides(),
     ...erreursAEviterSlides(),
     ...conclusionSlides(),
+    ...bonusSlides(),
   ].map((slidePath) => {
     return { path: slidePath };
   });

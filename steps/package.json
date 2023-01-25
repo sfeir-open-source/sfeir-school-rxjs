@@ -6,6 +6,8 @@
   "scripts": {
     "start:01": "ts-node ./01-ouverture-de-l-usine/index.ts",
     "start:01:solution": "ts-node ./01-ouverture-de-l-usine-solution/index.ts",
+    "start:99:solution": "ts-node ./99-bonus-simple-mapping/index.ts",
+    "start:100:solution": "ts-node ./100-bonus-chevre-chaud/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
