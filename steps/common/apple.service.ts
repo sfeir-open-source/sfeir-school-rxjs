@@ -7,7 +7,7 @@ class AppleServiceImpl {
     return interval(1000).pipe(
       map(() => ({
         _type: 'Apple',
-        color: randomValue({ red: 60, green: 40 }),
+        color: randomValue({ red: 70, green: 30 }),
         rot: randomValue({ false: 60, true: 40 }) === 'true',
       }))
     );

@@ -1,7 +1,7 @@
 import { Apple, AppleSlice } from './models';
 
 class CuttingMachineServiceImpl {
-  public cutApple(_apple: Apple): AppleSlice[] {
+  public cutApple(apple: Apple): AppleSlice[] {
     return new Array(32).fill(null).map(() => ({ _type: 'AppleSlice' }));
   }
 }

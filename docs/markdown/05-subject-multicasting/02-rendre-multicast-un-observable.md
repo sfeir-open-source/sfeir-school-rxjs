@@ -83,7 +83,7 @@ setTimeout(() => {
 ...
 ```
 
-Note:
+Notes:
 Sous le capot, share utilise un Subject
 
 ##==##
@@ -129,5 +129,5 @@ setTimeout(() => {
 ...
 ```
 
-Note:
+Notes:
 On remplace le Subject normalement utilisé par un BehaviorSubject et quelques paramètres

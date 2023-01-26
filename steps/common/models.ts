@@ -24,3 +24,8 @@ export interface AppleSlice {
 export interface ApplePie {
   _type: 'ApplePie';
 }
+
+export interface PiePlate {
+  _type: 'PiePlate';
+  pastry?: PiePastry;
+}

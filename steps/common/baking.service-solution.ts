@@ -10,7 +10,13 @@ class BakingServiceImpl {
   }
 
   public bakeApplePie(piePastryInPlate: PiePlate, compote: Compote, appleSlices: AppleSlice[]): Observable<ApplePie> {
-    return null!;
+    if (!piePastryInPlate.pastry) {
+      return throwError(() => new Error('No PiePastry in the PiePlate'));
+    }
+    if (appleSlices.length !== 64) {
+      return throwError(() => new Error('64 apple slices are needed for a pie'));
+    }
+    return of<ApplePie>({ _type: 'ApplePie' }).pipe(delay(5_000));
   }
 }
 

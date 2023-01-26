@@ -1,16 +1,37 @@
 <!-- .slide: class="exercice" -->
 
-# Démarrons les lignes !
+# Il faut aussi foncer les tartes !
 
-## Lab 3
-
-<br>
-
-Créer une machine qui distribue des moules à tarte
-
-- Créer un service PiePlateService sur le modèle d'AppleService ou PiePastryService
-- Le service doit avoir une méthode getPiePlate() qui renvoie un moule à tarte ({ _type: 'PiePlate' }) toutes les secondes
+## Lab 4
 
 <br>
 
-### npm run start:03
+1. Créer un service PiePlateService sur le modèle d'AppleService ou PiePastryService
+2. Le service doit avoir une méthode getPiePlate() qui renvoie un moule à tarte toutes les secondes
+3. Chaque pâte à tarte doit être foncé (mise dans un plat à tarte)
+
+<br>
+
+### npm run start:04
+
+##==##
+
+<!-- .slide: class="exercice" -->
+
+# Il faut aussi foncer les tartes !
+
+## Lab 4
+
+<br>
+
+4. Bonus : Utiliser un opérateur pour transformer le stream de pomme en multicast pour pouvoir le flux de pomme entre les tranches et la compote
+
+<br>
+
+### npm run start:04
+
+Notes:
+
+- Amener l'utilisation d'un opérateur de création (`interval`)
+- Pousser à aller chercher `zip` / `zipWith`
+- Bonus : pousser à utiliser `share`

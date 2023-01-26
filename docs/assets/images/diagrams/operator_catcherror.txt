@@ -1,0 +1,6 @@
+marble operator_catcherror
+{
+    source a:                             +-a-b-#
+    source b:                             ......+-1-2-3->
+    operator catchError(handleError):     +-a-b---1-2-3->
+}

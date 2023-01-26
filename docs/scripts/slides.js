@@ -49,10 +49,13 @@ function operateursSlides() {
     '03-operateurs/11-operator-takeuntil.md', //
     '03-operateurs/12-operator-takewhile.md', //
     '03-operateurs/13-operator-tap.md', //
-    '03-operateurs/14-transition.md', //
-    '03-operateurs/15-outils.md', //
-    '03-operateurs/16-lab.md', //
-    '03-operateurs/17-impossible-en-stream.md', //
+    '03-operateurs/14-operator-catcherror.md', //
+    '03-operateurs/15-operator-retry.md', //
+    '03-operateurs/16-transition.md', //
+    '03-operateurs/17-outils.md', //
+    '03-operateurs/18-impossible-en-stream.md', //
+    '03-operateurs/19-lab.md', //
+    '03-operateurs/99-pause.md',
   ];
 }
 

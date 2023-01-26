@@ -6,6 +6,14 @@
   "scripts": {
     "start:01": "ts-node ./01-ouverture-de-l-usine/index.ts",
     "start:01:solution": "ts-node ./01-ouverture-de-l-usine-solution/index.ts",
+    "start:02": "ts-node ./02-preparer-la-pate/index.ts",
+    "start:02:solution": "ts-node ./02-preparer-la-pate-solution/index.ts",
+    "start:03": "ts-node ./03-preparer-les-pommes/index.ts",
+    "start:03:solution": "ts-node ./03-preparer-les-pommes-solution/index.ts",
+    "start:04": "ts-node ./04-foncer-la-tarte/index.ts",
+    "start:04:solution": "ts-node ./04-foncer-la-tarte-solution/index.ts",
+    "start:05": "ts-node ./05-cuire-la-tarte/index.ts",
+    "start:05:solution": "ts-node ./05-cuire-la-tarte-solution/index.ts",
     "start:99:solution": "ts-node ./99-bonus-simple-mapping/index.ts",
     "start:100:solution": "ts-node ./100-bonus-chevre-chaud/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
