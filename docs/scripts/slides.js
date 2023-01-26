@@ -88,6 +88,10 @@ function subjectMulticastingSlides() {
 function testsSlides() {
   return [
     '06-tests/00-transition.md', //
+    '06-tests/01-test-simple.md', //
+    '06-tests/02-lab.md', //
+    '06-tests/03-tester-le-temps.md', //
+    '06-tests/04-lab.md', //
   ];
 }
 

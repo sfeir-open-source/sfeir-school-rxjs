@@ -3,7 +3,7 @@ import { randomValue } from './random.utils';
 import { Apple } from './models';
 
 class AppleServiceImpl {
-  public getApples$(): Observable<Apple> {
+  public getApples(): Observable<Apple> {
     return interval(1000).pipe(
       map(() => ({
         _type: 'Apple',

@@ -5,7 +5,7 @@ import { PiePlate } from '../common/models';
 
 const APPLE_PIES_ORDERED_COUNT = 11;
 
-const apples$ = AppleService.getApples$().pipe(share());
+const apples$ = AppleService.getApples().pipe(share());
 apples$
   .pipe(
     filter((apple) => !apple.rot),

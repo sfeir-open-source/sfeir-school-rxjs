@@ -3,14 +3,14 @@ import { AppleService, BakingService, CuttingMachineService, PiePastryService } 
 
 const APPLE_PIES_ORDERED_COUNT = 11;
 
-AppleService.getApples$()
+AppleService.getApples()
   .pipe(
     filter((apple) => !apple.rot),
     mergeMap((apple) => from(CuttingMachineService.cutApple(apple)))
   )
   .subscribe((appleSlices) => console.log(appleSlices));
 
-AppleService.getApples$()
+AppleService.getApples()
   .pipe(
     filter((apple) => apple.rot),
     bufferCount(4),

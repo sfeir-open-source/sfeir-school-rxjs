@@ -1,6 +1,6 @@
 import { AppleService, PiePastryService } from '../common';
 
-AppleService.getApples$().subscribe((apple) => {
+AppleService.getApples().subscribe((apple) => {
   console.log(apple);
 });
 

@@ -4,7 +4,7 @@ import { AppleService, BakingService, CuttingMachineService, PiePastryService } 
 const APPLE_PIES_ORDERED_COUNT = 11;
 
 // without bonuses
-AppleService.getApples$()
+AppleService.getApples()
   .pipe(
     filter((apple) => !apple.rot),
     mergeMap((apple) => from(CuttingMachineService.cutApple(apple)))
@@ -12,7 +12,7 @@ AppleService.getApples$()
   .subscribe((appleSlices) => console.log(appleSlices));
 
 // naive bonus (process 2 differents apple steams)
-AppleService.getApples$()
+AppleService.getApples()
   .pipe(
     filter((apple) => apple.rot),
     bufferCount(4),
