@@ -102,6 +102,7 @@ function erreursAEviterSlides() {
 function conclusionSlides() {
   return [
     '08-conclusion/00-transition.md', //
+    '08-conclusion/01-feedback.md', //
   ];
 }
 
