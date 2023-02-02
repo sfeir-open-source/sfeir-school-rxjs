@@ -10,4 +10,4 @@ const fromAnotherObservable$ = from(fromPromise$);
 ```
 <!-- .element: class="big-code block" -->
 
-![w-1000 center](../../assets/images/diagrams/factory_from.svg)
+![w-1000 center](./assets/images/diagrams/factory_from.svg)

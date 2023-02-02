@@ -12,7 +12,7 @@ ajax / bindCallback / bindNodeCallback / defer / empty / from / fromEvent / from
 
 # [Operator decision tree](https://rxjs.dev/operator-decision-tree)
 
-![w-1000 center](../../assets/images/operator-decision-tree.gif)
+![w-1000 center](./assets/images/operator-decision-tree.gif)
 
 Notes:
 Faire la démo de l'outil
@@ -21,7 +21,7 @@ Faire la démo de l'outil
 
 # [RxViz](https://rxviz.com/)
 
-![w-1000 center](../../assets/images/rxviz.gif)
+![w-1000 center](./assets/images/rxviz.gif)
 
 Notes:
 Faire la démo de l'outil

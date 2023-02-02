@@ -9,4 +9,4 @@ const results$ = numbers$.pipe(retry());
 
 ```
 
-![w-1000 center](../../assets/images/diagrams/operator_retry.svg)
+![w-1000 center](./assets/images/diagrams/operator_retry.svg)

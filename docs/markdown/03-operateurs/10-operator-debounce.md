@@ -16,4 +16,4 @@ function emitAfter3seconds(): Observable<number> {
 
 # debounce
 
-![w-1000 center](../../assets/images/diagrams/operator_debounce.svg)
+![w-1000 center](./assets/images/diagrams/operator_debounce.svg)

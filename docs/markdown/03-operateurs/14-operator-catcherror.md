@@ -14,4 +14,4 @@ const results$ = numbers$.pipe(catchError((error, source$) => {
 
 ```
 
-![w-1000 center](../../assets/images/diagrams/operator_catcherror.svg)
+![w-1000 center](./assets/images/diagrams/operator_catcherror.svg)

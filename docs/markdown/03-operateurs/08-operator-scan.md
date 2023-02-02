@@ -8,4 +8,4 @@ import { scan } from 'rxjs';
 const results$ = numbers$.pipe(scan((acc,cur) => acc + cur));
 ```
 
-![w-1000 center](../../assets/images/diagrams/operator_scan.svg)
+![w-1000 center](./assets/images/diagrams/operator_scan.svg)

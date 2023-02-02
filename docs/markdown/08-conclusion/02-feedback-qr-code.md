@@ -1,3 +1,3 @@
 # Feedback
 
-![w-800 center](../../assets/images/qrcode-feedback.png)
+![w-800 center](./assets/images/qrcode-feedback.png)

@@ -12,7 +12,7 @@ function emitAfter5second(): Observable<number> {
 }
 ```
 
-![w-1000 center](../../assets/images/diagrams/operator_debouncetime.svg)
+![w-1000 center](./assets/images/diagrams/operator_debouncetime.svg)
 
 Notes:
 

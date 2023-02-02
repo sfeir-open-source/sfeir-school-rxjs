@@ -12,4 +12,4 @@ function grabData(id: number): Observable<Data> {
 }
 ```
 
-![w-1000 center](../../assets/images/diagrams/operator_switchmap.svg)
+![w-1000 center](./assets/images/diagrams/operator_switchmap.svg)

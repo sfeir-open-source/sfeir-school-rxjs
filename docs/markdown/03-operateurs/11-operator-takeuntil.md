@@ -16,4 +16,4 @@ function emitAfter5seconds(): Observable<number> {
 
 # takeUntil
 
-![w-1000 center](../../assets/images/diagrams/operator_takeuntil.svg)
+![w-1000 center](./assets/images/diagrams/operator_takeuntil.svg)
