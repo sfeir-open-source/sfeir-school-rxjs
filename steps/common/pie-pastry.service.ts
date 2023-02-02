@@ -3,9 +3,9 @@ import { Box } from './models';
 
 class PiePastryServiceImpl {
   private errorModulo = generateModulo();
-  public getPiePastrys$(): Observable<Box> {
-    return interval(10_000).pipe(
-      map((): Box => ({ _type: 'Box', load: new Array(2).fill(null).map(() => ({ _type: 'PiePastry' })) })),
+  public getPiePastries(): Observable<Box> {
+    return interval(4_000).pipe(
+      map((): Box => ({ _type: 'Box', content: new Array(2).fill(null).map(() => ({ _type: 'PiePastry' })) })),
       mergeMap((box, index) => {
         if (index > 0 && index % this.errorModulo === 0) {
           this.errorModulo = generateModulo();

@@ -1,5 +1,3 @@
-##==##
-
 <!-- .slide: class="exercice" -->
 
 # Préparons nos pâtes !
@@ -8,7 +6,7 @@
 
 <br>
 
-1. Prendre les boites de pâtes à tarte une par une (hint: `from`)
+1. Prendre les boites de pâtes à tarte une par une
 2. Si une boite est vide (une erreur est émise), retenter de s'abonner au stream de boites de pâtes
 3. Prendre le nombre de pâte à tarte qu'il faut pour le nombre de commande qu'on doit traiter
 
@@ -19,6 +17,8 @@
 Notes:
 
 - dans ce lab, on chercher à montrer l'utilisation des operateurs mergeMap, retry
+
+##==##
 
 <!-- .slide: class="exercice" -->
 

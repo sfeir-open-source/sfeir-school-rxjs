@@ -109,9 +109,7 @@ Notes:
 const subscription: Subscription = apples$.subscribe({
     next(apple) {
         console.log('EVENT', apple);
-        if (apple.color === 'green') {
-            subscription.unsubscribe();
-        }
+        if (apple.color === 'green') subscription.unsubscribe();
     },
     error(error) {
         console.error('ERROR', error);
@@ -132,3 +130,7 @@ COMPLETE
 ```
 
 <!-- .element: class="big-code" -->
+
+Notes:
+
+- complete != finally : dès qu'on reçoit une erreur le stream n'émet plus rien (même pas de complete)

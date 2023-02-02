@@ -15,4 +15,4 @@ On se retrouve à
 <!-- .element: class="center" -->
 <br>
 
-![sfeir-icons big](clock)<!-- .element: style="--icon-color:var(--light-grey);" --> 16h00
+![sfeir-icons big](clock)<!-- .element: style="--icon-color:var(--light-grey);" --> 15h30

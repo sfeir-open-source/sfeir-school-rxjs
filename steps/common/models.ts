@@ -10,7 +10,7 @@ export interface PiePastry {
 
 export interface Box {
   _type: 'Box';
-  load: PiePastry[];
+  content: PiePastry[];
 }
 
 export interface Compote {

@@ -16,4 +16,6 @@
 
 Notes:
 
-- faire remarquer que dès qu'on reçoit une erreur le stream n'émet plus rien (même pas de complete)
+- le but de ce lab c'est simplement de consommer les services AppleService et PiePastryService pour afficher dans la console les pommes et tartes
+- pour les pommes on passera juste une fonction à .subscribe
+- pour les pâtes on passera un objet pour pouvoir écouter plus que le next

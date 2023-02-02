@@ -7,13 +7,13 @@ AppleService.getApples().subscribe((apple) => {
   console.log(apple);
 });
 
-PiePastryService.getPiePastrys$()
+PiePastryService.getPiePastries()
   .pipe(
     // we retry on errors
     retry(),
     // we transform each box as a stream of PiePastry
     // then mergeMap will transform every streams as one stream of PiePastry
-    mergeMap((box) => from(box.load)),
+    mergeMap((box) => box.content),
     // we take only the needed PiePastry
     take(APPLE_PIES_ORDERED_COUNT)
   )

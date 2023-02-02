@@ -21,10 +21,10 @@ apples$
   )
   .subscribe((compote) => console.log(compote));
 
-PiePastryService.getPiePastrys$()
+PiePastryService.getPiePastries()
   .pipe(
     retry(),
-    mergeMap((box) => from(box.load)),
+    mergeMap((box) => from(box.content)),
     take(APPLE_PIES_ORDERED_COUNT),
     zipWith(PiePlateService.getPiePlate()),
     map(([piePastry, piePlate]): PiePlate => ({ ...piePlate, pastry: piePastry }))

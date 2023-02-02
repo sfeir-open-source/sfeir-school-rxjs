@@ -4,7 +4,7 @@ AppleService.getApples().subscribe((apple) => {
   console.log(apple);
 });
 
-PiePastryService.getPiePastrys$().subscribe({
+PiePastryService.getPiePastries().subscribe({
   next(boxOfPiePastries) {
     console.log(boxOfPiePastries);
   },

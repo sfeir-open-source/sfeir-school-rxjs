@@ -20,9 +20,9 @@ const compote$ = apples$.pipe(
   tap(console.log)
 );
 
-const piePastryInPlate$ = PiePastryService.getPiePastrys$().pipe(
+const piePastryInPlate$ = PiePastryService.getPiePastries().pipe(
   retry(),
-  mergeMap((box) => from(box.load)),
+  mergeMap((box) => from(box.content)),
   take(APPLE_PIES_ORDERED_COUNT),
   zipWith(PiePlateService.getPiePlate()),
   map(([piePastry, piePlate]): PiePlate => ({ ...piePlate, pastry: piePastry })),

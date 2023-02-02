@@ -7,10 +7,10 @@ AppleService.getApples().subscribe((apple) => {
   console.log(apple);
 });
 
-PiePastryService.getPiePastrys$()
+PiePastryService.getPiePastries()
   .pipe(
     retry(),
-    mergeMap((box) => from(box.load)),
+    mergeMap((box) => from(box.content)),
     take(APPLE_PIES_ORDERED_COUNT)
   )
   .subscribe((boxOfPiePastries) => {
