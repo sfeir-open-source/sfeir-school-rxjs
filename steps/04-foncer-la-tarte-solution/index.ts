@@ -5,15 +5,14 @@ import { PiePlate } from '../common/models';
 
 const APPLE_PIES_ORDERED_COUNT = 11;
 
-const apples$ = AppleService.getApples().pipe(share());
-apples$
+AppleService.getApples()
   .pipe(
     filter((apple) => !apple.rot),
     mergeMap((apple) => from(CuttingMachineService.cutApple(apple)))
   )
   .subscribe((appleSlices) => console.log(appleSlices));
 
-apples$
+AppleService.getApples()
   .pipe(
     filter((apple) => apple.rot),
     bufferCount(4),

@@ -14,24 +14,7 @@
 
 ### npm run start:04
 
-##==##
-
-<!-- .slide: class="exercice" -->
-
-# Il faut aussi foncer les tartes !
-
-## Lab 4
-
-<br>
-
-4. Bonus : Utiliser un opérateur pour transformer le stream de pomme en multicast pour pouvoir le flux de pomme entre les tranches et la compote
-
-<br>
-
-### npm run start:04
-
 Notes:
 
 - Amener l'utilisation d'un opérateur de création (`interval`)
 - Pousser à aller chercher `zip` / `zipWith`
-- Bonus : pousser à utiliser `share`

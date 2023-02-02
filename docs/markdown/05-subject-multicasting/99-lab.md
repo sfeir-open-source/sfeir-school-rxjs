@@ -26,6 +26,7 @@
 <br>
 
 5. combiner les différents ingrédients pour les cuire ensemble pour obtenir des tartes
+4. Bonus : Utiliser un opérateur pour transformer le stream de pomme en multicast pour pouvoir le flux de pomme entre les tranches et la compote
 
 <br>
 
@@ -34,3 +35,4 @@
 Notes:
 
 - hint: utiliser `tap` pour visualiser le fait qu'un ingrédient est prêt
+- Bonus : utilisation de `share`

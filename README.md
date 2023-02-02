@@ -10,7 +10,7 @@
 
 # Slides
 
-You can view the slides [here](https://sfeir-open-source.github.io/sfeir-school-xxx/).
+You can view the slides [here](https://sfeir-open-source.github.io/sfeir-school-rxjs/).
 
 ## Develop
 
@@ -20,8 +20,19 @@ To run docs locally, go in directory `docs` and run `npx serve` of if you don't 
 
 Workshops are in directory `steps` : 
 * two directories per workshop :
-  * one with a README.md with workshop steps and source file to complete
+  * one with source file to complete
   * a second directory suffixed with `-solution` which contains source file with solutions.
+
+> Note: You may open steps folder with your editor (expecially VSCode)
+
+### Start a lab
+
+```bash
+npm install
+npm run start:01
+# for the solution
+npm run start:01:solution
+```
 
 ## Contributing
 
