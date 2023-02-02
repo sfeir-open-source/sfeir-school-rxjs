@@ -107,6 +107,7 @@ function conclusionSlides() {
   return [
     '08-conclusion/00-transition.md', //
     '08-conclusion/01-feedback.md', //
+    '08-conclusion/02-feedback-qr-code.md', // think to edit QR Code
   ];
 }
 
