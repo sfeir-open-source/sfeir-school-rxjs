@@ -1,4 +1,4 @@
-import { map, take } from 'rxjs';
+import { map } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
 import { AppleService } from '../common';
 

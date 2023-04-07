@@ -1,6 +1,6 @@
-import { map, take } from 'rxjs';
+import { map } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
-import { BakingService } from '../common';
+import { BakingService } from '../common/baking.service-solution';
 import { Apple, AppleSlice, Compote, PiePlate } from '../common/models';
 
 jest.setTimeout(10_000);
