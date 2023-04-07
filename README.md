@@ -14,7 +14,7 @@ You can view the slides [here](https://sfeir-open-source.github.io/sfeir-school-
 
 ## Develop
 
-To run docs locally, go in directory `docs` and run `npx serve` of if you don't have node, you can use docker `docker-compose up`, and open slides on http://localhost:5000/.
+To run docs locally, go in directory `docs` and run `npx serve` of if you don't have node, you can use docker `docker-compose up`, and open slides on http://localhost:3000/.
 
 ## Workshop
 
@@ -23,7 +23,7 @@ Workshops are in directory `steps` :
   * one with source file to complete
   * a second directory suffixed with `-solution` which contains source file with solutions.
 
-> Note: You may open steps folder with your editor (expecially VSCode)
+> Note: You may open steps folder with your editor (especially VSCode)
 
 ### Start a lab
 
@@ -53,4 +53,4 @@ Want to file a bug, contribute some code, or improve documentation? Excellent! R
 Help us keep Angular open and inclusive. Please read and follow our [Code of Conduct][codeofconduct].
 
 [contributing]: CONTRIBUTING.md
-[codeofconduct]: https://github.com/sfeir-open-source/code-of-conduct/blob/master/CODE_OF_CONDUCT.md
+[codeofconduct]: https://github.com/sfeir-open-source/.github/blob/main/CODE_OF_CONDUCT.md

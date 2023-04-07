@@ -197,8 +197,8 @@ BREAKING CHANGE:
 change login route to /users/login
 ```
 
-[coc]: /CODE_OF_CONDUCT.md
-[github]: https://github.com/sfeir-open-source/sfeir-school-template
-[github-issue]: https://github.com/sfeir-open-source/sfeir-school-template/issues/new
-[issue-tracker]: https://github.com/sfeir-open-source/sfeir-school-template/issues
-[github-pulls]: https://github.com/sfeir-open-source/sfeir-school-template/pulls
+[coc]: https://github.com/sfeir-open-source/.github/blob/main/CODE_OF_CONDUCT.md
+[github]: https://github.com/sfeir-open-source/sfeir-school-rxjs
+[github-issue]: https://github.com/sfeir-open-source/sfeir-school-rxjs/issues/new
+[issue-tracker]: https://github.com/sfeir-open-source/sfeir-school-rxjs/issues
+[github-pulls]: https://github.com/sfeir-open-source/sfeir-school-rxjs/pulls
