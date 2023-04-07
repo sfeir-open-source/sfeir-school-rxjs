@@ -50,7 +50,7 @@ Décrire le TestScheduler
 
 # Cheat sheet marble syntax
 
-- ` ` : espaces ignorés
+- " " (espace) : espaces ignorés
 - `-` : frame vide (= laisser passer 1ms)
 - `|` : complete
 - `#` : error
