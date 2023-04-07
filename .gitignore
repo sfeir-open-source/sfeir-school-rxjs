@@ -68,3 +68,6 @@ typings/
 
 #Dev
 docs/test.html
+
+#IDEs
+.idea/
