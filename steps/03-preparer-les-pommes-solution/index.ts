@@ -11,7 +11,7 @@ AppleService.getApples()
   )
   .subscribe((appleSlices) => console.log(appleSlices));
 
-// naive bonus (process 2 differents apple steams)
+// naive bonus (process 2 different apple streams)
 AppleService.getApples()
   .pipe(
     filter((apple) => apple.rot),

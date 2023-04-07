@@ -1,10 +1,11 @@
-import { bufferCount, retry, from, mergeMap, take, filter, zipWith, map, share } from 'rxjs';
-import { PiePlateService } from './pie-plate.service';
+import { bufferCount, filter, from, map, mergeMap, retry, take, zipWith } from 'rxjs';
 import { AppleService, BakingService, CuttingMachineService, PiePastryService } from '../common';
 import { PiePlate } from '../common/models';
+import { PiePlateService } from './pie-plate.service';
 
 const APPLE_PIES_ORDERED_COUNT = 11;
 
+// TODO: Bonus - Utiliser un opérateur pour transformer le stream de pomme en multicast pour pouvoir utiliser le même flux de pomme entre les tranches et la compote
 AppleService.getApples()
   .pipe(
     filter((apple) => !apple.rot),
@@ -31,3 +32,5 @@ PiePastryService.getPiePastries()
   .subscribe((piePastryInPlate) => {
     console.log(piePastryInPlate);
   });
+
+// TODO: combiner les différents ingrédients pour les cuire ensemble pour obtenir des tartes

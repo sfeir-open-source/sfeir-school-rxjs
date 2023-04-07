@@ -27,3 +27,7 @@ PiePastryService.getPiePastries()
   .subscribe((boxOfPiePastries) => {
     console.log(boxOfPiePastries);
   });
+
+// TODO: Chaque pâte à tarte doit être foncé
+//  (utiliser `PiePlateService.getPiePlate()` - attention à importer le votre et pas celui de la correction)
+//  Note: Pour "foncer" une pâte à tarte, il faut définir la propriété `pastry` d'un `PiePlate`
