@@ -45,6 +45,7 @@ it('should emit an apple every second', () => {
 
 Notes:
 Décrire le TestScheduler
+Insister sur son utilisation pour avoir des tests "instantanés"
 
 ##==##
 
@@ -63,12 +64,32 @@ Décrire le TestScheduler
 
 ##==##
 
+# Point d'attention: progression du temps
+
+<blockquote>
+<cite>
+NOTE: You may have to subtract 1 millisecond from the time you want to progress because the alphanumeric marbles (representing an actual emitted value) advance time 1 virtual frame themselves already, after they emit. This can be counter-intuitive and frustrating, but for now it is indeed correct.
+</cite>
+</blockquote>
+<blockquote>
+<cite>
+"()" sync groupings: The position of the initial ( determines the time at which its values are emitted. While it can be counter-intuitive at first, after all the values have synchronously emitted time will progress a number of frames equal to the number of ASCII characters in the group, including the parentheses. e.g. '(abc)' will emit the values of a, b, and c synchronously in the same frame and then advance virtual time by 5 frames, '(abc)'.length === 5.
+</cite>
+</blockquote>
+
+[Lien vers la documentation](https://rxjs.dev/guide/testing/marble-testing#time-progression-syntax)
+
+##==##
+
 # Point marble
 
-> --1--2---#
+> --a--b--#
+> --(abc)-|
 
 Notes:
-Expliquer ce marble
+Expliquer ces marbles
+On frame 2 emit a, on frame 5 emit b, and on frame 8, error.
+On frame 2 emit a, b, and c, then on frame 8, complete.
 
 ##==##
 
@@ -78,24 +99,38 @@ Expliquer ce marble
 
 Notes:
 Interroger les participants
+On frame 2 emit a, on frame 5 emit b, and on frame 8, complete.
 
 ##==##
 
 # Point marble
 
-> --^------!
+> --^--!-
 
 Notes:
 Interroger les participants
+on frame 2 a subscription happened, and on frame 5 was unsubscribed
+Equivalent to NEVER, or an observable that never emits or errors or completes
 
 ##==##
 
 # Point marble
 
-> --1--2--(3|)
+> --(a|)
 
 Notes:
 Interroger les participants
+on frame 2 emit a and complete
+
+##==##
+
+# Point marble
+
+> (a)-|
+
+Notes:
+Interroger les participants
+on frame 0 emit a and on frame 4, complete
 
 ##==##
 
@@ -105,6 +140,7 @@ Interroger les participants
 
 Notes:
 Interroger les participants
+on frame 0 emit 1, on frame 4001 emit 3 and complete
 
 ##==##
 
@@ -114,6 +150,7 @@ Interroger les participants
 
 Notes:
 Interroger les participants
+on frame 2 emit 1, on frame 4007 emit 3 and complete
 
 ##==##
 
@@ -163,8 +200,8 @@ it('should emit an apple every second', () => {
 
 ### ❌ `HeartbeatService.getBeat()` est infini
 ### ❌ expected n'est pas exhaustif (comme actual$ est infini)
-### ❌ il passe 1s entre chaque heartbeat mais là on attend 1s entre chaque
 ### ❌ on ne défini pas "h"
+### ❌ souvez-vous: un "alphanumeric marbles" = 1ms
 
 ##==##
 
@@ -180,7 +217,7 @@ it('should emit an apple every second', () => {
     testScheduler.run(({ expectObservable }) => {
         const actual$ = HeartbeatService.getBeat();
         const actualSubscription = '^ 3500ms !';
-        const expected = '1s h 1s h 1s h';
+        const expected = '1s h 999ms h 999ms h';
         expectObservable(actual$, actualSubscription)
             .toBe(expected, { h: { "type": "heartbeat", "status": "OK" } });
     });
@@ -201,7 +238,7 @@ it('should emit an apple every second', () => {
     testScheduler.run(({ expectObservable }) => {
         const actual$ = HeartbeatService.getBeat().pipe(map(() => 'h'));
         const actualSubscription = '^ 3500ms !';
-        const expected = '1s h 1s h 1s h';
+        const expected = '1s h 999ms h 999ms h';
         expectObservable(actual$, actualSubscription).toBe(expected);
     });
 });
