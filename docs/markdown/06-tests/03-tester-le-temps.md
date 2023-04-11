@@ -64,16 +64,31 @@ Insister sur son utilisation pour avoir des tests "instantanés"
 
 ##==##
 
-# Point d'attention: progression du temps
+# Point d'attention : progression du temps
 
 <blockquote>
 <cite>
 NOTE: You may have to subtract 1 millisecond from the time you want to progress because the alphanumeric marbles (representing an actual emitted value) advance time 1 virtual frame themselves already, after they emit. This can be counter-intuitive and frustrating, but for now it is indeed correct.
 </cite>
 </blockquote>
+
+##==##
+
+# Point marble
+
+> --a--b--#
+
+Notes:
+Expliquer ces marbles
+On frame 2 emit a, on frame 5 emit b, and on frame 8, error.
+
+##==##
+
+# Point d'attention : progression du temps - subtilité
+
 <blockquote>
 <cite>
-"()" sync groupings: The position of the initial ( determines the time at which its values are emitted. While it can be counter-intuitive at first, after all the values have synchronously emitted time will progress a number of frames equal to the number of ASCII characters in the group, including the parentheses. e.g. '(abc)' will emit the values of a, b, and c synchronously in the same frame and then advance virtual time by 5 frames, '(abc)'.length === 5.
+"()" sync groupings: The position of the initial "(" determines the time at which its values are emitted. While it can be counter-intuitive at first, after all the values have synchronously emitted time will progress a number of frames equal to the number of ASCII characters in the group, including the parentheses. e.g. '(abc)' will emit the values of a, b, and c synchronously in the same frame and then advance virtual time by 5 frames, '(abc)'.length === 5.
 </cite>
 </blockquote>
 
@@ -83,12 +98,10 @@ NOTE: You may have to subtract 1 millisecond from the time you want to progress 
 
 # Point marble
 
-> --a--b--#
 > --(abc)-|
 
 Notes:
 Expliquer ces marbles
-On frame 2 emit a, on frame 5 emit b, and on frame 8, error.
 On frame 2 emit a, b, and c, then on frame 8, complete.
 
 ##==##
