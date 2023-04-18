@@ -4,16 +4,16 @@ import { AppleService, PiePastryService, CuttingMachineService, BakingService } 
 const APPLE_PIES_ORDERED_COUNT = 11;
 
 // TODO:
-//  1. Retirer les pommes pourries
-//  2. Couper les pommes en tranches (à l'aide de `CuttingMachineService.cutApple()`)
+//  1. remove the rotten apples
+//  2. cut the apples into slices (using `CuttingMachineService.cutApple()`)
 AppleService.getApples().subscribe((apple) => {
   console.log(apple);
 });
 
-// TODO: Bonus (à partir d'un stream de pommes séparé)
-//  1. Ne prendre que les pommes pourries
-//  2. Faire une compote (à l'aide de `BakingService.bakeCompote()`)
-//  Note: Il faut 4 pommes pour faire une compote
+// TODO: Bonus (from a separate apple stream)
+//  1. take only the rotten apples
+//  2. make a compote (using `BakingService.bakeCompote()`)
+//  Note: You need 4 apples to make a compote
 AppleService.getApples();
 
 PiePastryService.getPiePastries()
