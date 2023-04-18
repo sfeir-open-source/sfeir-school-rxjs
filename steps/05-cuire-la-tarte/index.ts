@@ -5,7 +5,7 @@ import { PiePlateService } from './pie-plate.service';
 
 const APPLE_PIES_ORDERED_COUNT = 11;
 
-// TODO: Bonus - Utiliser un opérateur pour transformer le stream de pomme en multicast pour pouvoir utiliser le même flux de pomme entre les tranches et la compote
+// TODO: Bonus - Use an operator to turn the apple stream into a multicast so that the same apple stream can be used between slices and compote
 AppleService.getApples()
   .pipe(
     filter((apple) => !apple.rot),
@@ -33,4 +33,4 @@ PiePastryService.getPiePastries()
     console.log(piePastryInPlate);
   });
 
-// TODO: combiner les différents ingrédients pour les cuire ensemble pour obtenir des tartes
+// TODO: combine the different ingredients and cook them together to obtain pies

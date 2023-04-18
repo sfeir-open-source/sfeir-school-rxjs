@@ -1,1 +1,1 @@
-// TODO: Écrivez des tests pour BakingService.bakeCompote() et BakingService.bakeApplePie() (objet reçu, valide et cas d'erreur)
+// TODO: Write tests for BakingService.bakeCompote() and BakingService.bakeApplePie() (received object, valid and error cases)

@@ -11,9 +11,9 @@ class BakingServiceImpl {
 
   public bakeApplePie(piePastryInPlate: PiePlate, compote: Compote, appleSlices: AppleSlice[]): Observable<ApplePie> {
     // TODO: Lab5
-    //  1. Après 5s (le temps de cuisson), la méthode doit renvoyer une ApplePie
-    //  2. Si on a pas 64 tranches de pommes on émettra une erreur
-    //  3. Si on a pas de pâte dans le plat on émettra une erreur
+    //  1. after 5s (the cooking time), the method must return an ApplePie
+    //  2. if we don't have 64 slices of apples, we'll give an error
+    //  3. if we don't have any dough in the dish, we'll give an error
     return null!;
   }
 }
