@@ -1,4 +1,4 @@
-import { retry, from, mergeMap, take } from 'rxjs';
+import { mergeMap, retry, take } from 'rxjs';
 import { AppleService, PiePastryService, CuttingMachineService, BakingService } from '../common';
 
 const APPLE_PIES_ORDERED_COUNT = 11;
@@ -6,9 +6,7 @@ const APPLE_PIES_ORDERED_COUNT = 11;
 // TODO:
 //  1. remove the rotten apples
 //  2. cut the apples into slices (using `CuttingMachineService.cutApple()`)
-AppleService.getApples().subscribe((apple) => {
-  console.log(apple);
-});
+AppleService.getApples().subscribe(console.log);
 
 // TODO: Bonus (from a separate apple stream)
 //  1. take only the rotten apples
@@ -19,9 +17,7 @@ AppleService.getApples();
 PiePastryService.getPiePastries()
   .pipe(
     retry(),
-    mergeMap((box) => from(box.content)),
+    mergeMap((box) => box.content),
     take(APPLE_PIES_ORDERED_COUNT)
   )
-  .subscribe((boxOfPiePastries) => {
-    console.log(boxOfPiePastries);
-  });
+  .subscribe(console.log);

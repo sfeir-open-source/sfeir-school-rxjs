@@ -1,33 +1,31 @@
-import { bufferCount, retry, from, mergeMap, take, filter, zipWith, map, share } from 'rxjs';
-import { PiePlateService } from './pie-plate.service';
+import { bufferCount, filter, map, mergeMap, retry, take, zipWith } from 'rxjs';
 import { AppleService, BakingService, CuttingMachineService, PiePastryService } from '../common';
 import { PiePlate } from '../common/models';
+import { PiePlateService } from './pie-plate.service';
 
 const APPLE_PIES_ORDERED_COUNT = 11;
 
 AppleService.getApples()
   .pipe(
     filter((apple) => !apple.rot),
-    mergeMap((apple) => from(CuttingMachineService.cutApple(apple)))
+    mergeMap(CuttingMachineService.cutApple)
   )
-  .subscribe((appleSlices) => console.log(appleSlices));
+  .subscribe(console.log);
 
 AppleService.getApples()
   .pipe(
     filter((apple) => apple.rot),
     bufferCount(4),
-    mergeMap((apples) => BakingService.bakeCompote(apples))
+    mergeMap(BakingService.bakeCompote)
   )
-  .subscribe((compote) => console.log(compote));
+  .subscribe(console.log);
 
 PiePastryService.getPiePastries()
   .pipe(
     retry(),
-    mergeMap((box) => from(box.content)),
+    mergeMap((box) => box.content),
     take(APPLE_PIES_ORDERED_COUNT),
     zipWith(PiePlateService.getPiePlate()),
     map(([piePastry, piePlate]): PiePlate => ({ ...piePlate, pastry: piePastry }))
   )
-  .subscribe((piePastryInPlate) => {
-    console.log(piePastryInPlate);
-  });
+  .subscribe(console.log);
