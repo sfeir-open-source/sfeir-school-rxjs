@@ -1,14 +1,8 @@
 import { AppleService, PiePastryService } from '../common';
 
-AppleService.getApples().subscribe((apple) => {
-  console.log(apple);
-});
+AppleService.getApples().subscribe(console.log);
 
 PiePastryService.getPiePastries().subscribe({
-  next(boxOfPiePastries) {
-    console.log(boxOfPiePastries);
-  },
-  error(error) {
-    console.error(error);
-  },
+  next: console.log,
+  error: console.error,
 });
