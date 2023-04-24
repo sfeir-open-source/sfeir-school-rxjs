@@ -1,7 +1,6 @@
 import { bufferCount, filter, map, mergeMap, retry, share, take, tap, zip, zipWith } from 'rxjs';
-import { AppleService, BakingService, CuttingMachineService, PiePastryService } from '../common';
+import { AppleService, BakingService, CuttingMachineService, PiePastryService, PiePlateService } from '../common';
 import { PiePlate } from '../common/models';
-import { PiePlateService } from './pie-plate.service';
 
 const APPLE_PIES_ORDERED_COUNT = 11;
 
