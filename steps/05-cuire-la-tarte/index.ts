@@ -1,6 +1,7 @@
 import { bufferCount, filter, map, mergeMap, retry, take, zipWith } from 'rxjs';
-import { AppleService, BakingService, CuttingMachineService, PiePastryService, PiePlateService } from '../common';
+import { AppleService, CompoteBakingService, CuttingMachineService, PiePastryService, PiePlateService } from '../common';
 import { PiePlate } from '../common/models';
+import { ApplePieBakingService } from './apple-pie-baking.service';
 
 const APPLE_PIES_ORDERED_COUNT = 11;
 
@@ -16,7 +17,7 @@ AppleService.getApples()
   .pipe(
     filter((apple) => apple.rot),
     bufferCount(4),
-    mergeMap(BakingService.bakeCompote)
+    mergeMap(CompoteBakingService.bakeCompote)
   )
   .subscribe(console.log);
 

@@ -1,5 +1,12 @@
 import { bufferCount, filter, map, mergeMap, retry, share, take, tap, zip, zipWith } from 'rxjs';
-import { AppleService, BakingService, CuttingMachineService, PiePastryService, PiePlateService } from '../common';
+import {
+  ApplePieBakingService,
+  AppleService,
+  CompoteBakingService,
+  CuttingMachineService,
+  PiePastryService,
+  PiePlateService,
+} from '../common';
 import { PiePlate } from '../common/models';
 
 const APPLE_PIES_ORDERED_COUNT = 11;
@@ -16,7 +23,7 @@ const appleSlices$ = apples$.pipe(
 const compote$ = apples$.pipe(
   filter((apple) => apple.rot),
   bufferCount(4),
-  mergeMap(BakingService.bakeCompote),
+  mergeMap(CompoteBakingService.bakeCompote),
   tap(console.log)
 );
 
@@ -32,7 +39,7 @@ const piePastryInPlate$ = PiePastryService.getPiePastries().pipe(
 zip(piePastryInPlate$, compote$, appleSlices$)
   .pipe(
     mergeMap(([piePastryInPlate, compote, appleSlices]) =>
-      BakingService.bakeApplePie(piePastryInPlate, compote, appleSlices)
+      ApplePieBakingService.bakeApplePie(piePastryInPlate, compote, appleSlices)
     )
   )
   .subscribe((applePie) => console.log('Apple Pie', applePie));
