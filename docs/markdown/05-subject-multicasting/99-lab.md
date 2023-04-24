@@ -6,7 +6,7 @@
 
 <br>
 
-1. Créer une méthode `bakeApplePie` dans BakingService qui prend une tarte dans son plat, une compote, et 64 tranches de pommes en entrée
+1. Créer une méthode `bakeApplePie` dans ApplePieBakingService qui prend une tarte dans son plat, une compote, et 64 tranches de pommes en entrée
 2. Après 5s (le temps de cuisson), la méthode doit renvoyer une ApplePie
 3. Si on a pas 64 tranches de pommes on émettra une erreur
 

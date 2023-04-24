@@ -1,5 +1,5 @@
 import { mergeMap, retry, take } from 'rxjs';
-import { AppleService, PiePastryService, CuttingMachineService, BakingService } from '../common';
+import { AppleService, PiePastryService, CuttingMachineService, CompoteBakingService } from '../common';
 
 const APPLE_PIES_ORDERED_COUNT = 11;
 
@@ -10,7 +10,7 @@ AppleService.getApples().subscribe(console.log);
 
 // TODO: Bonus (from a separate apple stream)
 //  1. take only the rotten apples
-//  2. make a compote (using `BakingService.bakeCompote()`)
+//  2. make a compote (using `CompoteBakingService.bakeCompote()`)
 //  Note: You need 4 apples to make a compote
 AppleService.getApples();
 

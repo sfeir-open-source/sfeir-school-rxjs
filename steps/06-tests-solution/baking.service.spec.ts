@@ -1,9 +1,9 @@
 import { map } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
-import { BakingService } from '../common/baking.service-solution';
+import { ApplePieBakingService, CompoteBakingService } from '../common';
 import { Apple, AppleSlice, Compote, PiePlate } from '../common/models';
 
-describe('BakingService', () => {
+describe('BakingServices', () => {
   let testScheduler: TestScheduler;
   beforeEach(() => {
     testScheduler = new TestScheduler((actual, expected) => {
@@ -20,7 +20,7 @@ describe('BakingService', () => {
         { _type: 'Apple', color: 'green', rot: false },
       ];
       testScheduler.run(() => {
-        const sub = BakingService.bakeCompote(fourApples).subscribe((compote) => {
+        const sub = CompoteBakingService.bakeCompote(fourApples).subscribe((compote) => {
           expect(compote._type).toBe('Compote');
           done();
           sub.unsubscribe();
@@ -30,7 +30,7 @@ describe('BakingService', () => {
 
     it('should emit an error when not enough apples are given', (done) => {
       testScheduler.run(() => {
-        BakingService.bakeCompote([{ _type: 'Apple', color: 'green', rot: false }]).subscribe({
+        CompoteBakingService.bakeCompote([{ _type: 'Apple', color: 'green', rot: false }]).subscribe({
           next() {
             fail('should not emit a Compote');
           },
@@ -49,7 +49,7 @@ describe('BakingService', () => {
         { _type: 'Apple', color: 'green', rot: false },
       ];
       testScheduler.run(({ expectObservable }) => {
-        const actual$ = BakingService.bakeCompote(fourApples).pipe(map(() => 'c'));
+        const actual$ = CompoteBakingService.bakeCompote(fourApples).pipe(map(() => 'c'));
         const expected = '5s (c|)';
         expectObservable(actual$).toBe(expected);
       });
@@ -62,7 +62,7 @@ describe('BakingService', () => {
       const compote: Compote = { _type: 'Compote' };
       const appleSlices = new Array(64).fill(null).map((): AppleSlice => ({ _type: 'AppleSlice' }));
       testScheduler.run(() => {
-        BakingService.bakeApplePie(pastry, compote, appleSlices).subscribe((pie) => {
+        ApplePieBakingService.bakeApplePie(pastry, compote, appleSlices).subscribe((pie) => {
           expect(pie._type).toBe('ApplePie');
           done();
         });
@@ -74,7 +74,7 @@ describe('BakingService', () => {
       const compote: Compote = { _type: 'Compote' };
       const appleSlices = new Array(63).fill(null).map((): AppleSlice => ({ _type: 'AppleSlice' }));
       testScheduler.run(() => {
-        BakingService.bakeApplePie(pastry, compote, appleSlices).subscribe({
+        ApplePieBakingService.bakeApplePie(pastry, compote, appleSlices).subscribe({
           next() {
             fail('should not emit a Compote');
           },
@@ -90,7 +90,7 @@ describe('BakingService', () => {
       const compote: Compote = { _type: 'Compote' };
       const appleSlices = new Array(64).fill(null).map((): AppleSlice => ({ _type: 'AppleSlice' }));
       testScheduler.run(() => {
-        BakingService.bakeApplePie(pastry, compote, appleSlices).subscribe({
+        ApplePieBakingService.bakeApplePie(pastry, compote, appleSlices).subscribe({
           next() {
             fail('should not emit a Compote');
           },
@@ -106,7 +106,7 @@ describe('BakingService', () => {
       const compote: Compote = { _type: 'Compote' };
       const appleSlices = new Array(64).fill(null).map((): AppleSlice => ({ _type: 'AppleSlice' }));
       testScheduler.run(({ expectObservable }) => {
-        const actual$ = BakingService.bakeApplePie(pastry, compote, appleSlices).pipe(map(() => 'p'));
+        const actual$ = ApplePieBakingService.bakeApplePie(pastry, compote, appleSlices).pipe(map(() => 'p'));
         const expected = '5s (p|)';
         expectObservable(actual$).toBe(expected);
       });
