@@ -1,10 +1,10 @@
 # Appliquer un traitement - trier les pommes
 
 ```typescript
-apples$.subscribe(apple => {
-    if (isRed(apple)) {
-        // do something
-    }
+apples$.subscribe((apple) => {
+  if (isRed(apple)) {
+    // do something
+  }
 });
 ```
 
@@ -17,12 +17,10 @@ import { filter } from 'rxjs';
 
 // const redApples$ = filter(isRed)(apples$);
 
-const redApples$ = apples$.pipe(
-    filter(isRed),
-);
+const redApples$ = apples$.pipe(filter(isRed));
 
-redApples$.subscribe(redApple => {
-    // do something
+redApples$.subscribe((redApple) => {
+  // do something
 });
 ```
 
@@ -33,9 +31,9 @@ redApples$.subscribe(redApple => {
 # Appliquer un traitement - couper les pommes
 
 ```typescript
-apples$.subscribe(apple => {
-    const appleSlices = cutInSlices(apple);
-})
+apples$.subscribe((apple) => {
+  const appleSlices = cutInSlices(apple);
+});
 ```
 
 ##==##
@@ -47,12 +45,10 @@ import { map } from 'rxjs';
 
 // const applesInSlices$ = map(cutInSlices)(apples$);
 
-const applesInSlices$ = apples$.pipe(
-    map(cutInSlices),
-);
+const applesInSlices$ = apples$.pipe(map(cutInSlices));
 
-applesInSlices$.subscribe(appleInSlices => {
-    // do something
+applesInSlices$.subscribe((appleInSlices) => {
+  // do something
 });
 ```
 
@@ -63,11 +59,11 @@ applesInSlices$.subscribe(appleInSlices => {
 # Appliquer un traitement - trier et couper les pommes ?
 
 ```typescript
-apples$.subscribe(apple => {
-    if (isRed(apple)) {
-        const appleSlices = cutInSlices(apple);
-    }
-})
+apples$.subscribe((apple) => {
+  if (isRed(apple)) {
+    const appleSlices = cutInSlices(apple);
+  }
+});
 ```
 
 ##==##
@@ -80,8 +76,8 @@ import { filter, map } from 'rxjs';
 const redApples$ = apples$.pipe(filter(isRed));
 const redApplesInSlices$ = redApples$.pipe(map(cutInSlices));
 
-redApplesInSlices$.subscribe(oneRedAppleSlices => {
-    // do something
+redApplesInSlices$.subscribe((oneRedAppleSlices) => {
+  // do something
 });
 ```
 
@@ -94,13 +90,10 @@ import { filter, map } from 'rxjs';
 
 // const redApplesInSlices$ = map(cutInSlices)(filter(isRed)(apples$))
 
-const redApplesInSlices$ = apples$.pipe(
-    filter(isRed),
-    map(cutInSlices),
-);
+const redApplesInSlices$ = apples$.pipe(filter(isRed), map(cutInSlices));
 
-redApplesInSlices$.subscribe(oneAppleSlices => {
-    // do something
+redApplesInSlices$.subscribe((oneAppleSlices) => {
+  // do something
 });
 ```
 
@@ -108,7 +101,6 @@ Notes:
 
 - plus intérressant parce qu'on peut plus facilement composer les différents traitements
 - on est pas obligé de subscribe pour faire un traitement
-
 
 ##==##
 

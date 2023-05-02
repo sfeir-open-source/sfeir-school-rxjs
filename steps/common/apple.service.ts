@@ -9,7 +9,7 @@ class AppleServiceImpl {
         _type: 'Apple',
         color: randomValue({ red: 70, green: 30 }),
         rot: randomValue({ false: 60, true: 40 }) === 'true',
-      }))
+      })),
     );
   }
 }

@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "live-server --port=4242 --open=\"./index.html\" --watch=\"markdown,scripts/\"",
     "start": "parallelshell \"npm run serve\" \"npm run sass\"",
-    "prepare": "node ./scripts/dont-touch/prepare-script.js"
+    "prepare": "node ./scripts/dont-touch/prepare-script.js",
+    "prettier": "prettier --config ../.prettierrc --write \"./markdown/**/*.{md,ts,js,json,html,scss}\""
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "chokidar-cli": "^3.0.0",
     "live-server": "^1.1.0",
     "parallelshell": "3.0.1",
+    "prettier": "2.8.8",
     "sass": "^1.51.0",
     "shelljs": "^0.8.5"
   }

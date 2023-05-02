@@ -5,7 +5,7 @@
 ```typescript
 import { takeWhile } from 'rxjs';
 
-const results$ = numbers$.pipe(takeWhile(n => n < 5));
+const results$ = numbers$.pipe(takeWhile((n) => n < 5));
 ```
 
 ![w-1000 center](./assets/images/diagrams/operator_takewhile.svg)

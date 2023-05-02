@@ -23,6 +23,6 @@ freeTraining
     map((sfeirSchool) => ({
       ...sfeirSchool,
       trainers: sfeirSchool.trainers[0].split(', '),
-    }))
+    })),
   )
   .subscribe(console.log);

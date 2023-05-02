@@ -2,19 +2,21 @@
 
 ```typescript
 class Service {
-    private url = 'https://example.com';
+  private url = 'https://example.com';
 
-    getData() {
-        return of(url);
-    }
+  getData() {
+    return of(url);
+  }
 }
 
-fromEvent(myButton, 'click').pipe(
+fromEvent(myButton, 'click')
+  .pipe(
     map(() => formState),
-    switchMap(Service.getData), // => Cannot read properties of undefined (reading 'url') 
-).subscribe(data => {
+    switchMap(Service.getData), // => Cannot read properties of undefined (reading 'url')
+  )
+  .subscribe((data) => {
     // do something
-});
+  });
 ```
 
 Notes:
@@ -27,19 +29,21 @@ Notes:
 
 ```typescript
 class Service {
-    private url = 'https://example.com';
+  private url = 'https://example.com';
 
-    getData() {
-        return of(url);
-    }
+  getData() {
+    return of(url);
+  }
 }
 
-fromEvent(myButton, 'click').pipe(
+fromEvent(myButton, 'click')
+  .pipe(
     map(() => formState),
     switchMap(Service.getData.bind(Service)),
-).subscribe(data => {
+  )
+  .subscribe((data) => {
     // do something
-});
+  });
 ```
 
 Notes:

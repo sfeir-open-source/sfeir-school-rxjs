@@ -11,9 +11,9 @@
 3. Vous saurez si la compote est prête une fois que les pommes ne seront plus dures du tout.
 4. Pendant que la compote cuit, éplucher et couper en quatre les deux dernières pommes, puis, couper les quartiers en fines lamelles
 5. Préchauffer le four à 210°C (thermostat 7).
-6. Laisser un peu refroidir la compote et étaler la pâte brisée dans un moule et la piquer avec une fourchette. 
+6. Laisser un peu refroidir la compote et étaler la pâte brisée dans un moule et la piquer avec une fourchette.
 7. Verser la compote sur la pâte et placer les lamelles de pommes en formant une spirale ou plusieurs cercles, au choix !
-8. Mettre au four et laisser cuire pendant 30 min max. Surveiller la cuisson. 
+8. Mettre au four et laisser cuire pendant 30 min max. Surveiller la cuisson.
 
 [Source de la recette](https://www.marmiton.org/recettes/recette_tarte-aux-pommes_18588.aspx)
 
@@ -29,6 +29,7 @@ Notes:
 <!-- .slide: class="transition-bg-green-5" -->
 
 # Il était une fois une fabrique de tartes aux pommes...
+
 ## qui utilisait RxJS pour automatiser tout son processus de fabrication...
 
 Notes:

@@ -13,6 +13,7 @@ combine$.subscribe();
 // => [3, { data: '...'}]
 // ...
 ```
+
 <!-- .element: class="big-code block" -->
 
 ![w-1000 center](./assets/images/diagrams/factory_combinelatestwith.svg)

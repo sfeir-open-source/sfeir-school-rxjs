@@ -31,6 +31,6 @@ const fromageDeChevre$ = eventInterval$(2000).pipe(map(() => 'Buche de chèvre')
 const cuisson$ = (toBake: string, cookingTime = 4000) =>
   of(toBake).pipe(
     map((toBake) => toBake.concat(' cuit')),
-    delay(cookingTime)
+    delay(cookingTime),
   );
 ```

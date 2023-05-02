@@ -3,12 +3,13 @@
 ```typescript
 // function expression
 function multiplyBy2(n: number): number {
-    return n * 2;
+  return n * 2;
 }
 
 // arrow function
 const multiplyBy2 = (n: number): number => n * 2;
 ```
+
 <!-- .element: class="big-code block" -->
 
 Notes:
@@ -22,28 +23,26 @@ Notes:
 ## Rappels : fonction pure
 
 ```typescript
-
 let FOO = 2;
 
 function impure(n: number) {
-    return n * FOO;
+  return n * FOO;
 }
 
 console.log(impure(2));
 
 function pure(a: number, b: number) {
-    return a * b;
+  return a * b;
 }
 
 console.log(pure(2, FOO));
 ```
 
 ```typescript
-
 let FOO = 2;
 
 function impureWithSideEffect(n: number) {
-    FOO = n;
+  FOO = n;
 }
 
 impureWithSideEffect(3);
@@ -55,17 +54,15 @@ Notes:
 - et qui pour les mêmes paramètres renverra toujours le même résultat
 - une fonction pure ne doit pas non plus avoir de side-effect
 
-
 ##==##
 
 ## Rappels : passer une fonction en paramètre
 
 ```typescript
-
-const numbers = [1,2,3,4,5,6];
+const numbers = [1, 2, 3, 4, 5, 6];
 
 function isEven(n: number): boolean {
-    return n % 2 === 0;
+  return n % 2 === 0;
 }
 
 const evenNumbers = numbers.filter((n) => isEven(n));

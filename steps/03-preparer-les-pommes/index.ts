@@ -18,6 +18,6 @@ PiePastryService.getPiePastries()
   .pipe(
     retry(),
     mergeMap((box) => box.content),
-    take(APPLE_PIES_ORDERED_COUNT)
+    take(APPLE_PIES_ORDERED_COUNT),
   )
   .subscribe(console.log);

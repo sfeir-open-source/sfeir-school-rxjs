@@ -25,9 +25,9 @@ Indiquer que tout est question de stream et que tout Rx repose sur la notion de 
 </div>
 
 Notes:
+
 - exemple de schéma courant appelé "marble diagram"
 - les streams sont représentés sous cette formes
 - on le verra plus tard mais les opérateurs sont expliqués via les marbles
 - expliquer les représentations du temps qui passe, des events, des erreurs et de la complétion
 - expliquer aussi ce que signifie chacun de ces éléments
-

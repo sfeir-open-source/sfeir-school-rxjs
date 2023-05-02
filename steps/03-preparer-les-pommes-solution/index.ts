@@ -7,7 +7,7 @@ const APPLE_PIES_ORDERED_COUNT = 11;
 AppleService.getApples()
   .pipe(
     filter((apple) => !apple.rot),
-    mergeMap(CuttingMachineService.cutApple)
+    mergeMap(CuttingMachineService.cutApple),
   )
   .subscribe(console.log);
 
@@ -16,7 +16,7 @@ AppleService.getApples()
   .pipe(
     filter((apple) => apple.rot),
     bufferCount(4),
-    mergeMap(CompoteBakingService.bakeCompote)
+    mergeMap(CompoteBakingService.bakeCompote),
   )
   .subscribe(console.log);
 
@@ -24,6 +24,6 @@ PiePastryService.getPiePastries()
   .pipe(
     retry(),
     mergeMap((box) => box.content),
-    take(APPLE_PIES_ORDERED_COUNT)
+    take(APPLE_PIES_ORDERED_COUNT),
   )
   .subscribe(console.log);

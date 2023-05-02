@@ -3,14 +3,15 @@
 ```typescript
 // JavaScript
 function fn(a, b) {
-    return a * b;
+  return a * b;
 }
 
 // TypeScript
-function fn(a:number, b: number) {
-    return a * b;
+function fn(a: number, b: number) {
+  return a * b;
 }
 ```
+
 <!-- .element: class="big-code block" -->
 
 Notes:
@@ -26,7 +27,7 @@ Notes:
 
 ```typescript
 interface Box<T> {
-    content: T;
+  content: T;
 }
 
 type Apple = { color: 'red' | 'green' };
@@ -38,4 +39,5 @@ const piePastryBox: Box<PiePastry> = { content: { cooked: true } };
 // KO
 const box: Box<PiePastry> = { content: { color: 'green' } };
 ```
+
 <!-- .element: class="big-code block" -->

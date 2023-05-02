@@ -32,8 +32,8 @@ import { Apple, AppleService } from './apple.service';
 
 const apples$: Observable<Apple> = AppleService.getApples();
 
-apples$.subscribe(event => {
-    console.log('EVENT', event);
+apples$.subscribe((event) => {
+  console.log('EVENT', event);
 });
 ```
 
@@ -72,11 +72,11 @@ import { Subscription } from 'rxjs';
 
 const apples$: Observable<Apple> = AppleService.getApples();
 
-const subscription: Subscription = apples$.subscribe(apple => {
-    console.log('EVENT', apple);
-    if (apple.color === 'green') {
-        subscription.unsubscribe();
-    }
+const subscription: Subscription = apples$.subscribe((apple) => {
+  console.log('EVENT', apple);
+  if (apple.color === 'green') {
+    subscription.unsubscribe();
+  }
 });
 ```
 
@@ -101,22 +101,22 @@ Notes:
 
 ![w-1000 center](./assets/images/diagrams/apple_subscribe_unsubscribe.svg)
 
-##==## 
+##==##
 
 # Gérer les erreurs et la fin du stream
 
 ```typescript
 const subscription: Subscription = apples$.subscribe({
-    next(apple) {
-        console.log('EVENT', apple);
-        if (apple.color === 'green') subscription.unsubscribe();
-    },
-    error(error) {
-        console.error('ERROR', error);
-    },
-    complete() {
-        console.error('COMPLETE');
-    }
+  next(apple) {
+    console.log('EVENT', apple);
+    if (apple.color === 'green') subscription.unsubscribe();
+  },
+  error(error) {
+    console.error('ERROR', error);
+  },
+  complete() {
+    console.error('COMPLETE');
+  },
 });
 ```
 

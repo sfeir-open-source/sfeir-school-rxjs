@@ -5,7 +5,7 @@
 ```typescript
 import { reduce } from 'rxjs';
 
-const results$ = numbers$.pipe(reduce((acc,cur) => acc + cur));
+const results$ = numbers$.pipe(reduce((acc, cur) => acc + cur));
 ```
 
 ![w-1000 center](./assets/images/diagrams/operator_reduce.svg)

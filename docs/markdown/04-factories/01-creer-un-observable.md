@@ -4,11 +4,12 @@
 import { Observable } from 'rxjs';
 
 const obs$ = new Observable((subscriber) => {
-    subscriber.next(1);
-    subscriber.error(new Error('Cannot emit 6! 😢'));
-    subscriber.complete();
+  subscriber.next(1);
+  subscriber.error(new Error('Cannot emit 6! 😢'));
+  subscriber.complete();
 });
 ```
+
 <!-- .element: class="big-code block" -->
 
 Notes:
@@ -22,17 +23,18 @@ Expliquer la logique de la création d'un Observable avec les 3 types d'events
 import { Observable } from 'rxjs';
 
 const interval$ = new Observable<number>((subscriber) => {
-    let i = 0;
-    const intervalId = setInterval(() => {
-        if (subscriber.closed) {
-            clearInterval(intervalId);
-            subscriber.complete();
-            return;
-        }
-        subscriber.next(i++);
-    }, 1_000);
+  let i = 0;
+  const intervalId = setInterval(() => {
+    if (subscriber.closed) {
+      clearInterval(intervalId);
+      subscriber.complete();
+      return;
+    }
+    subscriber.next(i++);
+  }, 1_000);
 });
 ```
+
 <!-- .element: class="big-code block" -->
 
 Notes:
@@ -51,9 +53,8 @@ Expliquer le fonctionnement d'un "interval" minimaliste :
 import { interval } from 'rxjs';
 
 const interval$ = interval(1_000);
-
 ```
+
 <!-- .element: class="big-code block" -->
 
 ![w-1000 center](./assets/images/diagrams/factory_interval.svg)
-

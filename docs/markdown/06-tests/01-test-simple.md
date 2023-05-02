@@ -2,9 +2,9 @@
 
 ```typescript
 describe('OrderService', () => {
-    it('should return an order', () => {
-        expect(OrderService.getOrder()).toEqual({ id: '1', items: [] });
-    });
+  it('should return an order', () => {
+    expect(OrderService.getOrder()).toEqual({ id: '1', items: [] });
+  });
 });
 ```
 
@@ -14,9 +14,9 @@ describe('OrderService', () => {
 
 ```typescript
 describe('OrderService', () => {
-    it('should return an order', () => {
-        expect(OrderService.getOrder()).toEqual({ id: '1', items: [] });
-    });
+  it('should return an order', () => {
+    expect(OrderService.getOrder()).toEqual({ id: '1', items: [] });
+  });
 });
 ```
 
@@ -30,11 +30,11 @@ describe('OrderService', () => {
 
 ```typescript
 describe('OrderService', () => {
-    it('should return an order', () => {
-        OrderService.getOrder().subscribe(order => {
-            expect(order).toEqual({ id: '1', items: [] });
-        });
+  it('should return an order', () => {
+    OrderService.getOrder().subscribe((order) => {
+      expect(order).toEqual({ id: '1', items: [] });
     });
+  });
 });
 ```
 
@@ -44,11 +44,11 @@ describe('OrderService', () => {
 
 ```typescript
 describe('OrderService', () => {
-    it('should return an order', () => {
-        OrderService.getOrder().subscribe(order => {
-            expect(order).toEqual({ id: '1', items: [] });
-        });
+  it('should return an order', () => {
+    OrderService.getOrder().subscribe((order) => {
+      expect(order).toEqual({ id: '1', items: [] });
     });
+  });
 });
 ```
 
@@ -62,12 +62,12 @@ describe('OrderService', () => {
 
 ```typescript
 describe('OrderService', () => {
-    it('should return an order', (done) => {
-        OrderService.getOrder().subscribe(order => {
-            expect(order).toEqual({ id: '1', items: [] });
-            done();
-        });
+  it('should return an order', (done) => {
+    OrderService.getOrder().subscribe((order) => {
+      expect(order).toEqual({ id: '1', items: [] });
+      done();
     });
+  });
 });
 ```
 
@@ -77,12 +77,12 @@ describe('OrderService', () => {
 
 ```typescript
 describe('OrderService', () => {
-    it('should return an order', (done) => {
-        OrderService.getOrder().subscribe(order => {
-            expect(order).toEqual({ id: '1', items: [] });
-            done();
-        });
+  it('should return an order', (done) => {
+    OrderService.getOrder().subscribe((order) => {
+      expect(order).toEqual({ id: '1', items: [] });
+      done();
     });
+  });
 });
 ```
 
@@ -103,13 +103,13 @@ Notes:
 
 ```typescript
 describe('OrderService', () => {
-    it('should return an order', (done) => {
-        const subscription = OrderService.getOrder().subscribe(order => {
-            expect(order).toEqual({ id: '1', items: [] });
-            done();
-            subscription.unsubscribe();
-        });
+  it('should return an order', (done) => {
+    const subscription = OrderService.getOrder().subscribe((order) => {
+      expect(order).toEqual({ id: '1', items: [] });
+      done();
+      subscription.unsubscribe();
     });
+  });
 });
 ```
 

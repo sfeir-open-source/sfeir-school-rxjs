@@ -15,5 +15,6 @@ RxJS est donc l'implémentation JavaScript du Reactive Programming et de la norm
 ![w-1000 center](./assets/images/reactive-traits-fr.svg)
 
 Notes:
+
 - évoquer le manifest
 - le fait qu'il décrit ce que c'est la reactivité de manière très simple
