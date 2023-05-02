@@ -13,7 +13,7 @@ class PiePastryServiceImpl {
         } else {
           return of(box);
         }
-      })
+      }),
     );
   }
 }

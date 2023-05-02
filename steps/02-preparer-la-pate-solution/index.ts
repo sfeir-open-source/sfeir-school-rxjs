@@ -14,6 +14,6 @@ PiePastryService.getPiePastries()
     // this is equivalent to `mergeMap((box) => from(box.content))` as `mergeMap` is taking care of transforming arrays into streams
     mergeMap((box) => box.content),
     // we take only the needed PiePastry
-    take(APPLE_PIES_ORDERED_COUNT)
+    take(APPLE_PIES_ORDERED_COUNT),
   )
   .subscribe(console.log);

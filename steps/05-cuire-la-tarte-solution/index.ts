@@ -17,14 +17,14 @@ const appleSlices$ = apples$.pipe(
   filter((apple) => !apple.rot),
   mergeMap(CuttingMachineService.cutApple),
   bufferCount(64),
-  tap(console.log)
+  tap(console.log),
 );
 
 const compote$ = apples$.pipe(
   filter((apple) => apple.rot),
   bufferCount(4),
   mergeMap(CompoteBakingService.bakeCompote),
-  tap(console.log)
+  tap(console.log),
 );
 
 const piePastryInPlate$ = PiePastryService.getPiePastries().pipe(
@@ -33,13 +33,13 @@ const piePastryInPlate$ = PiePastryService.getPiePastries().pipe(
   take(APPLE_PIES_ORDERED_COUNT),
   zipWith(PiePlateService.getPiePlate()),
   map(([piePastry, piePlate]): PiePlate => ({ ...piePlate, pastry: piePastry })),
-  tap(console.log)
+  tap(console.log),
 );
 
 zip(piePastryInPlate$, compote$, appleSlices$)
   .pipe(
     mergeMap(([piePastryInPlate, compote, appleSlices]) =>
-      ApplePieBakingService.bakeApplePie(piePastryInPlate, compote, appleSlices)
-    )
+      ApplePieBakingService.bakeApplePie(piePastryInPlate, compote, appleSlices),
+    ),
   )
   .subscribe((applePie) => console.log('Apple Pie', applePie));

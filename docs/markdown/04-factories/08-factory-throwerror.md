@@ -14,6 +14,7 @@ error$.subscribe({
 });
 // => 'something goes wrong! 😢'
 ```
+
 <!-- .element: class="big-code block" -->
 
 ![w-1000 center](./assets/images/diagrams/factory_throwerror.svg)

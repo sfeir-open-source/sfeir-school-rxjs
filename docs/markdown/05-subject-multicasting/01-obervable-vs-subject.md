@@ -1,14 +1,13 @@
 # Observable = monocast
 
 ```typescript
-
 const obs$ = new Observable((subscriber) => {
-    let i = 0;
-    setInterval(() => subscriber.next(i++), 1_000);
+  let i = 0;
+  setInterval(() => subscriber.next(i++), 1_000);
 });
 
-obs$.subscribe(i => console.log('ONE', i));
-obs$.subscribe(i => console.log('TWO', i));
+obs$.subscribe((i) => console.log('ONE', i));
+obs$.subscribe((i) => console.log('TWO', i));
 ```
 
 ```text
@@ -32,14 +31,13 @@ Notes:
 # Observable = monocast
 
 ```typescript
-
 let i = 0;
 const obs$ = new Observable((subscriber) => {
-    setInterval(() => subscriber.next(i++), 1_000);
+  setInterval(() => subscriber.next(i++), 1_000);
 });
 
-obs$.subscribe(i => console.log('ONE', i));
-obs$.subscribe(i => console.log('TWO', i));
+obs$.subscribe((i) => console.log('ONE', i));
+obs$.subscribe((i) => console.log('TWO', i));
 ```
 
 ```text
@@ -71,16 +69,14 @@ Si on sort la variable i de l'Observable ça ne fonctionne plus et on voit le c�
 
 # Subject = multicast
 
-
 ```typescript
-
 let i = 0;
 const obs$ = new Subject();
 
 setInterval(() => subscriber.next(i++), 1_000);
 
-obs$.subscribe(i => console.log('ONE', i));
-obs$.subscribe(i => console.log('TWO', i));
+obs$.subscribe((i) => console.log('ONE', i));
+obs$.subscribe((i) => console.log('TWO', i));
 ```
 
 ```text
@@ -119,4 +115,3 @@ Notes:
 - BehaviorSubject : nécessite une valeur initiale, porte une valeur qui est émise au moment du subscribe
 - ReplaySubject : va rejouer les N derniers événements au moment du subscribe
 - AsyncSubject : va émettre une seule fois quand il est complété
-

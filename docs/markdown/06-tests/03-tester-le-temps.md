@@ -11,7 +11,7 @@ Notes:
 - la méthode simple permet de tester des cas de base
 - mais nos Observable peuvent émettre plusieurs événements dans le temps
 - c'est difficile de tester le temps comme ça
-- on est aussi soumi au temps qui passe (ici le temps prendre 1s * le nombre d'événement)
+- on est aussi soumi au temps qui passe (ici le temps prendre 1s \* le nombre d'événement)
 
 ##==##
 
@@ -37,9 +37,9 @@ Notes:
 import { TestScheduler } from 'rxjs/testing';
 
 it('should emit an apple every second', () => {
-    const testScheduler = new TestScheduler((actual, expected) => {
-        expect(actual).toEqual(expected);
-    });
+  const testScheduler = new TestScheduler((actual, expected) => {
+    expect(actual).toEqual(expected);
+  });
 });
 ```
 
@@ -173,14 +173,14 @@ on frame 2 emit 1, on frame 4007 emit 3 and complete
 import { TestScheduler } from 'rxjs/testing';
 
 it('should emit an apple every second', () => {
-    const testScheduler = new TestScheduler((actual, expected) => {
-        expect(actual).toEqual(expected);
-    });
-    testScheduler.run(({ expectObservable }) => {
-        const actual$ = HeartbeatService.getBeat();
-        const expected = '1s h 1s h 1s h';
-        expectObservable(actual$).toBe(expected);
-    });
+  const testScheduler = new TestScheduler((actual, expected) => {
+    expect(actual).toEqual(expected);
+  });
+  testScheduler.run(({ expectObservable }) => {
+    const actual$ = HeartbeatService.getBeat();
+    const expected = '1s h 1s h 1s h';
+    expectObservable(actual$).toBe(expected);
+  });
 });
 ```
 
@@ -198,22 +198,25 @@ Notes:
 import { TestScheduler } from 'rxjs/testing';
 
 it('should emit an apple every second', () => {
-    const testScheduler = new TestScheduler((actual, expected) => {
-        expect(actual).toEqual(expected);
-    });
-    testScheduler.run(({ expectObservable }) => {
-        const actual$ = HeartbeatService.getBeat();
-        const expected = '1s h 1s h 1s h';
-        expectObservable(actual$).toBe(expected);
-    });
+  const testScheduler = new TestScheduler((actual, expected) => {
+    expect(actual).toEqual(expected);
+  });
+  testScheduler.run(({ expectObservable }) => {
+    const actual$ = HeartbeatService.getBeat();
+    const expected = '1s h 1s h 1s h';
+    expectObservable(actual$).toBe(expected);
+  });
 });
 ```
 
 <br />
 
 ### ❌ `HeartbeatService.getBeat()` est infini
+
 ### ❌ expected n'est pas exhaustif (comme actual$ est infini)
+
 ### ❌ on ne défini pas "h"
+
 ### ❌ souvez-vous: un "alphanumeric marbles" = 1ms
 
 ##==##
@@ -224,16 +227,15 @@ it('should emit an apple every second', () => {
 import { TestScheduler } from 'rxjs/testing';
 
 it('should emit an apple every second', () => {
-    const testScheduler = new TestScheduler((actual, expected) => {
-        expect(actual).toEqual(expected);
-    });
-    testScheduler.run(({ expectObservable }) => {
-        const actual$ = HeartbeatService.getBeat();
-        const actualSubscription = '^ 3500ms !';
-        const expected = '1s h 999ms h 999ms h';
-        expectObservable(actual$, actualSubscription)
-            .toBe(expected, { h: { "type": "heartbeat", "status": "OK" } });
-    });
+  const testScheduler = new TestScheduler((actual, expected) => {
+    expect(actual).toEqual(expected);
+  });
+  testScheduler.run(({ expectObservable }) => {
+    const actual$ = HeartbeatService.getBeat();
+    const actualSubscription = '^ 3500ms !';
+    const expected = '1s h 999ms h 999ms h';
+    expectObservable(actual$, actualSubscription).toBe(expected, { h: { type: 'heartbeat', status: 'OK' } });
+  });
 });
 ```
 
@@ -245,15 +247,15 @@ it('should emit an apple every second', () => {
 import { TestScheduler } from 'rxjs/testing';
 
 it('should emit an apple every second', () => {
-    const testScheduler = new TestScheduler((actual, expected) => {
-        expect(actual).toEqual(expected);
-    });
-    testScheduler.run(({ expectObservable }) => {
-        const actual$ = HeartbeatService.getBeat().pipe(map(() => 'h'));
-        const actualSubscription = '^ 3500ms !';
-        const expected = '1s h 999ms h 999ms h';
-        expectObservable(actual$, actualSubscription).toBe(expected);
-    });
+  const testScheduler = new TestScheduler((actual, expected) => {
+    expect(actual).toEqual(expected);
+  });
+  testScheduler.run(({ expectObservable }) => {
+    const actual$ = HeartbeatService.getBeat().pipe(map(() => 'h'));
+    const actualSubscription = '^ 3500ms !';
+    const expected = '1s h 999ms h 999ms h';
+    expectObservable(actual$, actualSubscription).toBe(expected);
+  });
 });
 ```
 

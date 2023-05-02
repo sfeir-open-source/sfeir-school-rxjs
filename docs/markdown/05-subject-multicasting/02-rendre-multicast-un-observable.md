@@ -1,14 +1,13 @@
 # Rendre multicast un Observable
 
 ```typescript
-
 let i = 0;
 const monocast$ = new Observable((subscriber) => {
-    setInterval(() => subscriber.next(i++), 1_000);
+  setInterval(() => subscriber.next(i++), 1_000);
 });
 
-monocast$.subscribe(i => console.log('ONE', i));
-monocast$.subscribe(i => console.log('TWO', i));
+monocast$.subscribe((i) => console.log('ONE', i));
+monocast$.subscribe((i) => console.log('TWO', i));
 ```
 
 ```text
@@ -26,16 +25,15 @@ monocast$.subscribe(i => console.log('TWO', i));
 # Rendre multicast un Observable
 
 ```typescript
-
 const monocast$ = new Observable((subscriber) => {
-    let i = 0;
-    setInterval(() => subscriber.next(i++), 1_000);
+  let i = 0;
+  setInterval(() => subscriber.next(i++), 1_000);
 });
 
 const multicast$ = monocast$.pipe(share());
 
-multicast$.subscribe(i => console.log('ONE', i));
-multicast$.subscribe(i => console.log('TWO', i));
+multicast$.subscribe((i) => console.log('ONE', i));
+multicast$.subscribe((i) => console.log('TWO', i));
 ```
 
 ```text
@@ -53,20 +51,19 @@ multicast$.subscribe(i => console.log('TWO', i));
 # share ne conserve pas l'état
 
 ```typescript
-
 const monocast$ = new Observable((subscriber) => {
-    let i = 0;
-    setInterval(() => subscriber.next(i++), 1_000);
+  let i = 0;
+  setInterval(() => subscriber.next(i++), 1_000);
 });
 
 const multicast$ = monocast$.pipe(share());
 
-const subOne = multicast$.subscribe(i => console.log('ONE', i));
-const subTwo = multicast$.subscribe(i => console.log('TWO', i));
+const subOne = multicast$.subscribe((i) => console.log('ONE', i));
+const subTwo = multicast$.subscribe((i) => console.log('TWO', i));
 setTimeout(() => {
-    subOne.unsubscribe();
-    subTwo.unsubscribe();
-    multicast$.subscribe(i => console.log('THREE', i));
+  subOne.unsubscribe();
+  subTwo.unsubscribe();
+  multicast$.subscribe((i) => console.log('THREE', i));
 }, 3_100);
 ```
 
@@ -91,27 +88,26 @@ Sous le capot, share utilise un Subject
 # Comment conserver l'état ?
 
 ```typescript
-
 const monocast$ = new Observable<number>((subscriber) => {
-    let i = 0;
-    setInterval(() => subscriber.next(i++), 1_000);
+  let i = 0;
+  setInterval(() => subscriber.next(i++), 1_000);
 });
 
 const multicast$ = monocast$.pipe(
-    share({
-        connector: () => new BehaviorSubject(-1),
-        resetOnError: false,
-        resetOnRefCountZero: false,
-        resetOnComplete: false,
-    }),
+  share({
+    connector: () => new BehaviorSubject(-1),
+    resetOnError: false,
+    resetOnRefCountZero: false,
+    resetOnComplete: false,
+  }),
 );
 
-const subOne = multicast$.subscribe(i => console.log('ONE', i));
-const subTwo = multicast$.subscribe(i => console.log('TWO', i));
+const subOne = multicast$.subscribe((i) => console.log('ONE', i));
+const subTwo = multicast$.subscribe((i) => console.log('TWO', i));
 setTimeout(() => {
-    subOne.unsubscribe();
-    subTwo.unsubscribe();
-    multicast$.subscribe(i => console.log('THREE', i));
+  subOne.unsubscribe();
+  subTwo.unsubscribe();
+  multicast$.subscribe((i) => console.log('THREE', i));
 }, 3_100);
 ```
 
