@@ -1,7 +1,7 @@
 export interface Apple {
   _type: 'Apple';
   color: 'red' | 'green';
-  rot: boolean;
+  isRotten: boolean;
 }
 
 export interface PiePastry {

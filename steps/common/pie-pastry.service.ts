@@ -9,7 +9,7 @@ class PiePastryServiceImpl {
       mergeMap((box, index) => {
         if (index > 0 && index % this.errorModulo === 0) {
           this.errorModulo = generateModulo();
-          return throwError(() => new Error('Oups empty box! 😡'));
+          return throwError(() => new Error('Oops empty box! 😡'));
         } else {
           return of(box);
         }

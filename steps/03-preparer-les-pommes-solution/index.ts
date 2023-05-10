@@ -6,7 +6,7 @@ const APPLE_PIES_ORDERED_COUNT = 11;
 // without bonuses
 AppleService.getApples()
   .pipe(
-    filter((apple) => !apple.rot),
+    filter((apple) => !apple.isRotten),
     mergeMap(CuttingMachineService.cutApple),
   )
   .subscribe(console.log);
@@ -14,7 +14,7 @@ AppleService.getApples()
 // naive bonus (process 2 different apple streams)
 AppleService.getApples()
   .pipe(
-    filter((apple) => apple.rot),
+    filter((apple) => apple.isRotten),
     bufferCount(4),
     mergeMap(CompoteBakingService.bakeCompote),
   )

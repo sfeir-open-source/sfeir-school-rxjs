@@ -5,15 +5,11 @@
 ```typescript
 import { debounceTime } from 'rxjs';
 
-const results$ = numbers$.pipe(debounceTime(emitAfter5second));
-
-function emitAfter5second(): Observable<number> {
-    ...
-}
+const results$ = numbers$.pipe(debounceTime(5000));
 ```
 
 ![w-1000 center](./assets/images/diagrams/operator_debouncetime.svg)
 
 Notes:
 
-Cette opérateur n'est une qu'une variante de debounce, on retrouve ce schema pour pas mal d'opérateur où des cas spécifiques étaient très courant
+Cette opérateur n'est une qu'une variante de debounce, on retrouve ce schéma pour pas mal d'opérateur où des cas spécifiques étaient très courants

@@ -22,7 +22,7 @@ describe('OrderService', () => {
 
 <br />
 
-### ❌ `getOrder` nous donne un `Observable<Order>` par un `Order`
+### ❌ `getOrder` nous donne un `Observable<Order>` pas un `Order`
 
 ##==##
 
@@ -119,5 +119,5 @@ describe('OrderService', () => {
 
 Notes:
 
-- Pour des Observable qui renvoie une seule valeur, cette manière de faire est la plus simple
+- Pour des Observables qui renvoient une seule valeur, cette manière de faire est la plus simple
 - c'est la manière dont on testerait une Promise ou un callback

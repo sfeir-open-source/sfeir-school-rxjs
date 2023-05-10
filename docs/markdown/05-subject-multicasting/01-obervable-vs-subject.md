@@ -73,7 +73,7 @@ Si on sort la variable i de l'Observable ça ne fonctionne plus et on voit le c�
 let i = 0;
 const obs$ = new Subject();
 
-setInterval(() => subscriber.next(i++), 1_000);
+setInterval(() => obs$.next(i++), 1_000);
 
 obs$.subscribe((i) => console.log('ONE', i));
 obs$.subscribe((i) => console.log('TWO', i));
@@ -91,9 +91,9 @@ obs$.subscribe((i) => console.log('TWO', i));
 
 Notes:
 
-- On retrouve de nouveau le fait d'avoir la même valeur entre nous 2 observer
+- On retrouve de nouveau le fait d'avoir la même valeur entre nos 2 observers
 - Cette fois-ci c'est parce qu'ils partagent le même événement
-- Attention aux fuites mémoires : ici on va émettre des événements dans le Subject à l'infini, peu importe qu'on est un subscriber ou non
+- Attention aux fuites mémoires : ici on va émettre des événements dans le Subject à l'infini, peu importe qu'on ait un subscriber ou non
 
 ##==##
 

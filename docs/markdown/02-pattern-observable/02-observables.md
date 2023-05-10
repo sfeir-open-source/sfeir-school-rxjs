@@ -15,7 +15,7 @@ Notes:
 - convention du $ après les noms de variables
 - on peut omettre de typer l'Observable plupart du temps
 - AppleService.getApples() est une fonction qui nous donne un Observable
-- apples$ ne contient aucune valeur (il faut souscrire pour ça) => les Observable sont lazy
+- apples$ ne contient aucune valeur (il faut souscrire pour ça) => les Observables sont lazy
 
 ##==##
 

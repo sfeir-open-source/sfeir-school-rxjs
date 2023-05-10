@@ -14,14 +14,14 @@ const APPLE_PIES_ORDERED_COUNT = 11;
 const apples$ = AppleService.getApples().pipe(share());
 
 const appleSlices$ = apples$.pipe(
-  filter((apple) => !apple.rot),
+  filter((apple) => !apple.isRotten),
   mergeMap(CuttingMachineService.cutApple),
   bufferCount(64),
   tap(console.log),
 );
 
 const compote$ = apples$.pipe(
-  filter((apple) => apple.rot),
+  filter((apple) => apple.isRotten),
   bufferCount(4),
   mergeMap(CompoteBakingService.bakeCompote),
   tap(console.log),

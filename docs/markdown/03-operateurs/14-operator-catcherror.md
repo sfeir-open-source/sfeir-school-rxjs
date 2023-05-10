@@ -10,7 +10,7 @@ const results$ = numbers$.pipe(
     // handle error?
     // do something with source$ observable?
     // emit a last value?
-    // throwing an error?
+    // throw an error?
   }),
 );
 ```

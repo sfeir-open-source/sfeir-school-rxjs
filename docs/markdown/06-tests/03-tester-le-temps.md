@@ -9,9 +9,9 @@
 Notes:
 
 - la méthode simple permet de tester des cas de base
-- mais nos Observable peuvent émettre plusieurs événements dans le temps
+- mais nos Observables peuvent émettre plusieurs événements dans le temps
 - c'est difficile de tester le temps comme ça
-- on est aussi soumi au temps qui passe (ici le temps prendre 1s \* le nombre d'événement)
+- on est aussi soumis au temps qui passe (ici le temps prendre 1s \* le nombre d'événement)
 
 ##==##
 
@@ -57,7 +57,7 @@ Insister sur son utilisation pour avoir des tests "instantanés"
 - `#` : error
 - `[a-z0-9]` : frame contenant un évènement
 - `[0-9]+[ms|s|m]` : progression du temps en millisecondes, secondes ou minutes
-- `(ab)`, `(a|)` : indique que plusieurs événements sont émit à la même frame
+- `(ab)`, `(a|)` : indique que plusieurs événements sont émis à la même frame
 
 - `^` : démarrage de la subscription
 - `!` : fin de la subscription (unsubscribe)
@@ -186,8 +186,8 @@ it('should emit an apple every second', () => {
 
 Notes:
 
-- testScheduler nous fourni pas mal de helper
-- ici on utilise que expectObservable
+- testScheduler nous fournit pas mal de helpers
+- ici on n'utilise que expectObservable
 - est-ce que ça marche ?
 
 ##==##
@@ -215,9 +215,9 @@ it('should emit an apple every second', () => {
 
 ### ❌ expected n'est pas exhaustif (comme actual$ est infini)
 
-### ❌ on ne défini pas "h"
+### ❌ on ne définit pas "h"
 
-### ❌ souvez-vous: un "alphanumeric marbles" = 1ms
+### ❌ souvenez-vous: un "alphanumeric marble" = 1ms
 
 ##==##
 

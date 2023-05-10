@@ -14,7 +14,7 @@ fromEvent(myButton, 'click').subscribe(() => {
 Notes:
 
 - on voit très souvent ce genre de code
-- parfois avec encore plus d'imbrication de subscribe
+- parfois avec encore plus d'imbrication de subscribes
   sauf que :
 - souvent on oublie d'unsubscribe
 - on fait des subscribes inutiles
