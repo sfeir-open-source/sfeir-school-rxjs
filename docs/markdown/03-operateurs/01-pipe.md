@@ -61,7 +61,7 @@ applesInSlices$.subscribe((appleInSlices) => {
 ```typescript
 apples$.subscribe((apple) => {
   if (isRed(apple)) {
-    const appleSlices = cutInSlices(apple);
+    const applesInSlices = cutInSlices(apple);
   }
 });
 ```
@@ -76,7 +76,7 @@ import { filter, map } from 'rxjs';
 const redApples$ = apples$.pipe(filter(isRed));
 const redApplesInSlices$ = redApples$.pipe(map(cutInSlices));
 
-redApplesInSlices$.subscribe((oneRedAppleSlices) => {
+redApplesInSlices$.subscribe((oneRedAppleInSlices) => {
   // do something
 });
 ```
@@ -92,15 +92,15 @@ import { filter, map } from 'rxjs';
 
 const redApplesInSlices$ = apples$.pipe(filter(isRed), map(cutInSlices));
 
-redApplesInSlices$.subscribe((oneAppleSlices) => {
+redApplesInSlices$.subscribe((oneAppleInSlices) => {
   // do something
 });
 ```
 
 Notes:
 
-- plus intérressant parce qu'on peut plus facilement composer les différents traitements
-- on est pas obligé de subscribe pour faire un traitement
+- plus intéressant parce qu'on peut plus facilement composer les différents traitements
+- on n'est pas obligé de subscribe pour faire un traitement
 
 ##==##
 

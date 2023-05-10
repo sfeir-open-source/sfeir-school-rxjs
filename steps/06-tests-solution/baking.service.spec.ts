@@ -14,10 +14,10 @@ describe('BakingServices', () => {
   describe('bakeCompote', () => {
     it('should return an compote', (done) => {
       const fourApples: Apple[] = [
-        { _type: 'Apple', color: 'green', rot: false },
-        { _type: 'Apple', color: 'green', rot: false },
-        { _type: 'Apple', color: 'green', rot: false },
-        { _type: 'Apple', color: 'green', rot: false },
+        { _type: 'Apple', color: 'green', isRotten: false },
+        { _type: 'Apple', color: 'green', isRotten: false },
+        { _type: 'Apple', color: 'green', isRotten: false },
+        { _type: 'Apple', color: 'green', isRotten: false },
       ];
       testScheduler.run(() => {
         const sub = CompoteBakingService.bakeCompote(fourApples).subscribe((compote) => {
@@ -30,7 +30,7 @@ describe('BakingServices', () => {
 
     it('should emit an error when not enough apples are given', (done) => {
       testScheduler.run(() => {
-        CompoteBakingService.bakeCompote([{ _type: 'Apple', color: 'green', rot: false }]).subscribe({
+        CompoteBakingService.bakeCompote([{ _type: 'Apple', color: 'green', isRotten: false }]).subscribe({
           next() {
             fail('should not emit a Compote');
           },
@@ -43,10 +43,10 @@ describe('BakingServices', () => {
 
     it('should emit an apple every second', () => {
       const fourApples: Apple[] = [
-        { _type: 'Apple', color: 'green', rot: false },
-        { _type: 'Apple', color: 'green', rot: false },
-        { _type: 'Apple', color: 'green', rot: false },
-        { _type: 'Apple', color: 'green', rot: false },
+        { _type: 'Apple', color: 'green', isRotten: false },
+        { _type: 'Apple', color: 'green', isRotten: false },
+        { _type: 'Apple', color: 'green', isRotten: false },
+        { _type: 'Apple', color: 'green', isRotten: false },
       ];
       testScheduler.run(({ expectObservable }) => {
         const actual$ = CompoteBakingService.bakeCompote(fourApples).pipe(map(() => 'c'));

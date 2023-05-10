@@ -50,7 +50,7 @@ impureWithSideEffect(3);
 
 Notes:
 
-- une fonction pure est une fonction qui ne dépend que de ces paramètres
+- une fonction pure est une fonction qui ne dépend que de ses paramètres
 - et qui pour les mêmes paramètres renverra toujours le même résultat
 - une fonction pure ne doit pas non plus avoir de side-effect
 

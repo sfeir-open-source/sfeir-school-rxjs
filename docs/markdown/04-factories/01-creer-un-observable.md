@@ -42,8 +42,8 @@ Expliquer le fonctionnement d'un "interval" minimaliste :
 
 - pas de scheduler (juste évoquer l'existence des schedulers pour gérer le temps et typiquement pouvoir mocker le temps dans les tests)
 - on wrap un setInterval standard JavaScript
-- la fonction qu'on passe en paramètre de new Observable n'est exécuté que si on subscribe
-- si on unsubscribe subscriber.closed passe à true, donc on coupe l'interval et on emet un complete
+- la fonction qu'on passe en paramètre de new Observable n'est exécutée que si on subscribe
+- si on unsubscribe subscriber.closed passe à true, donc on coupe l'interval et on émet un complete
 
 ##==##
 

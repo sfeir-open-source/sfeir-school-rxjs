@@ -14,14 +14,14 @@ const APPLE_PIES_ORDERED_COUNT = 11;
 // TODO: Bonus - Use an operator to turn the apple stream into a multicast so that the same apple stream can be used between slices and compote
 AppleService.getApples()
   .pipe(
-    filter((apple) => !apple.rot),
+    filter((apple) => !apple.isRotten),
     mergeMap(CuttingMachineService.cutApple),
   )
   .subscribe(console.log);
 
 AppleService.getApples()
   .pipe(
-    filter((apple) => apple.rot),
+    filter((apple) => apple.isRotten),
     bufferCount(4),
     mergeMap(CompoteBakingService.bakeCompote),
   )
