@@ -13,8 +13,8 @@
 
 ### @\_Anthony_Pena
 
-<!-- .element: class="icon-twitter icon-second" -->
+<!-- .element: class="icon-second" -->
 
 ### pena.a@sfeir.com
 
-<!-- .element: class="icon-mail icon-third" -->
+<!-- .element: class="icon-third" -->

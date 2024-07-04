@@ -13,8 +13,8 @@
 
 ### @Msieur_Jo
 
-<!-- .element: class="icon-twitter icon-second" -->
+<!-- .element: class="icon-second" -->
 
 ### molza.j@sfeir.com
 
-<!-- .element: class="icon-mail icon-third" -->
+<!-- .element: class="icon-third" -->
