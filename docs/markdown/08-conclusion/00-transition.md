@@ -1,4 +1,4 @@
-<!-- .slide: class="transition bg-pink" -->
+<!-- .slide: class="transition transition-bg-sfeir-1" -->
 
 # Conclusion
 
