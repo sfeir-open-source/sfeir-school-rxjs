@@ -50,7 +50,7 @@ describe('BakingServices', () => {
       ];
       testScheduler.run(({ expectObservable }) => {
         const actual$ = CompoteBakingService.bakeCompote(fourApples).pipe(map(() => 'c'));
-        const expected = '5s (c|)';
+        const expected = '2s (c|)';
         expectObservable(actual$).toBe(expected);
       });
     });

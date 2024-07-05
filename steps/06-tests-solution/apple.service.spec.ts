@@ -17,7 +17,7 @@ describe('AppleService', () => {
           expect(apple._type).toBe('Apple');
           expect(apple).toHaveProperty('color');
           expect(['red', 'green'].includes(apple.color)).toBeTruthy();
-          expect(apple).toHaveProperty('rot');
+          expect(apple).toHaveProperty('isRotten');
           done();
           sub.unsubscribe();
         });
