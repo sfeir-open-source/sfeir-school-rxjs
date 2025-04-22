@@ -26,14 +26,14 @@
   },
   "homepage": "https://github.com/sfeir-open-source/sfeir-school-template",
   "dependencies": {
-    "sfeir-school-theme": "^3.2.0-rc"
+    "sfeir-school-theme": "^3.2.0"
   },
   "devDependencies": {
     "chokidar-cli": "^3.0.0",
-    "live-server": "^1.1.0",
+    "live-server": "^1.2.2",
     "parallelshell": "3.0.1",
-    "prettier": "^3.3.2",
-    "sass": "^1.51.0",
+    "prettier": "^3.5.3",
+    "sass": "^1.87.0",
     "shelljs": "^0.8.5"
   }
 }
