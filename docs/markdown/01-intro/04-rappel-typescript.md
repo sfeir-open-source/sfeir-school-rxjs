@@ -12,7 +12,7 @@ function fn(a: number, b: number) {
 }
 ```
 
-<!-- .element: class="big-code block" -->
+<!-- .element: class="big-code" -->
 
 Notes:
 
@@ -40,4 +40,4 @@ const piePastryBox: Box<PiePastry> = { content: { cooked: true } };
 const box: Box<PiePastry> = { content: { color: 'green' } };
 ```
 
-<!-- .element: class="big-code block" -->
+<!-- .element: class="big-code" -->

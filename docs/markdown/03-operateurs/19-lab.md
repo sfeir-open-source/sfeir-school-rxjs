@@ -2,7 +2,7 @@
 
 # Préparons nos pâtes !
 
-## Lab 2
+## Lab
 
 <br>
 
@@ -12,7 +12,7 @@
 
 <br>
 
-### npm run start:02
+### npm run 02-preparer-la-pate
 
 Notes:
 
@@ -24,7 +24,7 @@ Notes:
 
 # Préparons nos pommes !
 
-## Lab 3
+## Lab
 
 <br>
 
@@ -35,7 +35,7 @@ Notes:
 
 <br>
 
-### npm run start:03
+### npm run 03-preparer-les-pommes
 
 Notes:
 

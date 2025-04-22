@@ -11,6 +11,6 @@ const inputPasteEvent$ = fromEvent(input, 'paste');
 const inputValueChange$ = merge(inputChangeEvent$, inputKeyUpEvent$, inputPasteEvent$);
 ```
 
-<!-- .element: class="big-code block" -->
+<!-- .element: class="big-code" -->
 
 ![w-1000 center](./assets/images/diagrams/factory_merge.svg)

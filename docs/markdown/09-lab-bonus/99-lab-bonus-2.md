@@ -34,3 +34,7 @@ const cuisson$ = (toBake: string, cookingTime = 4000) =>
     delay(cookingTime),
   );
 ```
+
+<br>
+
+### npm run 100-bonus-chevre-chaud

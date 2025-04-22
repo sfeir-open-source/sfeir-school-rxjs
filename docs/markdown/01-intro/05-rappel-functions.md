@@ -10,7 +10,7 @@ function multiplyBy2(n: number): number {
 const multiplyBy2 = (n: number): number => n * 2;
 ```
 
-<!-- .element: class="big-code block" -->
+<!-- .element: class="big-code" -->
 
 Notes:
 

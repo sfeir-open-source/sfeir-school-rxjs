@@ -2,7 +2,7 @@
 
 # Ouverture de l'usine !
 
-## Lab 1
+## Lab
 
 <br>
 
@@ -12,7 +12,7 @@
 
 <br>
 
-### npm run start:01
+### npm run 01-ouverture-de-l-usine
 
 Notes:
 

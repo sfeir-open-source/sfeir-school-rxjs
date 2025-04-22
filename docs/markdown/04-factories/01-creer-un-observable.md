@@ -10,7 +10,7 @@ const obs$ = new Observable((subscriber) => {
 });
 ```
 
-<!-- .element: class="big-code block" -->
+<!-- .element: class="big-code" -->
 
 Notes:
 Expliquer la logique de la création d'un Observable avec les 3 types d'events
@@ -35,7 +35,7 @@ const interval$ = new Observable<number>((subscriber) => {
 });
 ```
 
-<!-- .element: class="big-code block" -->
+<!-- .element: class="big-code" -->
 
 Notes:
 Expliquer le fonctionnement d'un "interval" minimaliste :
@@ -55,6 +55,6 @@ import { interval } from 'rxjs';
 const interval$ = interval(1_000);
 ```
 
-<!-- .element: class="big-code block" -->
+<!-- .element: class="big-code" -->
 
 ![w-1000 center](./assets/images/diagrams/factory_interval.svg)

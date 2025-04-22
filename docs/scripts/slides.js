@@ -119,7 +119,7 @@ function bonusSlides() {
   ];
 }
 
-function formation() {
+export function formation() {
   return [
     ...schoolSlides(),
     ...introSlides(),

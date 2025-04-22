@@ -2,7 +2,7 @@
 
 # Test simple
 
-## Lab <br/>6.1
+## Lab
 
 <br>
 
@@ -11,4 +11,4 @@
 
 <br>
 
-### npm run start:06
+### npm run 06-tests

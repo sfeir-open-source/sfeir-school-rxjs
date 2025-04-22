@@ -13,6 +13,6 @@ const joinObject$ = forkJoin({ num: fromArray$, req: fromPromise$ });
 joinObject$.subscribe(); // => { num: 3, req: { data: '...'} }
 ```
 
-<!-- .element: class="big-code block" -->
+<!-- .element: class="big-code" -->
 
 ![w-1000 center](./assets/images/diagrams/factory_forkjoin.svg)

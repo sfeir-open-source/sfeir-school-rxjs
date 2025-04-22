@@ -8,6 +8,6 @@ const fromPromise$ = from(fetch('https://sfeir.com'));
 const fromAnotherObservable$ = from(fromPromise$);
 ```
 
-<!-- .element: class="big-code block" -->
+<!-- .element: class="big-code" -->
 
 ![w-1000 center](./assets/images/diagrams/factory_from.svg)

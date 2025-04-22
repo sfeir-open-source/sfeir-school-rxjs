@@ -6,14 +6,12 @@
 npm install rxjs
 ```
 
-<!-- .element: class="big-code block" -->
+<!-- .element: class="big-code" -->
 
 Import just what you need:
-
-<!-- .element: class="text-center" -->
 
 ```javascript
 import { fromEvent, map } from 'rxjs';
 ```
 
-<!-- .element: class="big-code block" -->
+<!-- .element: class="big-code" -->

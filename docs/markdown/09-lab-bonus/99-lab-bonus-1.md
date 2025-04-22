@@ -18,3 +18,7 @@ const freeTraining = of({
 ```
 
 Retournez un nouvel observable avec le bon format !
+
+<br>
+
+### npm run 99-bonus-simple-mapping

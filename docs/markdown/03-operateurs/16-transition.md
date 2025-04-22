@@ -1,3 +1,3 @@
-<!-- .slide: class="transition transition-bg-sfeir-1" -->
+<!-- .slide: class="transition" -->
 
 # Comment on s'en sort ?
