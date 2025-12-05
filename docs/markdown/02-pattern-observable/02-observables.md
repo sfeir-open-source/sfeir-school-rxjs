@@ -21,7 +21,8 @@ Notes:
 
 # Observable
 
-![w-1000 center](./assets/images/diagrams/empty_stream.svg)
+![](./assets/images/diagrams/empty_stream.svg 'w-1000 center')
+
 
 ##==##
 
@@ -60,7 +61,7 @@ Notes:
 
 # Subscribe
 
-![w-1000 center](./assets/images/diagrams/apple_subscribe.svg)
+![](./assets/images/diagrams/apple_subscribe.svg 'w-1000 center')
 
 ##==##
 
@@ -99,7 +100,7 @@ Notes:
 
 # Unsubscribe
 
-![w-1000 center](./assets/images/diagrams/apple_subscribe_unsubscribe.svg)
+![](./assets/images/diagrams/apple_subscribe_unsubscribe.svg 'w-1000 center')
 
 ##==##
 

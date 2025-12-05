@@ -1,21 +1,22 @@
 <!-- .slide: class="speaker-slide" -->
 
+<div class="speaker-slide">
+
 # Présentation
 
-![speaker](./assets/images/speakers/garreau-jf.jpg)
-![badge](./assets/images/speakers/gde.png)
-![company](./assets/images/logo-sfeir-blanc.png)
+![](./assets/images/speakers/garreau-jf.jpg 'speaker')
+
+![](./assets/images/speakers/gde.png 'badge')
+
+![](./assets/images/logo-sfeir-blanc.png 'company')
 
 ## Jean-François Garreau
 
 ### CTO front
 
-<!-- .element: class="icon-rule icon-first" -->
-
 ### @jefbinomed
-
-<!-- .element: class="icon-second" -->
 
 ### garreau.jf@sfeir.com
 
-<!-- .element: class="icon-third" -->
+</div>
+

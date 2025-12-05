@@ -15,4 +15,4 @@ const results$ = numbers$.pipe(
 );
 ```
 
-![w-1000 center](./assets/images/diagrams/operator_catcherror.svg)
+![](./assets/images/diagrams/operator_catcherror.svg 'w-1000 center')

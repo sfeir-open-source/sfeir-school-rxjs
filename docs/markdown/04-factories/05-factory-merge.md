@@ -13,4 +13,4 @@ const inputValueChange$ = merge(inputChangeEvent$, inputKeyUpEvent$, inputPasteE
 
 <!-- .element: class="big-code" -->
 
-![w-1000 center](./assets/images/diagrams/factory_merge.svg)
+![](./assets/images/diagrams/factory_merge.svg 'w-1000 center')

@@ -8,4 +8,4 @@ import { tap } from 'rxjs';
 const results$ = numbers$.pipe(tap((value) => console.log(value)));
 ```
 
-![w-1000 center](./assets/images/diagrams/operator_tap.svg)
+![](./assets/images/diagrams/operator_tap.svg 'w-1000 center')

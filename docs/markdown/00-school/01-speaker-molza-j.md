@@ -1,20 +1,20 @@
 <!-- .slide: class="speaker-slide" -->
 
+<div class="speaker-slide">
+
 # Présentation
 
-![speaker](./assets/images/speakers/molza-j.jpeg)
-![company](./assets/images/logo-sfeir-blanc.png)
+![](./assets/images/speakers/molza-j.jpeg 'speaker')
+
+![](./assets/images/logo-sfeir-blanc.png 'company')
 
 ## Jonathan Molza
 
 ### Dev Web Fullstack
 
-<!-- .element: class="icon-rule icon-first" -->
-
 ### @Msieur_Jo
-
-<!-- .element: class="icon-second" -->
 
 ### molza.j@sfeir.com
 
-<!-- .element: class="icon-third" -->
+</div>
+

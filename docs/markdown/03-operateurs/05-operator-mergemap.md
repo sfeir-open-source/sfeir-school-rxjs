@@ -12,7 +12,7 @@ function grabData(id: number): Observable<Data> {
 }
 ```
 
-![w-1000 center](./assets/images/diagrams/operator_mergemap.svg)
+![](./assets/images/diagrams/operator_mergemap.svg 'w-1000 center')
 
 Notes:
 Le résultat du callback de mergeMap sera passé à from, donc on peut lui passer : un Observable, une Promise ou un tableau

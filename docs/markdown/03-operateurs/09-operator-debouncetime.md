@@ -8,7 +8,7 @@ import { debounceTime } from 'rxjs';
 const results$ = numbers$.pipe(debounceTime(5000));
 ```
 
-![w-1000 center](./assets/images/diagrams/operator_debouncetime.svg)
+![](./assets/images/diagrams/operator_debouncetime.svg 'w-1000 center')
 
 Notes:
 

@@ -24,7 +24,7 @@ redApples$.subscribe((redApple) => {
 });
 ```
 
-![w-1000 center](./assets/images/diagrams/apple_filter.svg)
+![](./assets/images/diagrams/apple_filter.svg 'w-1000 center')
 
 ##==##
 
@@ -52,7 +52,7 @@ applesInSlices$.subscribe((appleInSlices) => {
 });
 ```
 
-![w-1000 center](./assets/images/diagrams/apple_map.svg)
+![](./assets/images/diagrams/apple_map.svg 'w-1000 center')
 
 ##==##
 
@@ -106,7 +106,7 @@ Notes:
 
 # Appliquer un traitement - Rx-style
 
-![w-1000 center](./assets/images/diagrams/apple_filter_and_map.svg)
+![](./assets/images/diagrams/apple_filter_and_map.svg 'w-1000 center')
 
 ##==##
 

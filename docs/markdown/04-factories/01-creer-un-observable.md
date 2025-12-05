@@ -57,4 +57,4 @@ const interval$ = interval(1_000);
 
 <!-- .element: class="big-code" -->
 
-![w-1000 center](./assets/images/diagrams/factory_interval.svg)
+![](./assets/images/diagrams/factory_interval.svg 'w-1000 center')
