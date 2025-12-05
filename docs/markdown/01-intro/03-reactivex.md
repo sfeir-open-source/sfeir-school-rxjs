@@ -1,8 +1,7 @@
 # ReactiveX (Reactive eXtension)
 
-<div class="full-center">
- <img src="./assets/images/Rx_Logo-512-512.png">
-</div>
+
+![](./assets/images/Rx_Logo-512-512.png 'w-500 center')
 
 Notes:
 

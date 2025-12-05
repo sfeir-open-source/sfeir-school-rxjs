@@ -6,7 +6,7 @@ ajax / bindCallback / bindNodeCallback / defer / empty / from / fromEvent / from
 
 # Vous n'avez pas à les apprendre : il y a des astuces !
 
-<iframe src="https://giphy.com/embed/s9Y0czwWdTtB7U6d5I" style="display: block; height: 95%; width: 60%; margin: auto" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+![](./assets/images/JimmyFallonOk.webp 'h-600 center')
 
 ##==##
 
