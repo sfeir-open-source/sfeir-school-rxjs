@@ -32,8 +32,8 @@
     "chokidar-cli": "^3.0.0",
     "live-server": "^1.2.2",
     "parallelshell": "3.0.1",
-    "prettier": "^3.5.3",
-    "sass": "^1.87.0",
+    "prettier": "^3.7.4",
+    "sass": "^1.94.2",
     "shelljs": "^0.8.5"
   }
 }
