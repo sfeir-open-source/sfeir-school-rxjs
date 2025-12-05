@@ -5,7 +5,7 @@
   "scripts": {
     "sass": "sass ./scss/slides.scss:./css/slides.css --source-map --watch",
     "sass-once": "sass ./scss/slides.scss:./css/slides.css --source-map",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "sfeir-school-theme check --rootDir=..",
     "serve": "live-server --port=4242 --open=\"./index.html\" --watch=\"markdown,scripts/\"",
     "start": "parallelshell \"npm run serve\" \"npm run sass\"",
     "prepare": "node ./scripts/dont-touch/prepare-script.js",

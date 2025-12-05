@@ -1,0 +1,6 @@
+{
+    "name": "04-foncer-la-tarte-solution",
+    "scripts": {
+        "start": "ts-node ./index.ts"
+    }
+}

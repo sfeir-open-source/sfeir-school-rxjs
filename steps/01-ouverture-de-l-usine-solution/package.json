@@ -1,0 +1,6 @@
+{
+    "name": "01-ouverture-de-l-usine-solution",
+    "scripts": {
+        "start": "ts-node ./index.ts"
+    }
+}

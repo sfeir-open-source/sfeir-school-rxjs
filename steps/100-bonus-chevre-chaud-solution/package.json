@@ -1,0 +1,6 @@
+{
+    "name": "100-bonus-chevre-chaud-solution",
+    "scripts": {
+        "start": "ts-node ./index.ts"
+    }
+}

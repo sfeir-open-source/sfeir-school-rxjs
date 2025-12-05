@@ -1,0 +1,6 @@
+{
+    "name": "03-preparer-les-pommes",
+    "scripts": {
+        "start": "ts-node ./index.ts"
+    }
+}
