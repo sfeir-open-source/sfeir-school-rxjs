@@ -1,6 +1,13 @@
 {
-    "name": "100-bonus-chevre-chaud",
-    "scripts": {
-        "start": "ts-node ./index.ts"
-    }
+  "name": "100-bonus-chevre-chaud",
+  "type": "module",
+  "scripts": {
+    "start": "ts-node ./index.ts"
+  },
+  "dependencies": {
+    "00-common": "*"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
 }

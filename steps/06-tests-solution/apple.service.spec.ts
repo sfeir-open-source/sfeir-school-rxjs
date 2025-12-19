@@ -1,6 +1,6 @@
 import { map } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
-import { AppleService } from '../common';
+import { AppleService } from '00-common';
 
 describe('AppleService', () => {
   let testScheduler: TestScheduler;

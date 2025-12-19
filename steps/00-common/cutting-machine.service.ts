@@ -1,4 +1,4 @@
-import { Apple, AppleSlice } from './models';
+import type { Apple, AppleSlice } from './models.ts';
 
 class CuttingMachineServiceImpl {
   public cutApple(apple: Apple): AppleSlice[] {

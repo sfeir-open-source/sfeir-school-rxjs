@@ -1,4 +1,4 @@
-import { AppleService, PiePastryService } from '../common';
+import { AppleService, PiePastryService } from '00-common';
 
 // TODO: subscribe to the apple stream and display the apples in the console
 

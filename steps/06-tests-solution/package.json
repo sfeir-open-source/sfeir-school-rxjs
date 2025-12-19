@@ -1,6 +1,14 @@
 {
-    "name": "06-tests-solution",
-    "scripts": {
-        "test": "jest ."
-    }
+  "name": "06-tests-solution",
+  "type": "module",
+  "scripts": {
+    "test": "jest ."
+  },
+  "dependencies": {
+    "00-common": "*"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "ts-node": "^10.9.1"
+  }
 }

@@ -1,5 +1,5 @@
 import { Observable, interval, map, mergeMap, of, throwError } from 'rxjs';
-import { Box } from './models';
+import type { Box } from './models.ts';
 
 class PiePastryServiceImpl {
   private errorModulo = generateModulo();

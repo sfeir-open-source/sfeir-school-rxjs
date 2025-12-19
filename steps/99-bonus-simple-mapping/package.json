@@ -1,6 +1,13 @@
 {
-    "name": "99-bonus-simple-mapping",
-    "scripts": {
-        "start": "ts-node ./index.ts"
-    }
+  "name": "99-bonus-simple-mapping",
+  "type": "module",
+  "scripts": {
+    "start": "ts-node ./index.ts"
+  },
+  "dependencies": {
+    "00-common": "*"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
 }

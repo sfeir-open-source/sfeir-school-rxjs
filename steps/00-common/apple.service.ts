@@ -1,6 +1,6 @@
 import { Observable, interval, map } from 'rxjs';
-import { randomValue } from './random.utils';
-import { Apple } from './models';
+import { randomValue } from './random.utils.ts';
+import type { Apple } from './models.ts';
 
 class AppleServiceImpl {
   public getApples(): Observable<Apple> {

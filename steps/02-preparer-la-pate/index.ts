@@ -1,4 +1,4 @@
-import { AppleService, CompoteBakingService, PiePastryService } from '../common';
+import { AppleService, CompoteBakingService, PiePastryService } from '00-common';
 
 const APPLE_PIES_ORDERED_COUNT = 11;
 

@@ -1,5 +1,5 @@
 import { mergeMap, retry, take } from 'rxjs';
-import { AppleService, PiePastryService, CuttingMachineService, CompoteBakingService } from '../common';
+import { AppleService, PiePastryService, CuttingMachineService, CompoteBakingService } from '00-common';
 
 const APPLE_PIES_ORDERED_COUNT = 11;
 

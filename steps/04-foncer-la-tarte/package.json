@@ -1,6 +1,13 @@
 {
-    "name": "04-foncer-la-tarte",
-    "scripts": {
-        "start": "ts-node ./index.ts"
-    }
+  "name": "04-foncer-la-tarte",
+  "type": "module",
+  "scripts": {
+    "start": "ts-node ./index.ts"
+  },
+  "dependencies": {
+    "00-common": "*"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
 }

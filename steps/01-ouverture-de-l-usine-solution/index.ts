@@ -1,4 +1,4 @@
-import { AppleService, PiePastryService } from '../common';
+import { AppleService, PiePastryService } from '00-common';
 
 AppleService.getApples().subscribe(console.log);
 

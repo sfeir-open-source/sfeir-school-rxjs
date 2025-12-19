@@ -1,5 +1,5 @@
 import { interval, map } from 'rxjs';
-import { PiePlate } from './models';
+import type { PiePlate } from './models.ts';
 
 class PiePlateServiceImpl {
   getPiePlate() {

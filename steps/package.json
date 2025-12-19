@@ -4,6 +4,7 @@
   "description": "Description de la tâche...",
   "main": "index.js",
   "workspaces": [
+    "00-common",
     "01-ouverture-de-l-usine",
     "01-ouverture-de-l-usine-solution",
     "02-preparer-la-pate",
@@ -46,7 +47,6 @@
     "rxjs": "^7.8.2"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.14",
     "jest": "^29.4.0",
     "prettier": "^3.5.3",
     "ts-jest": "^29.3.2",

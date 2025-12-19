@@ -1,5 +1,5 @@
 import { delay, Observable, of, throwError } from 'rxjs';
-import { Apple, Compote } from './models';
+import type { Apple, Compote } from './models.ts';
 
 class CompoteBakingServiceImpl {
   public bakeCompote(apples: Apple[]): Observable<Compote> {
