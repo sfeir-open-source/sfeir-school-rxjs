@@ -1,0 +1,13 @@
+{
+  "name": "01-ouverture-de-l-usine",
+  "type": "module",
+  "scripts": {
+    "start": "ts-node ./index.ts"
+  },
+  "dependencies": {
+    "00-common": "*"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
+}

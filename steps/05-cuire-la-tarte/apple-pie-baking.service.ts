@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { ApplePie, AppleSlice, Compote, PiePlate } from '../common/models';
+import type { ApplePie, AppleSlice, Compote, PiePlate } from '00-common/models.ts';
 
 class ApplePieBakingServiceImpl {
   public bakeApplePie(piePastryInPlate: PiePlate, compote: Compote, appleSlices: AppleSlice[]): Observable<ApplePie> {

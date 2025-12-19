@@ -5,9 +5,9 @@ import {
   CuttingMachineService,
   PiePastryService,
   PiePlateService,
-} from '../common';
-import { PiePlate } from '../common/models';
-import { ApplePieBakingService } from './apple-pie-baking.service';
+} from '00-common';
+import type { PiePlate } from '00-common/models.ts';
+import { ApplePieBakingService } from './apple-pie-baking.service.ts';
 
 const APPLE_PIES_ORDERED_COUNT = 11;
 

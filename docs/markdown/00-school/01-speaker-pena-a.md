@@ -1,20 +1,20 @@
 <!-- .slide: class="speaker-slide" -->
 
+<div class="speaker-slide">
+
 # Présentation
 
-![speaker](./assets/images/speakers/pena-a.jpg)
-![company](./assets/images/logo-sfeir-blanc.png)
+![](./assets/images/speakers/pena-a.jpg 'speaker')
+
+![](./assets/images/logo-sfeir-blanc.png 'company')
 
 ## Anthony Pena
 
 ### Dev Web Fullstack
 
-<!-- .element: class="icon-rule icon-first" -->
-
 ### @\_Anthony_Pena
-
-<!-- .element: class="icon-second" -->
 
 ### pena.a@sfeir.com
 
-<!-- .element: class="icon-third" -->
+</div>
+

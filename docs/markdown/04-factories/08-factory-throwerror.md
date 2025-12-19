@@ -17,4 +17,4 @@ error$.subscribe({
 
 <!-- .element: class="big-code" -->
 
-![w-1000 center](./assets/images/diagrams/factory_throwerror.svg)
+![](./assets/images/diagrams/factory_throwerror.svg 'w-1000 center')

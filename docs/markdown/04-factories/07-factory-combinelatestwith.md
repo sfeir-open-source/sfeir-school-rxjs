@@ -16,7 +16,7 @@ combine$.subscribe();
 
 <!-- .element: class="big-code" -->
 
-![w-1000 center](./assets/images/diagrams/factory_combinelatestwith.svg)
+![](./assets/images/diagrams/factory_combinelatestwith.svg 'w-1000 center')
 
 Notes:
 Remplace combineLatest

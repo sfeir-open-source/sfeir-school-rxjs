@@ -1,17 +1,13 @@
 # Observer Pattern
 
-<div class="full-center">
- <img src="./assets/images/Pattern-Observer.png">
-</div>
+![](./assets/images/Pattern-Observer.png 'center')
 
 Notes:
 Expliquer le pattern Observer
 
 ##==##
 
-<div class="full-center">
- <img class="h-600" src="./assets/images/everything-stream.jpeg">
-</div>
+![](./assets/images/everything-stream.jpeg 'h-600 center')
 
 Notes:
 Indiquer que tout est question de stream et que tout Rx repose sur la notion de stream
@@ -20,9 +16,7 @@ Indiquer que tout est question de stream et que tout Rx repose sur la notion de 
 
 # Understand Reactive Programming
 
-<div class="full-center">
- <img src="./assets/images/Stream-explanation.png">
-</div>
+![](./assets/images/Stream-explanation.png 'center')
 
 Notes:
 

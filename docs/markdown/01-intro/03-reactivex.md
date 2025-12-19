@@ -1,8 +1,7 @@
 # ReactiveX (Reactive eXtension)
 
-<div class="full-center">
- <img src="./assets/images/Rx_Logo-512-512.png">
-</div>
+
+![](./assets/images/Rx_Logo-512-512.png 'w-500 center')
 
 Notes:
 
@@ -12,7 +11,7 @@ RxJS est donc l'implémentation JavaScript du Reactive Programming et de la norm
 
 # [The Reactive Manifesto](https://www.reactivemanifesto.org/fr)
 
-![w-1000 center](./assets/images/reactive-traits-fr.svg)
+![](./assets/images/reactive-traits-fr.svg 'w-1000 center')
 
 Notes:
 

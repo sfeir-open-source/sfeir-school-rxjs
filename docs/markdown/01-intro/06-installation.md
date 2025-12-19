@@ -1,4 +1,4 @@
-<!-- .slide: class="with-code consolas" -->
+<!-- .slide: class="with-code" -->
 
 # Installation
 

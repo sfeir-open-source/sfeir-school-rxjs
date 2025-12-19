@@ -12,6 +12,11 @@
 
 You can view the slides [here](https://sfeir-open-source.github.io/sfeir-school-rxjs/).
 
+## Prerequisites
+
+- Node 22.18+ (LTS recommended)
+- npm
+
 ## Develop
 
 To run docs locally, go in directory `docs` and run `npx serve` of if you don't have node, you can use docker `docker-compose up`, and open slides on http://localhost:3000/.

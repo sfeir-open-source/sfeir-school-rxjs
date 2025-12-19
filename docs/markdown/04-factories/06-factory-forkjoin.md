@@ -15,4 +15,4 @@ joinObject$.subscribe(); // => { num: 3, req: { data: '...'} }
 
 <!-- .element: class="big-code" -->
 
-![w-1000 center](./assets/images/diagrams/factory_forkjoin.svg)
+![](./assets/images/diagrams/factory_forkjoin.svg 'w-1000 center')

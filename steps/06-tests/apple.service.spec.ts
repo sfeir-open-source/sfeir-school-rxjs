@@ -1,4 +1,4 @@
-import { AppleService } from '../common';
+import { AppleService } from '00-common';
 
 describe('AppleService', () => {
   describe('getApples', () => {

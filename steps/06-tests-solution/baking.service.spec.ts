@@ -1,7 +1,7 @@
 import { map } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
-import { ApplePieBakingService, CompoteBakingService } from '../common';
-import { Apple, AppleSlice, Compote, PiePlate } from '../common/models';
+import { ApplePieBakingService, CompoteBakingService } from '00-common';
+import type { Apple, AppleSlice, Compote, PiePlate } from '00-common/models.ts';
 
 describe('BakingServices', () => {
   let testScheduler: TestScheduler;

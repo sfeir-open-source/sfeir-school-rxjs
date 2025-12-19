@@ -1,0 +1,6 @@
+{
+  "name": "00-common",
+  "type": "module",
+  "types": "./index.ts",
+  "main": "./index.ts"
+}
