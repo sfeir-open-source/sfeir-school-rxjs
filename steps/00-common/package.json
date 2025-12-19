@@ -2,11 +2,5 @@
   "name": "00-common",
   "type": "module",
   "types": "./index.ts",
-  "main": "./index.ts",
-  "scripts": {
-    "start": "ts-node ./index.ts"
-  },
-  "devDependencies": {
-    "ts-node": "^10.9.1"
-  }
+  "main": "./index.ts"
 }
